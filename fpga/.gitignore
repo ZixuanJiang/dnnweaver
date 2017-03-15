@@ -1,0 +1,7 @@
+synthesis-output
+fsm_encoding.os
+zynq_output.txt
+*.gtkw
+hardware/bin/waveform/*.fst
+*.vcd
+hardware/bin/*

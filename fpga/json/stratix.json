@@ -1,0 +1,21 @@
+{
+  "name": "Stratix V GS D5",
+  "resources": {
+    "fpga": "stratix",
+    "num_macs": 600,
+    "bandwidth": 48,
+    "memory_per_bram": 16384,
+    "num_bram": 2014,
+    "frequency":200000000
+  },
+  "cycles": {
+    "mac": 1,
+    "comparison": 1,
+    "lookup": 1,
+    "shuffling": 3
+  },
+  "data": {
+    "bytes_per_element": 2,
+    "bytes_per_weight": 2
+  }
+}

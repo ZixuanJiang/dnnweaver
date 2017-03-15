@@ -1,0 +1,22 @@
+{
+  "name": "Zynq ZC702",
+  "resources": {
+    "fpga": "zynq",
+    "num_macs": 220,
+    "ports": 200,
+    "bandwidth": 24,
+    "memory_per_bram": 32768,
+    "num_bram": 140,
+    "frequency":150000000
+  },
+  "cycles": {
+    "mac": 1,
+    "comparison": 1,
+    "lookup": 1,
+    "shuffling": 3
+  },
+  "data": {
+    "bytes_per_element": 2,
+    "bytes_per_weight": 2
+  }
+}

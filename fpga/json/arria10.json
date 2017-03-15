@@ -1,0 +1,23 @@
+{
+  "name": "Arria10",
+  "product_id": "10AX115",
+  "webpage": "https://www.altera.com/products/boards_and_kits/dev-kits/altera/kit-a10-gx-fpga.html",
+  "resources": {
+    "fpga": "arria10",
+    "num_macs": 1350,
+    "bandwidth": 48,
+    "memory_per_bram": 16384,
+    "num_bram": 2713,
+    "frequency":200000000
+  },
+  "cycles": {
+    "mac": 1,
+    "comparison": 1,
+    "lookup": 1,
+    "shuffling": 3
+  },
+  "data": {
+    "bytes_per_element": 2,
+    "bytes_per_weight": 2
+  }
+}
