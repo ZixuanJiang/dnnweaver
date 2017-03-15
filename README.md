@@ -38,7 +38,7 @@ We provide a simple API to communicate with the accelerator, along with a sample
 ```
 fpga/arm_software/
 ```
-By default, the make command will compile the sample *linux.c* and generate and executable in the following path:
+By default, the make command will compile the sample *linux.c* and generate an executable in the following path:
 ```
 fpga/synthesis_output/linux.elf
 ```
