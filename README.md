@@ -59,15 +59,23 @@ The initial set of benchmarks are listed below.
 ```
 The above benchmarks can be found in compiler/sample\_prototxt/*
 
-## Software License
+## License
 
-The license is a free non-exclusive, non-transferable license to reproduce, use,
-modify and display the source code version of the Software, with or without
-modifications solely for non-commercial research, educational or evaluation
-purposes. The license does not entitle Licensee to technical support, telephone
-assistance, enhancements or updates to the Software. All rights, title to and
-ownership interest in Software, including all intellectual property rights
-therein shall remain in Georgia Institute of Technology.
+```
+Copyright 2017 Hadi Esmaeilzadeh
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
 
 ## Maintained By
 Hardik Sharma (*hsharma@gatech.edu*)
