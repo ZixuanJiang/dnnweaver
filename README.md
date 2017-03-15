@@ -25,7 +25,7 @@ These are the dependencies for DnnWeaver:
 
 Define the prototxt file for the DNN model in Caffe format in the Makefile.
 
-Generating the accelerator:
+To generate the accelerator Verilog, use the following command in the fpga directory:
 ```
 make PROTOTXT=your_prototxt_here
 ```
