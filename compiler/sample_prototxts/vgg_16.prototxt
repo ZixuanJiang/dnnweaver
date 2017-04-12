@@ -12,7 +12,7 @@ layer {
   name: "conv1_1"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 64
     pad: 1
     kernel_size: 3
   }
@@ -29,7 +29,7 @@ layer {
   name: "conv1_2"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 64
     pad: 1
     kernel_size: 3
   }
@@ -57,7 +57,7 @@ layer {
   name: "conv2_1"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 128
     pad: 1
     kernel_size: 3
   }
@@ -74,7 +74,7 @@ layer {
   name: "conv2_2"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 128
     pad: 1
     kernel_size: 3
   }
@@ -102,7 +102,7 @@ layer {
   name: "conv3_1"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 256
     pad: 1
     kernel_size: 3
   }
@@ -119,7 +119,7 @@ layer {
   name: "conv3_2"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 256
     pad: 1
     kernel_size: 3
   }
@@ -136,7 +136,7 @@ layer {
   name: "conv3_3"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 256
     pad: 1
     kernel_size: 3
   }
@@ -164,7 +164,7 @@ layer {
   name: "conv4_1"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 512
     pad: 1
     kernel_size: 3
   }
@@ -181,7 +181,7 @@ layer {
   name: "conv4_2"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 512
     pad: 1
     kernel_size: 3
   }
@@ -198,7 +198,7 @@ layer {
   name: "conv4_3"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 512
     pad: 1
     kernel_size: 3
   }
@@ -226,7 +226,7 @@ layer {
   name: "conv5_1"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 512
     pad: 1
     kernel_size: 3
   }
@@ -243,7 +243,7 @@ layer {
   name: "conv5_2"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 512
     pad: 1
     kernel_size: 3
   }
@@ -260,7 +260,7 @@ layer {
   name: "conv5_3"
   type: "Convolution"
   convolution_param {
-    num_output: 1
+    num_output: 512
     pad: 1
     kernel_size: 3
   }
@@ -288,7 +288,7 @@ layer {
   name: "fc6"
   type: "InnerProduct"
   inner_product_param {
-    num_output: 128
+    num_output: 4096
   }
 }
 layer {
@@ -312,7 +312,7 @@ layer {
   name: "fc7"
   type: "InnerProduct"
   inner_product_param {
-    num_output: 128
+    num_output: 4096
   }
 }
 layer {
@@ -336,7 +336,7 @@ layer {
   name: "fc8"
   type: "InnerProduct"
   inner_product_param {
-    num_output: 128
+    num_output: 1000
   }
 }
 layer {
