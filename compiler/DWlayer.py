@@ -47,7 +47,7 @@ def floor_a_by_b(a, b):
 
 
 def int_to_bin(num, width):
-    print(num, width)
+    #print(num, width)
     if num > pow(2, width):
         print("Number {0} too large for the given bitwidth {1}".format(num, width))
         exit(-1)
@@ -55,7 +55,7 @@ def int_to_bin(num, width):
     if num < 0:
         print("Number {0} is negative. Bitwidth = {1}".format(num, width))
         exit(-1)
-    print("Binary = {0}".format(b))
+    #print("Binary = {0}".format(b))
     return b
 
 
@@ -152,7 +152,7 @@ class DWMacroLayer(object):
 
                 # This is the number of rows stored in PE buffer
                 curr_slice_rows = min(max(self.slice_size, 1), self.input_dim[3] - i * self.slice_size)
-                print("Generating {0} rows for PE output".format(curr_slice_rows))
+                #print("Generating {0} rows for PE output".format(curr_slice_rows))
 
                 # This is the number of rows read by the memory controller for each channel of the input feature map
                 slice_read_rows = curr_slice_rows + self.PE_layer.kernel_height - 1
@@ -160,7 +160,7 @@ class DWMacroLayer(object):
                     slice_read_rows -= self.PE_layer.pad
                 if i == self.number_of_slices - 1:
                     slice_read_rows -= self.PE_layer.pad
-                print("Current slice read rows = {0}".format(slice_read_rows))
+                #print("Current slice read rows = {0}".format(slice_read_rows))
 
                 row_num_axi = ceil_a_by_b(self.input_dim[2], self.num_pe) * \
                               ceil_a_by_b(self.num_pe, self.axi_num_data)
@@ -184,15 +184,15 @@ class DWMacroLayer(object):
                 curr_slice_read_addr = self.base_data_read_address + i * slice_read_offset - (negative_offset * row_size)
                 self.slice_stream_read_addr.append(curr_slice_read_addr)
 
-                print("Slice addr = {0}".format(hex(curr_slice_read_addr)))
-                print("Base addr = {0}".format(hex(self.base_data_read_address)))
-                print("negative offset = {0}".format(negative_offset))
-                print("Row size = {0}".format(row_size))
+                #print("Slice addr = {0}".format(hex(curr_slice_read_addr)))
+                #print("Base addr = {0}".format(hex(self.base_data_read_address)))
+                #print("negative offset = {0}".format(negative_offset))
+                #print("Row size = {0}".format(row_size))
 
             elif isinstance(self.PE_layer, LRNLayer):
                 curr_slice_read_size = self.stream_read_size
                 self.slice_stream_read_size.append(curr_slice_read_size)
-                print("LRN slice read size = {0}".format(curr_slice_read_size))
+                #print("LRN slice read size = {0}".format(curr_slice_read_size))
 
                 packed_stream_read_size = curr_slice_read_size * self.axi_num_data / self.num_pe
                 self.slice_packed_stream_size.append(packed_stream_read_size)
@@ -295,10 +295,10 @@ class DWMacroLayer(object):
             _pool_kernel = 0
             _pool_enable = 0
 
-        print("Pool Enabled     = {0}".format(_pool_enable))
-        print("Pool Kernel size = {0}".format(_pool_kernel))
-        print("Output channels  = {0}".format(_oc))
-        print("Stride           = {0}".format(_stride))
+        # print("Pool Enabled     = {0}".format(_pool_enable))
+        # print("Pool Kernel size = {0}".format(_pool_kernel))
+        # print("Output channels  = {0}".format(_oc))
+        # print("Stride           = {0}".format(_stride))
 
         od = self.output_dim
         if self.Pool_layer is not None:
@@ -315,32 +315,32 @@ class DWMacroLayer(object):
             # exit(-1)
         else:
             serdes_count = self.num_pe
-        print("SerDes Count = {0}".format(serdes_count))
+        # print("SerDes Count = {0}".format(serdes_count))
 
-        print(self.hardware["resources"]["memory_per_bram"])
+        # print(self.hardware["resources"]["memory_per_bram"])
 
         # TODO: find lower bound on this
         scratch_space = 128
         scratch_space_needed = ceil_a_by_b(self.input_dim[2], self.num_pe) * self.PE_layer.kernel_height - 1
-        print("Assigned scratch space = {0}; required = {1}".format(scratch_space, scratch_space_needed))
+        # print("Assigned scratch space = {0}; required = {1}".format(scratch_space, scratch_space_needed))
 
-        if scratch_space_needed > scratch_space:
-            print("Error: Scratch space needed exceeds assigned space")
+        # if scratch_space_needed > scratch_space:
+            # print("Error: Scratch space needed exceeds assigned space")
 
         bram_size = self.hardware["resources"]["memory_per_bram"]
         # TODO: factor of 2 added
         bram_depth = ceil_a_by_b(bram_size, self.op_width) / 2
-        print("BRAM depth = {0}".format(bram_depth))
+        # print("BRAM depth = {0}".format(bram_depth))
 
         result_depth = bram_depth - scratch_space
-        print("BRAM for result slice = {0}".format(result_depth))
+        # print("BRAM for result slice = {0}".format(result_depth))
 
         bram_per_row = ceil_a_by_b(self.output_dim[2], self.num_pe)
         rows_per_slice = min(floor_a_by_b(result_depth, bram_per_row), self.PE_layer.output_dim[3])
-        print("Max rows per slice = {0}".format(rows_per_slice))
+        # print("Max rows per slice = {0}".format(rows_per_slice))
 
         number_of_slices = ceil_a_by_b(self.output_dim[2], rows_per_slice)
-        print("Number of slices = {0}".format(number_of_slices))
+        # print("Number of slices = {0}".format(number_of_slices))
 
         self.slice_size = max(min(rows_per_slice, _oh), 1)
         self.number_of_slices = number_of_slices
@@ -364,19 +364,19 @@ class DWMacroLayer(object):
             else:
                 _pad_r_e = 0
 
-            print("slice {0} - Pad_W: {1} Pad_R_S: {2} Pad_R_E: {3}".format(ii, _pad, _pad_r_s, _pad_r_e))
-            print("slice size = {0}".format(slice_size))
+            # print("slice {0} - Pad_W: {1} Pad_R_S: {2} Pad_R_E: {3}".format(ii, _pad, _pad_r_s, _pad_r_e))
+            # print("slice size = {0}".format(slice_size))
 
             _oh = slice_size
             _ih = (_oh - 1) * self.PE_layer.stride - _pad_r_e - _pad_r_s + _kh
 
-            print("OH = {0}".format(_oh))
-            print("IH = {0}".format(_ih))
-            print("Pad = {0}".format(self.PE_layer.pad))
-            print("Pad_r_s = {0}".format(_pad_r_s))
-            print("Pad_r_e = {0}".format(_pad_r_e))
-            print("KH = {0}".format(_kh))
-            print("stride = {0}".format(self.PE_layer.stride))
+            # print("OH = {0}".format(_oh))
+            # print("IH = {0}".format(_ih))
+            # print("Pad = {0}".format(self.PE_layer.pad))
+            # print("Pad_r_s = {0}".format(_pad_r_s))
+            # print("Pad_r_e = {0}".format(_pad_r_e))
+            # print("KH = {0}".format(_kh))
+            # print("stride = {0}".format(self.PE_layer.stride))
 
             text_buffer = \
                 int_to_bin(serdes_count, serdes_count_bitwidth) + \
@@ -401,15 +401,6 @@ class DWMacroLayer(object):
 
             tb.append(text_buffer)
 
-            print("*"*50)
-            print("*"*50)
-            print("*"*50)
-            print("Serdes Count = {0}".format(serdes_count))
-            print("Len of instruction = {0}".format(len(text_buffer)))
-            print("*"*50)
-            print("*"*50)
-            print("*"*50)
-
         return tb
 
     def generate_memory_read_binary(self):
@@ -433,20 +424,20 @@ class DWMacroLayer(object):
         self.weight_mem_offset = self.weight_mem_size * 8
         self.weight_mem_count = self.get_weight_read_count()
 
-        print("Base Data Read Address = {0}".format(hex(self.base_data_read_address)))
-        print("Data Read Size = {0}".format(self.data_mem_size))
-        print("Data Read Offset = {0}".format(self.data_mem_offset))
-        print("Data Read Count = {0}".format(self.data_mem_count))
+        #print("Base Data Read Address = {0}".format(hex(self.base_data_read_address)))
+        #print("Data Read Size = {0}".format(self.data_mem_size))
+        #print("Data Read Offset = {0}".format(self.data_mem_offset))
+        #print("Data Read Count = {0}".format(self.data_mem_count))
 
         if self.base_weight_read_address is None:
             self.base_weight_read_address = self.prev.base_weight_read_address + self.prev.PE_layer.get_weight_mem_size()
 
-        print("Base Weight Read Address = {0}".format(hex(self.base_weight_read_address)))
-        print("Weight Read Size = {0}".format(self.weight_mem_size))
-        print("Weight Read Offset = {0}".format(self.weight_mem_offset))
-        print("Weight Read Count = {0}".format(self.weight_mem_count))
+        #print("Base Weight Read Address = {0}".format(hex(self.base_weight_read_address)))
+        #print("Weight Read Size = {0}".format(self.weight_mem_size))
+        #print("Weight Read Offset = {0}".format(self.weight_mem_offset))
+        #print("Weight Read Count = {0}".format(self.weight_mem_count))
 
-        print("Number of slices = {0}".format(self.slice_size))
+        #print("Number of slices = {0}".format(self.slice_size))
 
         self.stream_read_loop1_offset = 0
         self.stream_read_loop2_offset = 0
@@ -478,7 +469,7 @@ class DWMacroLayer(object):
             self.stream_read_loop0_offset = self.PE_layer.get_input_read_size() / self.axi_num_data * 8
             #self.stream_read_loop1_offset = self.stream_read_size * 8
             self.stream_read_loop1_offset = 0
-            print("LRN loop0 offset = {0}".format(self.stream_read_loop0_offset))
+            #print("LRN loop0 offset = {0}".format(self.stream_read_loop0_offset))
 
             #self.stream_read_loop1_count = self.input_dim[3]
             #self.stream_read_loop2_count = self.input_dim[1]
@@ -498,7 +489,7 @@ class DWMacroLayer(object):
             self.stream_read_loop2_count = 1
 
         packed_buffer_read_size = self.buffer_read_size
-        print("Packed Buffer Read Size = {0}".format(packed_buffer_read_size))
+        #print("Packed Buffer Read Size = {0}".format(packed_buffer_read_size))
 
         tb = []
 
@@ -510,10 +501,10 @@ class DWMacroLayer(object):
             curr_slice_addr = self.slice_stream_read_addr[i]
             packed_stream_read_size = self.slice_packed_stream_size[i]
 
-            print("Curr Slice Size = {0}".format(curr_slice_size))
-            print("Stream addr = {0}".format(hex(curr_slice_addr)))
-            print("Buffer addr = {0}".format(hex(self.buffer_read_address)))
-            print("Buffer offset = {0}".format(self.buffer_read_offset))
+            #print("Curr Slice Size = {0}".format(curr_slice_size))
+            #print("Stream addr = {0}".format(hex(curr_slice_addr)))
+            #print("Buffer addr = {0}".format(hex(self.buffer_read_address)))
+            #print("Buffer offset = {0}".format(self.buffer_read_offset))
 
             text_buffer = \
                 int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
@@ -546,7 +537,7 @@ class DWMacroLayer(object):
         od = self.output_dim
         if self.next is not None and isinstance(self.next.PE_layer, FCLayer):
             next_is_FC = True
-            print("next is FC. output size = {0}".format(od[1] * od[2] * od[3]))
+            #print("next is FC. output size = {0}".format(od[1] * od[2] * od[3]))
         else:
             next_is_FC = False
 
@@ -557,9 +548,9 @@ class DWMacroLayer(object):
             output_fm_size = int(ceil(float(od[1] * od[2] * od[3]) / self.num_pe)) * int(
                 ceil(float(self.num_pe) / self.axi_num_data)) * \
                              self.axi_num_data
-            if next_is_FC:
-                print("output_dm_size = {0}".format(output_fm_size))
-                print(od)
+            #if next_is_FC:
+                #print("output_dm_size = {0}".format(output_fm_size))
+                #print(od)
                 # exit(-1)
 
         self.write_mem_size = output_fm_size / self.axi_num_data
@@ -570,12 +561,12 @@ class DWMacroLayer(object):
         else:
             self.write_mem_count = self.num_pu
 
-        print("Output FM size = {0}".format(output_fm_size))
+        #print("Output FM size = {0}".format(output_fm_size))
 
-        print("Base Data Write Address = {0}".format(hex(self.base_data_write_address)))
-        print("Data Write Size = {0}".format(self.write_mem_size))
-        print("Data Write Offset = {0}".format(self.write_mem_offset))
-        print("Data Write Count = {0}".format(self.write_mem_count))
+        #print("Base Data Write Address = {0}".format(hex(self.base_data_write_address)))
+        #print("Data Write Size = {0}".format(self.write_mem_size))
+        #print("Data Write Offset = {0}".format(self.write_mem_offset))
+        #print("Data Write Count = {0}".format(self.write_mem_count))
 
         tb = []
         for i in range(self.number_of_slices):
@@ -604,8 +595,8 @@ class DWMacroLayer(object):
 
                 curr_slice_rows = ceil_a_by_b(curr_slice_rows, _stride)
 
-                print("Current write slice rows = {0}".format(curr_slice_rows))
-                print("Current output = {0}".format(self.output_dim[2]))
+                #print("Current write slice rows = {0}".format(curr_slice_rows))
+                #print("Current output = {0}".format(self.output_dim[2]))
 
                 curr_slice_size = ceil_a_by_b(self.output_dim[2], self.num_pe) * \
                                   curr_slice_rows * \
@@ -629,9 +620,9 @@ class DWMacroLayer(object):
                     curr_slice_size = ceil_a_by_b(od[2] * od[3], self.num_pe) * \
                                       ceil_a_by_b(self.num_pe, self.axi_num_data)
 
-            print("Curr Slice Size = {0}".format(curr_slice_size))
+            #print("Curr Slice Size = {0}".format(curr_slice_size))
             self.write_mem_offset = curr_slice_size * 8
-            print("Curr Slice Offset = {0}".format(self.write_mem_offset))
+            #print("Curr Slice Offset = {0}".format(self.write_mem_offset))
 
             text_buffer = \
                 int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
@@ -694,8 +685,14 @@ class DWlayer(object):
 class ConvLayer(DWlayer):
     def __init__(self, layer, num_pe, num_pu, op_width):
         super(self.__class__, self).__init__(layer, num_pe, num_pu, op_width)
-        self.kernel_width = layer.convolution_param.kernel_size
-        self.kernel_height = layer.convolution_param.kernel_size
+        if layer.convolution_param.kernel_w is not 0:
+            self.kernel_width = layer.convolution_param.kernel_w
+        else:
+            self.kernel_width = layer.convolution_param.kernel_size
+        if layer.convolution_param.kernel_h is not 0:
+            self.kernel_height = layer.convolution_param.kernel_h
+        else:
+            self.kernel_height = layer.convolution_param.kernel_size
         self.output_channels = layer.convolution_param.num_output
         self.num_groups = layer.convolution_param.group
         self.stride = layer.convolution_param.stride
