@@ -16,7 +16,7 @@ layer {
     lr_mult: 2
   }
   convolution_param {
-    num_output: 1
+    num_output: 20
     kernel_size: 5
     stride: 1
     pad: 0
@@ -51,7 +51,7 @@ layer {
     lr_mult: 2
   }
   convolution_param {
-    num_output: 3
+    num_output: 50
     kernel_size: 5
     stride: 1
     weight_filler {
