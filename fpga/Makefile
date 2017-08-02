@@ -124,6 +124,7 @@ $(STANDALONE): $(SW_STANDALONE_OBJS)
 
 $(SW_STANDALONE_OBJS):$(SW_STANDALONE_OBJDIR)/%.o:$(SW_SRCDIR)/%.c
 	@echo -n Compiling $< ...
+	mkdir -p $(SW_STANDALONE_OBJDIR)
 	@$(STANDALONE_CC) $(CFLAGS) $< -o $@
 	@echo ' Done !'
 
@@ -137,6 +138,7 @@ $(LINUX): $(SW_LINUX_SRC_OBJS)
 
 $(SW_LINUX_SRC_OBJS):$(SW_LINUX_OBJDIR)/%.o:$(SW_SRCDIR)/%.c
 	@echo -n Compiling $< ...
+	mkdir -p $(SW_LINUX_OBJDIR)
 	@$(LINUX_CC) $(CFLAGS) $< -o $@
 	@echo ' Done !'
 ###############################################################################
