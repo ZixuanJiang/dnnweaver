@@ -36,7 +36,9 @@ class accelerator {
   void initialize_write_data_null();
   void initialize_weights();
   void initialize_read_data(size_t);
+  void initialize_read_data_from_file(const char* filename);
   void initialize_write_data_null(size_t);
+  void initialize_weights_from_file(const char* filename);
   void initialize_weights(size_t);
   void initialize_weights_matrix(size_t);
   void print_write_data();

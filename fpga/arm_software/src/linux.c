@@ -67,8 +67,10 @@ int main(int argc, char* argv[])
   //int num_weights = atoi(argv[2]);
   //int num_data = atoi(argv[3]);
 
-  assert (argc > 1);
+  assert (argc > 3);
   string mem_file = string(argv[1]);
+  string weight_file = string(argv[2]);
+  string input_file = string(argv[3]);
 
   printf("DnnWeaver Loopback Test : \n\r ");
   int i;
@@ -76,7 +78,10 @@ int main(int argc, char* argv[])
   accelerator<DType> a(mem_file.c_str());
 
   a.print_registers();
-  a.initialize_weights();
+
+  // a.initialize_weights_from_file("weights.bin");
+  // a.initialize_read_data_from_file("input.bin");
+
   a.initialize_read_data();
   a.initialize_write_data_null();
   //a.convolution(0);

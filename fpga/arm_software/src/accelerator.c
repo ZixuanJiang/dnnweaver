@@ -405,4 +405,109 @@ void accelerator<T>::pooling(size_t idx) {
   }
 }
 
+
+// ==============================================
+// Functions for reading weights/inputs from file.
+// Please change the following two functions
+// according to your binary file.
+// ==============================================
+
+template <typename T>
+void accelerator<T>::initialize_read_data_from_file(const char* filename) {
+  std::cout << std::endl;
+  std::cout << "Initializing inputs from binary file: " << filename << std::endl;
+  std::cout << std::endl;
+  for (int l=0; l<1; l++) {
+    std::cout << "Input Addr: " << std::hex << rd_addr[l] << std::dec << std::endl;
+    std::cout << "Input Dimensions: ";
+    std::cout << rd_size[l].d0 << " x " <<
+      rd_size[l].d1 << " x " <<
+      rd_size[l].d2 << " x " <<
+      rd_size[l].d3 << std::endl;
+
+    size_t input_fm_width = rd_size[l].d2;
+    size_t input_fm_height = rd_size[l].d3;
+    size_t input_fm_channels = rd_size[l].d1;
+
+    // We pad the width dimension according to number of PEs
+    size_t padded_input_fm_width = ceil_a_by_b(input_fm_width, num_pe) * num_pe;
+
+    for (size_t i=0; i<padded_input_fm_width; i++){
+      
+    }
+
+    T* addr = rd_addr[l];
+    size_t offset = 0;
+    T value = 0;
+    for (int ic=0; ic<input_fm_channels; ic++) {
+      for (size_t w_count=0; w_count<padded_input_fm_width; w_count++) {
+        for (size_t h_count=0; h_count<input_fm_height; h_count++) {
+          offset = w_count + padded_input_fm_width * (h_count + input_fm_height * ic);
+          if (w_count < input_fm_width) {
+            // Change this according to your binary
+            value = w_count+input_fm_width*(h_count);
+          } else {
+            value = 0;
+          }
+          *(addr+offset) = value;
+        }
+      }
+    }
+
+    size_t len = padded_input_fm_width * input_fm_height * input_fm_channels;
+    cma_cache_clean((char*)addr, len);
+
+  }
+}
+
+template <typename T>
+void accelerator<T>::initialize_weights_from_file(const char* filename) {
+  std::cout << std::endl;
+  std::cout << "Initializing weights from binary file: " << filename << std::endl << std::endl;
+  for (int l=0; l<num_layers; l++) {
+
+    std::cout << "Weight Addr: " << std::hex << weight_addr[l] << std::dec << std::endl;
+    std::cout << "Weight Dimensions: ";
+    std::cout << weight_size[l].d0 << " x " <<
+      weight_size[l].d1 << " x " <<
+      weight_size[l].d2 << " x " <<
+      weight_size[l].d3 << std::endl;
+
+    size_t unpadded_len = weight_size[l].d2 * weight_size[l].d3;
+    size_t padded_len = weight_size[l].d2 * weight_size[l].d3;
+
+    int num_words_per_axi_width = 8 / sizeof(T);
+
+    padded_len = num_words_per_axi_width + \
+                 ceil_a_by_b(padded_len, num_words_per_axi_width) * num_words_per_axi_width;
+    std::cout << "padded len = " << padded_len << std::endl;
+
+    size_t len = weight_size[l].d0 * weight_size[l].d1 * padded_len;
+    std::cout << "write data dimensions = " << len << std::endl;
+
+    T* addr = weight_addr[l];
+
+    size_t num_weights = weight_size[l].d0 * weight_size[l].d1;
+
+    // Initialize Bias:
+    for (size_t i=0; i<num_words_per_axi_width; i++)
+      addr[i] = 0;
+    // Initialize Weights:
+    for (size_t i=0; i<padded_len-num_words_per_axi_width; i++){
+      // Read from file
+      if (i < unpadded_len) {
+        addr[num_words_per_axi_width+i] = 0;
+      }
+      else {
+        // Padding extra weights to zero
+        addr[num_words_per_axi_width+i] = 0;
+      }
+    }
+    std::cout << std::endl;
+
+    cma_cache_clean((char*)addr, padded_len);
+  }
+
+}
+
 template class accelerator<short>;
