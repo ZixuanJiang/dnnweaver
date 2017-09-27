@@ -101,7 +101,7 @@ $(BITFILE): $(HW_SRC) $(HW_FILELIST) $(VIVADO_TCL) $(DW_COMPILER_OUTPUT) $(PROTO
 	@echo "Synthesizing DnnWeaver"
 	@\rm -rf $(OUTPUT_FOLDER)
 	@mkdir -p $(OUTPUT_FOLDER)
-	@$(VIVADO_BIN) -mode batch $(VIVADO_FLAGS) -source $(VIVADO_TCL) -tclargs $(TOP_MODULE) $(FREQUENCY) $(HW_SRC_DIR) 2>&1 | tee $(OUTPUT_FOLDER)/$(LOGFILE) | grep "DnnWeaver"
+	@$(VIVADO_BIN) -mode batch -nojournal -nolog $(VIVADO_FLAGS) -source $(VIVADO_TCL) -tclargs $(TOP_MODULE) $(FREQUENCY) $(HW_SRC_DIR) 2>&1 | tee $(OUTPUT_FOLDER)/$(LOGFILE) | grep "DnnWeaver"
 
 vivado_gui: 
 	$(VIVADO) &
