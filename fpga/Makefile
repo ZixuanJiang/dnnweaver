@@ -61,7 +61,7 @@ SW_LINUX_SRC_OBJS := $(SW_LINUX_SRCFILES:$(SW_SRCDIR)/%.c=$(SW_LINUX_OBJDIR)/%.o
 LINUX := $(SW_BINDIR)/linux.elf
 
 VIVADO_FLAGS := -notrace
-VIVADO_TCL:=tcl/vivado_2016_2.tcl
+VIVADO_TCL:=tcl/vivado_$(VIVADO_VERSION).tcl
 
 XMD_TCL:=tcl/run_benchmark.tcl
 RESET_ZYNQ_TCL:=tcl/reset_zynq.tcl
