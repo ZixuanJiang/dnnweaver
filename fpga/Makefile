@@ -1,3 +1,6 @@
+CONFIG_FILE := Makefile.config
+include $(CONFIG_FILE)
+
 NUM_PE ?= 8
 NUM_PU ?= 1
 FPGA ?= zynq
@@ -46,26 +49,20 @@ SW_BINDIR := $(OUTPUT_FOLDER)
 
 STANDALONE_LDFLAGS := -Wl,-T -Wl,$(SW_DIR)/lib/lscript.ld -L $(SW_DIR)/lib
 STANDALONE_LIBS := -Wl,--start-group,-lxil,-lgcc,-lc,-lm,--end-group
-STANDALONE_CC := /opt/Xilinx/SDK/2016.2/gnu/arm/lin/bin/arm-xilinx-eabi-gcc
 SW_STANDALONE_OBJDIR := $(SW_DIR)/obj/standalone
 SW_STANDALONE_SRCFILES := $(SW_SRCDIR)/standalone.c $(SW_SRCDIR)/platform.c
 SW_STANDALONE_OBJS := $(SW_STANDALONE_SRCFILES:$(SW_SRCDIR)/%.c=$(SW_STANDALONE_OBJDIR)/%.o)
 STANDALONE := $(SW_BINDIR)/standalone.elf
 
 LINUX_LDFLAGS := 
-LINUX_CC :=/opt/Xilinx/SDK/2016.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++
 SW_LINUX_OBJDIR := $(SW_DIR)/obj/linux
 SW_LINUX_SRCFILES := $(SW_SRCDIR)/linux.c $(SW_SRCDIR)/accelerator.c
 SW_LINUX_SRC_OBJS := $(SW_LINUX_SRCFILES:$(SW_SRCDIR)/%.c=$(SW_LINUX_OBJDIR)/%.o)
 LINUX := $(SW_BINDIR)/linux.elf
 
-VIVADO_VERSION := 2016.2
-VIVADO_PATH := /opt/Xilinx/Vivado
-VIVADO_BIN :=$(VIVADO_PATH)/$(VIVADO_VERSION)/bin/vivado
 VIVADO_FLAGS := -notrace
 VIVADO_TCL:=tcl/vivado_2016_2.tcl
 
-XMD:=/opt/Xilinx/SDK/2015.2/bin/xmd
 XMD_TCL:=tcl/run_benchmark.tcl
 RESET_ZYNQ_TCL:=tcl/reset_zynq.tcl
 PS7_TCL:=tcl/ps7_init.tcl
@@ -116,6 +113,7 @@ vivado_gui:
 ELF: $(STANDALONE) $(LINUX)
 
 $(STANDALONE): $(SW_STANDALONE_OBJS)
+	@mkdir -p $(OUTPUT_FOLDER)
 	@echo -n 'Linking ...'
 	@$(STANDALONE_CC) $(STANDALONE_LDFLAGS) $(SW_STANDALONE_OBJS) -o $@ $(STANDALONE_LIBS)
 	@echo ' Done !'
@@ -129,6 +127,7 @@ $(SW_STANDALONE_OBJS):$(SW_STANDALONE_OBJDIR)/%.o:$(SW_SRCDIR)/%.c
 	@echo ' Done !'
 
 $(LINUX): $(SW_LINUX_SRC_OBJS)
+	@mkdir -p $(OUTPUT_FOLDER)
 	@echo -n 'Linking ...'
 	@echo $(SW_LINUX_SRC_OBJS)
 	@$(LINUX_CC) $(LINUX_LDFLAGS) $(SW_LINUX_SRC_OBJS) -o $@ $(LINUX_LIBS)

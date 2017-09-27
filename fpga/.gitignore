@@ -5,3 +5,4 @@ zynq_output.txt
 hardware/bin/waveform/*.fst
 *.vcd
 hardware/bin/*
+Makefile.config

@@ -1,0 +1,6 @@
+STANDALONE_CC := /opt/Xilinx/Tools//SDK/2017.2/gnu/arm/lin/bin/arm-xilinx-eabi-gcc
+LINUX_CC :=/opt/Xilinx//Tools/SDK/2017.2/gnu/aarch32/lin/gcc-arm-linux-gnueabi/bin/arm-linux-gnueabihf-g++
+VIVADO_VERSION := 2017.2
+VIVADO_PATH := /opt/Xilinx/Tools//Vivado
+VIVADO_BIN :=$(VIVADO_PATH)/$(VIVADO_VERSION)/bin/vivado
+XMD:=/opt/Xilinx/Tools//SDK/2015.2/bin/xmd
