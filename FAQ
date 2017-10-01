@@ -1,0 +1,12 @@
+
+if you get this error:
+Makefile:106: recipe for target 'synthesis-output/zynq_wrapper.bit' failed
+
+check the Makefile under dnnweaver.public/fpga
+and make sure your Vivado pathway/version is correct:
+    by default it is this: (lines 64-65)
+    VIVADO_VERSION := 2017.2
+    VIVADO_PATH := /opt/Xilinx/Tools/Vivado/
+
+
+    

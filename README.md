@@ -23,6 +23,17 @@ These are the dependencies for DnnWeaver:
 3. Xilinx Vivado 2016.2
 ```
 
+
+In addition, PetaLinux Tools are required. Please [download PetaLinux](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html) and refer to the [PetaLinux Wiki](http://www.wiki.xilinx.com/PetaLinux) for more information.
+
+In **dnnweaver.public/fpga/** directory, provide a customizable config file for Makefile by using the following command:
+
+```
+cp Makefile.config.example Makefile.config
+```
+
+Edit Makefile.config appropriately based on your Vivado version, path to Vivado and etc.
+
 Define the prototxt file for the DNN model in Caffe format in the Makefile.
 
 To generate the accelerator Verilog, use the following command in the fpga directory:

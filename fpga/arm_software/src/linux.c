@@ -72,9 +72,6 @@ int main(int argc, char* argv[])
   string weight_file = string(argv[2]);
   string input_file = string(argv[3]);
 
-  printf("DnnWeaver Loopback Test : \n\r ");
-  int i;
-
   accelerator<DType> a(mem_file.c_str());
 
   a.print_registers();
