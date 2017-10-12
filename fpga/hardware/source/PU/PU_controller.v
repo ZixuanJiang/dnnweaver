@@ -11,7 +11,7 @@ module PU_controller
   parameter integer PE_CTRL_W               = 10+2*PE_BUF_ADDR_WIDTH,
   parameter integer PE_OP_CODE_WIDTH        = 3,
   parameter integer LAYER_PARAM_WIDTH       = 10,
-  parameter integer PARAM_C_WIDTH       = 16,
+  parameter integer PARAM_C_WIDTH           = 32,
   parameter integer MAX_LAYERS              = 64,
   parameter integer VECGEN_CTRL_W           = 9,
   parameter integer TID_WIDTH               = 8,
@@ -165,18 +165,18 @@ module PU_controller
   wire                                        next_ih;
   wire                                        ih_underflow;
 
-  wire [ LAYER_PARAM_WIDTH  -1 : 0 ]          ih, ih_max, ih_max_pad;
+  wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        ih, ih_max, ih_max_pad;
   wire                                        ih_inc, ih_inc_d;
 
-  wire [ PARAM_C_WIDTH        -1 : 0 ]          ic, ic_max;
+  wire [ PARAM_C_WIDTH        -1 : 0 ]        ic, ic_max;
   wire                                        ic_inc, ic_inc_d;
 
-  wire [ PARAM_C_WIDTH          -1 : 0 ]        oc_min;
-  wire [ PARAM_C_WIDTH          -1 : 0 ]        oc_max;
-  wire [ PARAM_C_WIDTH          -1 : 0 ]        oc;
+  wire [ PARAM_C_WIDTH        -1 : 0 ]        oc_min;
+  wire [ PARAM_C_WIDTH        -1 : 0 ]        oc_max;
+  wire [ PARAM_C_WIDTH        -1 : 0 ]        oc;
   wire                                        oc_inc, oc_inc_d;
 
-  wire [ LAYER_PARAM_WIDTH  -1 : 0 ]          l, l_max;
+  wire [ LAYER_PARAM_WIDTH    -1 : 0 ]          l, l_max;
   wire                                        l_inc, l_inc_d, l_clear;
 
   wire                                        next_fm;
@@ -214,17 +214,17 @@ module PU_controller
   reg  [ CFG_WIDTH            -1 : 0 ]        layer_params;
 
   wire [ SERDES_COUNT_W       -1 : 0 ]        serdes_count;
-  wire [ PARAM_C_WIDTH          -1 : 0 ]        param_ic;
+  wire [ PARAM_C_WIDTH        -1 : 0 ]        param_ic;
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        param_ih;
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        param_oh;
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        param_iw;
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        param_pool_iw;
-  wire [ PARAM_C_WIDTH          -1 : 0 ]        param_oc;
+  wire [ PARAM_C_WIDTH        -1 : 0 ]        param_oc;
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        param_kh;
   wire [ KERNEL_SIZE_W        -1 : 0 ]        param_kh_reduced;
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        param_kw;
   wire [ KERNEL_SIZE_W        -1 : 0 ]        param_kw_reduced;
-  //wire [ L_TYPE_WIDTH         -1 : 0 ]        l_type;
+  //wire [ L_TYPE_WIDTH       -1 : 0 ]        l_type;
   wire                                        param_pool_enable;
   reg                                         pool_enable;
   wire [ 1                       : 0 ]        pool_kernel;
@@ -253,7 +253,7 @@ module PU_controller
 
   // Write Mask Logic
   wire [ NUM_PE               -1 : 0 ]        _pe_write_mask;
-  reg  [TID_WIDTH - 1:0]                      tid  [0:NUM_PE-1];
+  reg  [TID_WIDTH             -1 : 0 ]        tid  [0:NUM_PE-1];
   reg  [ NUM_PE               -1 : 0 ]        mask;
 
   wire                                        tid_reset;
@@ -475,11 +475,11 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
   assign kw_inc = state == BUSY && !data_stall;
 
 
-  //assign kw_max = (!flush) ? param_kw : 0; 
+  //assign kw_max = (!flush) ? param_kw : 0;
   // Changed FLUSH KW_MAX to param_kw.
   // Can change back if input feature map is large enough
   assign kw_max = param_kw;
-  
+
 
   assign kw_default = GND[LAYER_PARAM_WIDTH-1:0];
   assign kw_min = GND[LAYER_PARAM_WIDTH-1:0];

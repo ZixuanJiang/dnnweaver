@@ -11,10 +11,10 @@ max_threads_bitwidth = 16
 pad_bitwidth = 3
 skip_bitwidth = 1
 endrow_iw_bitwidth = 10
-conv_ic_bitwidth = 16
+conv_ic_bitwidth = 32
 conv_ih_bitwidth = 10
 conv_iw_bitwidth = 10
-conv_oc_bitwidth = 16
+conv_oc_bitwidth = 32
 conv_kh_bitwidth = 10
 conv_kw_bitwidth = 10
 
