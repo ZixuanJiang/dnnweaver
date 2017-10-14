@@ -18,8 +18,6 @@ conv_oc_bitwidth = 32
 conv_kh_bitwidth = 10
 conv_kw_bitwidth = 10
 
-AXI_data_bitwidth = 64
-
 total_bitwidth = \
     pool_iw_bitwidth + \
     pool_oh_bitwidth + \
@@ -36,6 +34,10 @@ total_bitwidth = \
     conv_oc_bitwidth + \
     conv_kh_bitwidth + \
     conv_kw_bitwidth;
+
+AXI_data_bitwidth = 64
+memory_bitwidth = 32
+
 
 
 def ceil_a_by_b(a, b):
@@ -505,23 +507,22 @@ class DWMacroLayer(object):
             #print("Stream addr = {0}".format(hex(curr_slice_addr)))
             #print("Buffer addr = {0}".format(hex(self.buffer_read_address)))
             #print("Buffer offset = {0}".format(self.buffer_read_offset))
-
             text_buffer = \
                 int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
-                int_to_bin(packed_stream_read_size, 20) + \
-                int_to_bin(curr_slice_addr, 32) + \
-                int_to_bin(curr_slice_size, 20) + \
-                int_to_bin(self.stream_read_loop0_offset, 32) + \
-                int_to_bin(self.stream_read_loop1_offset, 32) + \
-                int_to_bin(self.stream_read_loop2_offset, 32) + \
-                int_to_bin(self.stream_read_loop0_count - 1, 32) + \
-                int_to_bin(self.stream_read_loop1_count - 1, 32) + \
-                int_to_bin(self.stream_read_loop2_count - 1, 32) + \
+                int_to_bin(packed_stream_read_size, memory_bitwidth) + \
+                int_to_bin(curr_slice_addr, memory_bitwidth) + \
+                int_to_bin(curr_slice_size, memory_bitwidth) + \
+                int_to_bin(self.stream_read_loop0_offset, memory_bitwidth) + \
+                int_to_bin(self.stream_read_loop1_offset, memory_bitwidth) + \
+                int_to_bin(self.stream_read_loop2_offset, memory_bitwidth) + \
+                int_to_bin(self.stream_read_loop0_count - 1, memory_bitwidth) + \
+                int_to_bin(self.stream_read_loop1_count - 1, memory_bitwidth) + \
+                int_to_bin(self.stream_read_loop2_count - 1, memory_bitwidth) + \
                 int_to_bin(packed_buffer_read_size, 20) + \
-                int_to_bin(self.buffer_read_address, 32) + \
+                int_to_bin(self.buffer_read_address, memory_bitwidth) + \
                 int_to_bin(self.buffer_read_size, 20) + \
-                int_to_bin(self.buffer_read_offset, 32) + \
-                int_to_bin(self.buffer_read_count - 1, 32) + \
+                int_to_bin(self.buffer_read_offset, memory_bitwidth) + \
+                int_to_bin(self.buffer_read_count - 1, memory_bitwidth) + \
                 "\n"
             tb.append(text_buffer)
 
@@ -626,10 +627,10 @@ class DWMacroLayer(object):
 
             text_buffer = \
                 int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
-                int_to_bin(curr_slice_addr, 32) + \
+                int_to_bin(curr_slice_addr, memory_bitwidth) + \
                 int_to_bin(curr_slice_size, 20) + \
-                int_to_bin(self.write_mem_offset, 32) + \
-                int_to_bin(self.write_mem_count - 1, 32) + \
+                int_to_bin(self.write_mem_offset, memory_bitwidth) + \
+                int_to_bin(self.write_mem_count - 1, memory_bitwidth) + \
                 "\n"
 
             tb.append(text_buffer)
