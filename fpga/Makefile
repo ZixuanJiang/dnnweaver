@@ -13,10 +13,10 @@ MEM_WR_INSTRUCTIONS := hardware/include/wr_mem_controller.vh
 DW_COMPILER_OUTPUT := $(PU_INSTRUCTIONS) $(MEM_RD_INSTRUCTIONS) $(MEM_WR_INSTRUCTIONS)
 DW_COMPILER_DEPS := ../compiler/DWlayer.py
 
-#PROTOTXT:= ../compiler/sample_prototxts/lenet.prototxt
+PROTOTXT:= ../compiler/sample_prototxts/lenet.prototxt
 #PROTOTXT:= ../compiler/sample_prototxts/loopback.prototxt
 #PROTOTXT:= ../compiler/sample_prototxts/vgg_16.prototxt
-PROTOTXT:= ../compiler/sample_prototxts/cifar10_full.prototxt
+#PROTOTXT:= ../compiler/sample_prototxts/cifar10_full.prototxt
 
 HW_SRC_DIR := hardware
 HW_FILELIST := $(HW_SRC_DIR)/file.list
@@ -102,6 +102,7 @@ $(BITFILE): $(HW_SRC) $(HW_FILELIST) $(VIVADO_TCL) $(DW_COMPILER_OUTPUT) $(PROTO
 	@\rm -rf $(OUTPUT_FOLDER)
 	@mkdir -p $(OUTPUT_FOLDER)
 	@$(VIVADO_BIN) -mode batch -nojournal -nolog $(VIVADO_FLAGS) -source $(VIVADO_TCL) -tclargs $(TOP_MODULE) $(FREQUENCY) $(HW_SRC_DIR) 2>&1 | tee $(OUTPUT_FOLDER)/$(LOGFILE) | grep "DnnWeaver"
+	@echo "done"
 
 vivado_gui: 
 	$(VIVADO) &

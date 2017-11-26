@@ -11,6 +11,7 @@ max_threads_bitwidth = 16
 pad_bitwidth = 3
 skip_bitwidth = 1
 endrow_iw_bitwidth = 10
+conv_in_bitwidth = 32
 conv_ic_bitwidth = 32
 conv_ih_bitwidth = 10
 conv_iw_bitwidth = 10
@@ -28,6 +29,7 @@ total_bitwidth = \
     pad_bitwidth + \
     skip_bitwidth + \
     endrow_iw_bitwidth + \
+    conv_in_bitwidth + \
     conv_ic_bitwidth + \
     conv_ih_bitwidth + \
     conv_iw_bitwidth + \
@@ -235,19 +237,23 @@ class DWMacroLayer(object):
         _stride = self.PE_layer.stride
 
         if isinstance(self.PE_layer, ConvLayer):
-            _oc = self.PE_layer.output_dim[1]
+            _in = self.PE_layer.input_dim[0]
             _ic = self.PE_layer.input_dim[1]
             _iw = self.PE_layer.input_dim[2]
             _ih = self.PE_layer.input_dim[3]
+            _on = _in
+            _oc = self.PE_layer.output_dim[1]
             _ow = (_iw + 2 * _pad - _kh) / self.PE_layer.stride + 1
             _oh = (_ih + 2 * _pad - _kh) / self.PE_layer.stride + 1
             _max_threads = _ow
             _endrow_iw = int(floor((_ih - _kh + 1 + _pad) / float(self.num_pe)))
         elif isinstance(self.PE_layer, FCLayer):
-            _oc = int(ceil(self.PE_layer.output_dim[1] / float(self.num_pe)))
+            _in = self.input_dim[0]
             _ic = self.input_dim[1] * self.input_dim[2] * self.input_dim[3]
             _iw = 1
             _ih = 1
+            _on = _in
+            _oc = int(ceil(self.PE_layer.output_dim[1] / float(self.num_pe)))
             _ow = 1
             _oh = 1
             _max_threads = self.output_dim[1]
@@ -255,17 +261,21 @@ class DWMacroLayer(object):
             _stride = 1
         else:
             #_oc = ceil_a_by_b(self.output_dim[1], self.num_pu)
-            _oc = self.output_dim[1]
-            _ic = 1
             _kw = self.PE_layer.local_size
             _kh = self.PE_layer.local_size
-            _ih = self.input_dim[3]
+            _in = self.input_dim[0]
+            _ic = 1
             _iw = self.input_dim[2]
+            _ih = self.input_dim[3]
+            _on = _in 
+            _oc = self.output_dim[1]
             _ow = self.output_dim[2]
             _oh = self.output_dim[3]
             _max_threads = _ow
             _endrow_iw = int(floor((_ih - _kh + 1 + _pad) / float(self.num_pe)))
             _stride = 1
+        print("in:  {0} x {1} x {2} x {3}".format(_in, _ic, _iw, _ih))
+        print("out: {0} x {1} x {2} x {3}".format(_on, _oc, _ow, _oh));
 
         iw_padded = int(ceil(float(_iw) / self.num_pe)) * self.num_pe
         ow_padded = int(ceil(float(_ow) / self.num_pe)) * self.num_pe
@@ -394,6 +404,7 @@ class DWMacroLayer(object):
                 int_to_bin(_pad_r_e, pad_bitwidth) + \
                 int_to_bin(_skip, skip_bitwidth) + \
                 int_to_bin(_endrow_iw, endrow_iw_bitwidth) + \
+                int_to_bin(_in - 1, conv_in_bitwidth) + \
                 int_to_bin(_ic - 1, conv_ic_bitwidth) + \
                 int_to_bin(_ih - 1, conv_ih_bitwidth) + \
                 int_to_bin(_iw, conv_iw_bitwidth) + \
@@ -710,7 +721,7 @@ class ConvLayer(DWlayer):
             if len(self.input_dim) == 0:
                 self.input_dim = self.prev.output_dim
 
-            self.output_dim.append(self.num_pu)
+            self.output_dim.append(self.input_dim[0])
             self.output_dim.append(self.output_channels)
             self.output_dim.append((self.input_dim[2] - self.kernel_width + 2 * self.pad) / self.stride + 1)
             self.output_dim.append((self.input_dim[3] - self.kernel_height + 2 * self.pad) / self.stride + 1)
@@ -718,7 +729,8 @@ class ConvLayer(DWlayer):
         return self.output_dim
 
     def get_input_read_size(self):
-        input_read_size = ceil_a_by_b(self.input_dim[2], self.num_pe) * \
+        input_read_size = self.input_dim[0] * \
+                          ceil_a_by_b(self.input_dim[2], self.num_pe) * \
                           self.input_dim[3] * \
                           ceil_a_by_b(self.num_pe, self.axi_num_data) * \
                           self.axi_num_data
@@ -805,7 +817,7 @@ class FCLayer(DWlayer):
         return weight_size * self.op_width / 8
 
     def get_input_read_size(self):
-        input_read_size = ceil_a_by_b(self.input_dim[1] * self.input_dim[2] * self.input_dim[3], self.num_pe) * \
+        input_read_size = ceil_a_by_b(self.input_dim[0] * self.input_dim[1] * self.input_dim[2] * self.input_dim[3], self.num_pe) * \
                           ceil_a_by_b(self.num_pe, self.axi_num_data) * self.axi_num_data
         return input_read_size
 
