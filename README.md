@@ -70,6 +70,8 @@ The initial set of benchmarks are listed below.
 ```
 The above benchmarks can be found in compiler/sample\_prototxt/*
 
+## [FAQs](https://bitbucket.org/hsharma35/dnnweaver.public/src/3b71c71903a3db25b67a44f9cbcc89fe0f4df47b/FAQs.md?at=master)
+
 ## License
 
 ```
