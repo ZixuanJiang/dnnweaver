@@ -54,6 +54,16 @@ By default, the make command will compile the sample *linux.c* and generate an e
 fpga/synthesis_output/linux.elf
 ```
 
+## Example of Running linux.elf on Petalinux:
+
+Here’s an example workflow of running *linux.c* on Petalinux.
+1. Provide *inputs.bin* and *weights.bin* files according to your preferred format. Input dimensions and weight dimensions are specified in *mmap.txt*.
+2. Implement “initialize_weights_from_file" and “initialize_read_data_from_file" methods in *accelerator.c* to load weights and inputs from your files.
+3. Modify *linux.c* such that it loads *mmap.txt*, *inputs.bin* and *weights.bin* to initialize an accelerator object. The methods to start the accelerator and print results have already been implemented.
+4. Make the project and transfer *zynq_wrapper.bit*, *linux.elf*, *mmap.txt*, *inputs.bin* and *weights.bin* to the host on FPGA. 
+5. Program the FPGA with the *zynq_wrapper.bit* and run *linux.elf* with command line arguments pointing to *mmap.txt*, *inputs.bin* and *weights.bin*.
+
+
 ## Benchmark DNNs
 We are actively improving DnnWeaver by adding more benchmark DNN models and supporting more types of layers.
 We are also working towards architectural improvements which would lead to an increase in performance and dynamic utilization of the FPGA's resources.
