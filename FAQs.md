@@ -1,7 +1,7 @@
 # FAQs
 
 ## Problem
-'''Traceback (most recent call last): 
+```Traceback (most recent call last): 
  File "../compiler/compiler.py", line 4, in <module> 
    import caffe_pb2 
  File "/home/$USER/dnnweaver/compiler/caffe_pb2.py", line 6, in <module> 
@@ -9,10 +9,10 @@
 ImportError: No module named google.protobuf.internal 
 Makefile:157: recipe for target 'hardware/include/pu_controller_bin.vh' failed 
 make: *** [hardware/include/pu_controller_bin.vh] Error 1
-'''
+```
 
 ## Solution
-'sudo apt-get install python-protobuf'
+`sudo apt-get install python-protobuf`
 
 ## Problem
 Issues relate to Makefile or Makefile.config
