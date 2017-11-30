@@ -75,7 +75,7 @@ module mem_controller_top
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_RVALID,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_RREADY,
 
-  output wire  [ RD_LOOP_W            -1 : 0 ]        pu_id_buf,
+  output wire  [ PU_ID_W              -1 : 0 ]        pu_id_buf,
   output wire  [ D_TYPE_W             -1 : 0 ]        d_type_buf,
   output wire                                         next_read,
 

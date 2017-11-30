@@ -27,7 +27,7 @@ module mem_controller
   output reg  [ TX_SIZE_WIDTH  -1 : 0 ] rd_rvalid_size,
   output reg  [ ADDR_W         -1 : 0 ] rd_addr,
 
-  output wire [ RD_LOOP_W      -1 : 0 ] pu_id,
+  output wire [ PU_ID_W        -1 : 0 ] pu_id,
   output wire [ D_TYPE_W       -1 : 0 ] d_type,
 
   output wire                           wr_req,

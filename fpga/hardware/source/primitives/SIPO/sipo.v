@@ -25,6 +25,7 @@ module sipo
 // WIRES and REGS
 // ******************************************************************
   wire                                        parallel_load;
+  wire                                        parallel_load_d;
   reg  [ SHIFT_COUNT_WIDTH    -1 : 0 ]        shift_count;
   reg  [ DATA_OUT_WIDTH       -1 : 0 ]        shift;
 // ******************************************************************
@@ -62,12 +63,13 @@ module sipo
     end
 
     register #(
-    .NUM_STAGES               ( 1                        )
+      .NUM_STAGES               ( 1                        ),
+      .DATA_WIDTH               ( 1                        )
     ) push_delay (
-    .CLK                      ( clk                      ),
-    .RESET                    ( reset                    ),
-    .DIN                      ( parallel_load            ),
-    .DOUT                     ( parallel_load_d          )
+      .CLK                      ( clk                      ),
+      .RESET                    ( reset                    ),
+      .DIN                      ( parallel_load            ),
+      .DOUT                     ( parallel_load_d          )
     );
 
 endmodule

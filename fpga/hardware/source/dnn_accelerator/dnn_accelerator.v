@@ -17,8 +17,9 @@ module dnn_accelerator #(
   parameter integer RD_LOOP_W         = 32,
   parameter integer D_TYPE_W          = 2,
   parameter integer ROM_ADDR_W        = 3,
-  parameter integer SERDES_COUNT_W    = 6,
-  parameter integer PE_SEL_W          = `C_LOG_2(NUM_PE)
+  parameter integer SERDES_COUNT_W    = `C_LOG_2(NUM_PE+1),
+  parameter integer PE_SEL_W          = `C_LOG_2(NUM_PE),
+  parameter integer PU_ID_W           = `C_LOG_2(NUM_PU)+1
 ) (
 // ******************************************************************
 // IO
@@ -143,7 +144,7 @@ module dnn_accelerator #(
   wire [ TX_SIZE_WIDTH        -1 : 0 ]        wr_req_size;
   wire                                        wr_done;
 
-  wire [ RD_LOOP_W            -1 : 0 ]        pu_id_buf;
+  wire [ PU_ID_W              -1 : 0 ]        pu_id_buf;
   wire [ D_TYPE_W             -1 : 0 ]        d_type_buf;
   wire [ PU_DATA_W            -1 : 0 ]        stream_fifo_data_out;
 
@@ -316,6 +317,8 @@ module dnn_accelerator #(
       wire                                        pu_vecgen_wr_valid;
       wire [ NUM_PE               -1 : 0 ]        pu_vecgen_mask;
 
+      wire [ 2                    -1 : 0 ]        pu_vecgen_state;
+
       assign pu_vecgen_cfg = vecgen_cfg;
       assign pu_vecgen_rd_data = stream_pu_data_out[i*PU_DATA_W+:PU_DATA_W];
       assign pu_vecgen_rd_ready = !stream_pu_empty[i];
@@ -366,7 +369,10 @@ module dnn_accelerator #(
         // Parameters
         .PU_ID                    ( i                        ),
         .OP_WIDTH                 ( OP_WIDTH                 ),
-        .NUM_PE                   ( NUM_PE                   )
+        .NUM_PE                   ( NUM_PE                   ),
+        .SERDES_COUNT_W           ( SERDES_COUNT_W           ),
+        .WR_ADDR_WIDTH            ( WR_ADDR_WIDTH            ),
+        .RD_ADDR_WIDTH            ( RD_ADDR_WIDTH            )
       ) u_PU (
         // IO
         .clk                      ( clk                      ), //input

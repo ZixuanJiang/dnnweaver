@@ -12,7 +12,7 @@ module PU
   parameter integer STRIDE_SIZE_W     = 3,
   parameter integer VECGEN_CFG_W      = STRIDE_SIZE_W + PAD_WIDTH,
   parameter integer WR_ADDR_WIDTH     = 5,
-  parameter integer RD_ADDR_WIDTH     = WR_ADDR_WIDTH+2,
+  parameter integer RD_ADDR_WIDTH     = WR_ADDR_WIDTH+`C_LOG_2(NUM_PE),
   parameter integer PE_BUF_ADDR_WIDTH = 10,
   parameter integer LAYER_PARAM_WIDTH = 10,
   parameter integer POOL_CTRL_WIDTH   = 7,
@@ -21,7 +21,7 @@ module PU
 
   parameter integer D_TYPE_W          = 2,
   parameter integer RD_LOOP_W         = 10,
-  parameter integer SERDES_COUNT_W    = 6,
+  parameter integer SERDES_COUNT_W    = `C_LOG_2(NUM_PE+1),
 
   parameter integer PE_SEL_W          = `C_LOG_2(NUM_PE)
 
@@ -96,7 +96,7 @@ module PU
   wire [ OP_WIDTH             -1 : 0 ]        wb_read_data;
   wire                                        wb_write_req;
   wire                                        wb_weight_read_req;
-  wire [ DATA_IN_WIDTH        -1 : 0 ]        wb_write_data;
+  wire [ AXI_DATA_WIDTH       -1 : 0 ]        wb_write_data;
   reg  [ WR_ADDR_WIDTH        -1 : 0 ]        wb_write_addr;
 
   // -- pooling -- //

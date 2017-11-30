@@ -105,7 +105,7 @@ module axi_master_wrapper
 
 localparam integer PU_PER_AXI = ceil_a_by_b(NUM_PU, NUM_AXI);
 localparam integer AXI_ID_W = `C_LOG_2(NUM_AXI+0);
-localparam integer AXI_PU_ID_W = `C_LOG_2(PU_PER_AXI);
+localparam integer AXI_PU_ID_W = `C_LOG_2(NUM_PU) + 1;
 
 wire [NUM_AXI-1:0] rd_ready_axi;
 wire [NUM_AXI-1:0] wr_ready_axi;
