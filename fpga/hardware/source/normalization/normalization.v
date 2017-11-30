@@ -144,7 +144,7 @@ module normalization
   ) u_lrn_lut (
     .clk                      ( clk                      ),
     .reset                    ( reset                    ),
-    .address                  ( sqsum_ser                ),
+    .address                  ( sqsum_ser[5:0]           ),
     .enable                   ( sqsum_ser_valid          ),
     .data_out                 ( lrn_weight               )
   );

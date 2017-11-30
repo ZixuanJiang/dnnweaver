@@ -6,14 +6,13 @@ module PU
   parameter integer OP_WIDTH          = 16,
   parameter integer ACC_WIDTH         = 48,
   parameter integer NUM_PE            = 4,
-  parameter         MODE              = "FPGA",
   parameter integer VECGEN_CTRL_W     = 9,
   parameter integer TID_WIDTH         = 16,
   parameter integer PAD_WIDTH         = 3,
   parameter integer STRIDE_SIZE_W     = 3,
   parameter integer VECGEN_CFG_W      = STRIDE_SIZE_W + PAD_WIDTH,
   parameter integer WR_ADDR_WIDTH     = 5,
-  parameter integer RD_ADDR_WIDTH     = WR_ADDR_WIDTH+2,
+  parameter integer RD_ADDR_WIDTH     = WR_ADDR_WIDTH+`C_LOG_2(NUM_PE),
   parameter integer PE_BUF_ADDR_WIDTH = 10,
   parameter integer LAYER_PARAM_WIDTH = 10,
   parameter integer POOL_CTRL_WIDTH   = 7,
@@ -22,7 +21,7 @@ module PU
 
   parameter integer D_TYPE_W          = 2,
   parameter integer RD_LOOP_W         = 10,
-  parameter integer SERDES_COUNT_W    = 6,
+  parameter integer SERDES_COUNT_W    = `C_LOG_2(NUM_PE+1),
 
   parameter integer PE_SEL_W          = `C_LOG_2(NUM_PE)
 
@@ -97,7 +96,7 @@ module PU
   wire [ OP_WIDTH             -1 : 0 ]        wb_read_data;
   wire                                        wb_write_req;
   wire                                        wb_weight_read_req;
-  wire [ DATA_IN_WIDTH        -1 : 0 ]        wb_write_data;
+  wire [ AXI_DATA_WIDTH       -1 : 0 ]        wb_write_data;
   reg  [ WR_ADDR_WIDTH        -1 : 0 ]        wb_write_addr;
 
   // -- pooling -- //
@@ -123,8 +122,6 @@ module PU
   assign read_req = wb_weight_read_req || pu_bias_read_req;
 
   assign lrn_enable_local = PU_ID == 0 && lrn_enable;
-
-  
 
 // ******************************************************************
 // INSTANTIATIONS
@@ -190,7 +187,7 @@ pe_neuron_bias_delay (clk, reset, pe_neuron_bias, pe_neuron_bias_d);
 // ==================================================================
 
   reg  [ OP_WIDTH             -1 : 0 ]        bias;
-  reg bias_v;
+  reg                                         bias_v;
   reg  [ D_TYPE_W             -1 : 0 ]        read_d_type_d;
 
   wire weight_reset;
@@ -260,7 +257,7 @@ pe_neuron_bias_delay (clk, reset, pe_neuron_bias, pe_neuron_bias_d);
   always @(posedge clk)
     if (reset)
       wb_bias_data <= 0;
-    else if (bias_read_req)
+    else if (bias_v)
       wb_bias_data <= bias;
 // ==================================================================
 
@@ -481,5 +478,12 @@ assign write_req = pu_write_valid_local && !(lrn_enable && PU_ID != 0);
       else if (write_req)
         pu_write_count <= pu_write_count + 1;
   `endif
+`ifdef TOPLEVEL_PU
+  initial
+  begin
+    $dumpfile("PU.vcd");
+    $dumpvars(0,PU);
+  end
+`endif
 
 endmodule

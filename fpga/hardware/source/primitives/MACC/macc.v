@@ -154,4 +154,12 @@ end else begin
 end
 endgenerate
 
+`ifdef TOPLEVEL_macc
+  initial
+  begin
+    $dumpfile("macc.vcd");
+    $dumpvars(0,macc);
+  end
+`endif
+
 endmodule

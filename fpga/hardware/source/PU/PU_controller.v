@@ -21,7 +21,7 @@ module PU_controller
   parameter integer POOL_CTRL_W             = 7,
   parameter integer POOL_CFG_W              = 3,
   parameter integer KERNEL_SIZE_W           = 3,
-  parameter integer SERDES_COUNT_W          = 6,
+  parameter integer SERDES_COUNT_W          = `C_LOG_2(NUM_PE+1),
   parameter integer PE_SEL_W                = `C_LOG_2(NUM_PE)
 )
 ( // PORTS
@@ -62,12 +62,12 @@ module PU_controller
   output wire                                         bias_read_req,
 
   // Debug
-  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_kw,
-  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_kh,
-  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_iw,
-  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_ih,
-  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_ic,
-  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_oc
+  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_kw,
+  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_kh,
+  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_iw,
+  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_ih,
+  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_ic,
+  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_oc
 );
 // ******************************************************************
 // Local params
@@ -302,7 +302,7 @@ module PU_controller
   initial begin
     max_layers = `max_layers;
     `ifdef simulation
-      $readmemb("./hardware/include/pu_controller_bin.vh", cfg_rom);
+      $readmemb("./..//include/pu_controller_bin.vh", cfg_rom);
     `else
       $readmemb("pu_controller_bin.vh", cfg_rom);
     `endif
@@ -864,16 +864,16 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
     if (reset)
       ic_is_max <= 0;
     else if (state == RD_CFG_2)
-      ic_is_max <= (param_ic == 0);
-    else if (ic_inc || state_d == RD_CFG_2)
-      ic_is_max <= (ic == param_ic_minus_1) || (param_ic == 0);
+      ic_is_max <= ic == param_ic;
+    else if (ic_inc)
+      ic_is_max <= ic == param_ic_minus_1;
 
   always @(posedge clk)
     if (reset)
       ic_is_zero <= 0;
-    else if (state == RD_CFG_2)
-      ic_is_zero <= (param_ic == 0);
-    else if (ic_inc || state_d == RD_CFG_2)
+    else if (state == RD_CFG_2 && param_ic == 0)
+      ic_is_zero <= 1;
+    else if (ic_inc)
       ic_is_zero <= (ic_is_max) || (param_ic == 0);
 
   always @(posedge clk)
@@ -881,8 +881,9 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
       oc_is_max <= 0;
     else if (state == RD_CFG_2)
       oc_is_max <= (param_oc == 0);
-    else if (oc_inc || state_d == RD_CFG_2)
-      oc_is_max <= (oc == param_oc_minus_1) || (param_oc == 0);
+    // else if (oc_inc || state_d == RD_CFG_2)
+    else if (oc_inc)
+      oc_is_max <= (oc == param_oc_minus_1);
 
 
   always @(posedge clk)
@@ -1527,13 +1528,12 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
     end
   end
 
-  // TODO: These are unused
   assign src_0_sel = `SRC_0_DDR;
   assign _src_1_sel = (l_type == L_CONV || l_type == L_NORM) ? `SRC_1_WEIGHT_BUFFER : `SRC_2_PE_BUFFER;
   assign src_2_sel = (((kh == param_kh || (ih == 0)) && ic_is_zero) || l_type == L_IP) && state ==BUSY ? `SRC_2_BIAS : `SRC_2_PE_BUFFER;
   assign dst_sel   = `DST_PE_BUFFER;//DST_DDR;
 
-  assign bias_read_req = (ic_is_zero && state == RD_CFG_2);
+  assign bias_read_req = (state == WAIT) && (state_d != WAIT);
 
   //assign _out_sel = pool_enable && state==BUSY ? 1'b1 : 1'b0;
   register #(
@@ -1827,12 +1827,12 @@ always @(posedge clk)
   else if (kw_inc)
     kw_inc_count <= kw_inc_count + 1'b1;
 
-//assign dbg_kw = param_kw;
-//assign dbg_kh = param_kh;
-//assign dbg_iw = param_iw;
-//assign dbg_ih = param_ih;
-//assign dbg_ic = param_ic;
-//assign dbg_oc = param_oc;
+assign dbg_kw = param_kw;
+assign dbg_kh = param_kh;
+assign dbg_iw = param_iw;
+assign dbg_ih = param_ih;
+assign dbg_ic = param_ic;
+assign dbg_oc = param_oc;
 
 
 // ==================================================================

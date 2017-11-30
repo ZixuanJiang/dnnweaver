@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
 module register #(
-    parameter NUM_STAGES = 1,
-    parameter DATA_WIDTH = 1
+    parameter NUM_STAGES = 2,
+    parameter DATA_WIDTH = 2
 )(
     input  wire                  CLK,
     input  wire                  RESET,
@@ -28,8 +28,8 @@ begin
             din_delay[DATA_WIDTH-1:0] <= DIN;
         end
     end
-    for (i=1; i<NUM_STAGES; i=i+1) 
-	 begin : REGISTER_STAGES
+    for (i=1; i<NUM_STAGES; i=i+1)
+    begin : REGISTER_STAGES
         always @(posedge CLK)
         begin
             if(RESET)
