@@ -47,8 +47,7 @@ module mem_controller
 // ******************************************************************
 localparam PU_ID_W = `C_LOG_2(NUM_PU)+1;
 localparam integer STATE_W  = 3;
-localparam integer RD_ROM_WIDTH = 2 + (BASE_ADDR_W + 3*OFFSET_ADDR_W + 3*TX_SIZE_WIDTH +
-  2*RD_LOOP_W) * 2;
+localparam integer RD_ROM_WIDTH = 402;
 localparam integer WR_ROM_WIDTH = 2 + (BASE_ADDR_W + OFFSET_ADDR_W + TX_SIZE_WIDTH +
   RD_LOOP_W);
 localparam integer RD_ROM_DEPTH = 1<<RD_ROM_ADDR_W;
@@ -163,8 +162,8 @@ localparam integer IDLE = 0, RD_CFG_BUFFER = 1, RD_CFG_STREAM = 2,
     rd_cfg_idx_max = `max_rd_mem_idx;
     wr_cfg_idx_max = `max_wr_mem_idx;
     `ifdef simulation
-      $readmemb("./hardware/include/rd_mem_controller.vh", rd_cfg_rom);
-      $readmemb("./hardware/include/wr_mem_controller.vh", wr_cfg_rom);
+      $readmemb("./..//include/rd_mem_controller.vh", rd_cfg_rom);
+      $readmemb("./..//include/wr_mem_controller.vh", wr_cfg_rom);
     `else
       $readmemb("rd_mem_controller.vh", rd_cfg_rom);
       $readmemb("wr_mem_controller.vh", wr_cfg_rom);
@@ -273,7 +272,7 @@ localparam integer IDLE = 0, RD_CFG_BUFFER = 1, RD_CFG_STREAM = 2,
     if (reset)
       buffer_read_address <= 'b0;
     else begin
-      if (rd_state == RD_CFG_BUFFER && stream_rd_loop0_count == 0)
+      if (rd_state == RD_CFG_BUFFER && stream_rd_loop0_count == 0 && stream_rd_loop1_count == 0)
         buffer_read_address <= buffer_read_base_addr;
       else if (buffer_rd_count_inc)
         buffer_read_address <= buffer_read_address + buffer_read_offset;

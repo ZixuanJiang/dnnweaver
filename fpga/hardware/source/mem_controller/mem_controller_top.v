@@ -28,49 +28,49 @@ module mem_controller_top
   output wire                                         done,
 
   // Master Interface Write Address
-  output wire                                         [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_AWID,
-  output wire                                         [ NUM_AXI*ADDR_W       -1 : 0 ]        M_AXI_AWADDR,
-  output wire                                         [ NUM_AXI*4            -1 : 0 ]        M_AXI_AWLEN,
-  output wire                                         [ NUM_AXI*3            -1 : 0 ]        M_AXI_AWSIZE,
-  output wire                                         [ NUM_AXI*2            -1 : 0 ]        M_AXI_AWBURST,
-  output wire                                         [ NUM_AXI*2            -1 : 0 ]        M_AXI_AWLOCK,
-  output wire                                         [ NUM_AXI*4            -1 : 0 ]        M_AXI_AWCACHE,
-  output wire                                         [ NUM_AXI*3            -1 : 0 ]        M_AXI_AWPROT,
-  output wire                                         [ NUM_AXI*4            -1 : 0 ]        M_AXI_AWQOS,
+  output wire  [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_AWID,
+  output wire  [ NUM_AXI*ADDR_W       -1 : 0 ]        M_AXI_AWADDR,
+  output wire  [ NUM_AXI*4            -1 : 0 ]        M_AXI_AWLEN,
+  output wire  [ NUM_AXI*3            -1 : 0 ]        M_AXI_AWSIZE,
+  output wire  [ NUM_AXI*2            -1 : 0 ]        M_AXI_AWBURST,
+  output wire  [ NUM_AXI*2            -1 : 0 ]        M_AXI_AWLOCK,
+  output wire  [ NUM_AXI*4            -1 : 0 ]        M_AXI_AWCACHE,
+  output wire  [ NUM_AXI*3            -1 : 0 ]        M_AXI_AWPROT,
+  output wire  [ NUM_AXI*4            -1 : 0 ]        M_AXI_AWQOS,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_AWVALID,
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_AWREADY,
 
   // Master Interface Write Data
-  output wire                                         [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_WID,
-  output wire                                         [ NUM_AXI*AXI_DATA_W   -1 : 0 ]        M_AXI_WDATA,
-  output wire                                         [ NUM_AXI*WSTRB_W      -1 : 0 ]        M_AXI_WSTRB,
+  output wire  [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_WID,
+  output wire  [ NUM_AXI*AXI_DATA_W   -1 : 0 ]        M_AXI_WDATA,
+  output wire  [ NUM_AXI*WSTRB_W      -1 : 0 ]        M_AXI_WSTRB,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_WLAST,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_WVALID,
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_WREADY,
 
   // Master Interface Write Response
-  input  wire                                         [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_BID,
-  input  wire                                         [ NUM_AXI*2            -1 : 0 ]        M_AXI_BRESP,
+  input  wire  [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_BID,
+  input  wire  [ NUM_AXI*2            -1 : 0 ]        M_AXI_BRESP,
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_BVALID,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_BREADY,
 
   // Master Interface Read Address
-  output wire                                         [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_ARID,
-  output wire                                         [ NUM_AXI*ADDR_W       -1 : 0 ]        M_AXI_ARADDR,
-  output wire                                         [ NUM_AXI*4            -1 : 0 ]        M_AXI_ARLEN,
-  output wire                                         [ NUM_AXI*3            -1 : 0 ]        M_AXI_ARSIZE,
-  output wire                                         [ NUM_AXI*2            -1 : 0 ]        M_AXI_ARBURST,
-  output wire                                         [ NUM_AXI*2            -1 : 0 ]        M_AXI_ARLOCK,
-  output wire                                         [ NUM_AXI*4            -1 : 0 ]        M_AXI_ARCACHE,
-  output wire                                         [ NUM_AXI*3            -1 : 0 ]        M_AXI_ARPROT,
-  output wire                                         [ NUM_AXI*4            -1 : 0 ]        M_AXI_ARQOS,
+  output wire  [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_ARID,
+  output wire  [ NUM_AXI*ADDR_W       -1 : 0 ]        M_AXI_ARADDR,
+  output wire  [ NUM_AXI*4            -1 : 0 ]        M_AXI_ARLEN,
+  output wire  [ NUM_AXI*3            -1 : 0 ]        M_AXI_ARSIZE,
+  output wire  [ NUM_AXI*2            -1 : 0 ]        M_AXI_ARBURST,
+  output wire  [ NUM_AXI*2            -1 : 0 ]        M_AXI_ARLOCK,
+  output wire  [ NUM_AXI*4            -1 : 0 ]        M_AXI_ARCACHE,
+  output wire  [ NUM_AXI*3            -1 : 0 ]        M_AXI_ARPROT,
+  output wire  [ NUM_AXI*4            -1 : 0 ]        M_AXI_ARQOS,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_ARVALID,
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_ARREADY,
 
   // Master Interface Read Data
-  input  wire                                         [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_RID,
-  input  wire                                         [ NUM_AXI*AXI_DATA_W   -1 : 0 ]        M_AXI_RDATA,
-  input  wire                                         [ NUM_AXI*2            -1 : 0 ]        M_AXI_RRESP,
+  input  wire  [ NUM_AXI*TID_WIDTH    -1 : 0 ]        M_AXI_RID,
+  input  wire  [ NUM_AXI*AXI_DATA_W   -1 : 0 ]        M_AXI_RDATA,
+  input  wire  [ NUM_AXI*2            -1 : 0 ]        M_AXI_RRESP,
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_RLAST,
   input  wire  [ NUM_AXI              -1 : 0 ]        M_AXI_RVALID,
   output wire  [ NUM_AXI              -1 : 0 ]        M_AXI_RREADY,
@@ -98,8 +98,8 @@ module mem_controller_top
   output wire  [ AXI_DATA_W           -1 : 0 ]        buffer_read_data_out,
 
   // Debug
-  output reg  [ 32                   -1 : 0 ]         buffer_read_count,
-  output reg  [ 32                   -1 : 0 ]         stream_read_count,
+  output reg   [ 32                   -1 : 0 ]        buffer_read_count,
+  output reg   [ 32                   -1 : 0 ]        stream_read_count,
   output wire  [ 11                   -1 : 0 ]        inbuf_count,
   output wire  [ NUM_PU               -1 : 0 ]        pu_write_valid,
   output wire  [ ROM_ADDR_W           -1 : 0 ]        wr_cfg_idx,
@@ -299,6 +299,7 @@ module mem_controller_top
 // ==================================================================
 
 assign read_full = axi_rd_buffer_full || read_info_full || buffer_counter_full;
+// assign read_full = axi_rd_buffer_full || buffer_counter_full;
 
 assign rd_ready = !buffer_counter_full && axi_rd_ready;
 
@@ -352,7 +353,7 @@ generate
     wire                                        stream_pu_fifo_pop;
     wire                                        stream_pu_fifo_full;
     wire                                        stream_pu_fifo_empty;
-    wire [STREAM_PU_FIFO_ADDR_W-1:0] stream_pu_fifo_count;
+    wire [STREAM_PU_FIFO_ADDR_W:0] stream_pu_fifo_count;
 
     assign stream_pu_data_in = axi_rd_buffer_data_out_d;
 
@@ -501,6 +502,13 @@ endgenerate
 // ==================================================================
 // InBuf - Input Buffer
 // ==================================================================
+
+  reg [31:0] axi_rd_count;
+  always @(posedge clk)
+    if (reset)
+      axi_rd_count <= 0;
+    else
+      axi_rd_count <= axi_rd_count + axi_rd_buffer_push;
 
   fifo#(
     .DATA_WIDTH               ( AXI_DATA_W               ),

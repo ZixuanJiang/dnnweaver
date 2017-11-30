@@ -1,3 +1,4 @@
+`include "dw_params.vh"
 `include "common.vh"
 module dnn_accelerator #(
 // ******************************************************************
@@ -5,15 +6,15 @@ module dnn_accelerator #(
 // ******************************************************************
   parameter integer PU_TID_WIDTH      = 16,
   parameter integer AXI_TID_WIDTH     = 6,
-  parameter integer NUM_PU            = 1,
+  parameter integer NUM_PU            = `num_pu,
   parameter integer ADDR_W            = 32,
   parameter integer OP_WIDTH          = 16,
   parameter integer AXI_DATA_W        = 64,
-  parameter integer NUM_PE            = 4,
+  parameter integer NUM_PE            = `num_pe,
   parameter integer BASE_ADDR_W       = ADDR_W,
   parameter integer OFFSET_ADDR_W     = ADDR_W,
   parameter integer TX_SIZE_WIDTH     = 20,
-  parameter integer RD_LOOP_W         = 10,
+  parameter integer RD_LOOP_W         = 32,
   parameter integer D_TYPE_W          = 2,
   parameter integer ROM_ADDR_W        = 3,
   parameter integer SERDES_COUNT_W    = 6,
@@ -46,7 +47,7 @@ module dnn_accelerator #(
   output wire [ 2                    -1 : 0 ]        vecgen_state,
   output reg  [ 16                   -1 : 0 ]        vecgen_read_count,
 
-  output wire [ AXI_TID_WIDTH            -1 : 0 ]        M_AXI_AWID,
+  output wire [ AXI_TID_WIDTH        -1 : 0 ]        M_AXI_AWID,
   output wire [ ADDR_W               -1 : 0 ]        M_AXI_AWADDR,
   output wire [ 4                    -1 : 0 ]        M_AXI_AWLEN,
   output wire [ 3                    -1 : 0 ]        M_AXI_AWSIZE,
@@ -57,17 +58,17 @@ module dnn_accelerator #(
   output wire [ 4                    -1 : 0 ]        M_AXI_AWQOS,
   output wire                                        M_AXI_AWVALID,
   input  wire                                        M_AXI_AWREADY,
-  output wire [ AXI_TID_WIDTH            -1 : 0 ]        M_AXI_WID,
-  output wire [ AXI_DATA_W               -1 : 0 ]        M_AXI_WDATA,
-  output wire [ AXI_DATA_W/8             -1 : 0 ]        M_AXI_WSTRB,
+  output wire [ AXI_TID_WIDTH        -1 : 0 ]        M_AXI_WID,
+  output wire [ AXI_DATA_W           -1 : 0 ]        M_AXI_WDATA,
+  output wire [ AXI_DATA_W/8         -1 : 0 ]        M_AXI_WSTRB,
   output wire                                        M_AXI_WLAST,
   output wire                                        M_AXI_WVALID,
   input  wire                                        M_AXI_WREADY,
-  input  wire [ AXI_TID_WIDTH            -1 : 0 ]        M_AXI_BID,
+  input  wire [ AXI_TID_WIDTH        -1 : 0 ]        M_AXI_BID,
   input  wire [ 2                    -1 : 0 ]        M_AXI_BRESP,
   input  wire                                        M_AXI_BVALID,
   output wire                                        M_AXI_BREADY,
-  output wire [ AXI_TID_WIDTH            -1 : 0 ]        M_AXI_ARID,
+  output wire [ AXI_TID_WIDTH        -1 : 0 ]        M_AXI_ARID,
   output wire [ ADDR_W               -1 : 0 ]        M_AXI_ARADDR,
   output wire [ 4                    -1 : 0 ]        M_AXI_ARLEN,
   output wire [ 3                    -1 : 0 ]        M_AXI_ARSIZE,
@@ -78,8 +79,8 @@ module dnn_accelerator #(
   output wire [ 4                    -1 : 0 ]        M_AXI_ARQOS,
   output wire                                        M_AXI_ARVALID,
   input  wire                                        M_AXI_ARREADY,
-  input  wire [ AXI_TID_WIDTH            -1 : 0 ]        M_AXI_RID,
-  input  wire [ AXI_DATA_W               -1 : 0 ]        M_AXI_RDATA,
+  input  wire [ AXI_TID_WIDTH        -1 : 0 ]        M_AXI_RID,
+  input  wire [ AXI_DATA_W           -1 : 0 ]        M_AXI_RDATA,
   input  wire [ 2                    -1 : 0 ]        M_AXI_RRESP,
   input  wire                                        M_AXI_RLAST,
   input  wire                                        M_AXI_RVALID,
@@ -184,9 +185,9 @@ module dnn_accelerator #(
   wire [ POOL_CFG_WIDTH       -1 : 0 ]        pool_cfg;
 
   wire                                        bias_read_req;
-  
+
   wire [ AXI_DATA_W           -1 : 0 ]        buffer_read_data_out;
-  
+
 // ******************************************************************
 
 // ==================================================================
@@ -505,4 +506,12 @@ module dnn_accelerator #(
     );
   // ==================================================================
 
+
+`ifdef TOPLEVEL_dnn_accelerator
+  initial
+  begin
+    $dumpfile("dnn_accelerator.vcd");
+    $dumpvars(0,dnn_accelerator);
+  end
+`endif
 endmodule

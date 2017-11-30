@@ -425,7 +425,7 @@ always @(posedge clk)
   if (reset)
     wburst_issued <= 0;
   else
-    wburst_issued <= write_state == 1 && (M_AXI_AWVALID && M_AXI_AWREADY);
+    wburst_issued <= (write_state == 1) && (M_AXI_AWVALID && M_AXI_AWREADY);
 
 always @(posedge clk)
 begin
@@ -555,7 +555,13 @@ end
 
   reg                                         wlast_d;
   wire                                        check_next_pu;
-  assign check_next_pu = (write_state == 3) || (write_state == 0 && !axi_wr_req && !all_writes_done_d);
+  assign check_next_pu = !check_next_pu_d && ((write_state == 3) || (write_state == 0 && !axi_wr_req && !all_writes_done_d));
+
+
+  reg check_next_pu_d;
+  always @(posedge clk)
+    check_next_pu_d <= check_next_pu;
+
   always @(posedge clk)wlast_d <= wlast;
   always @(posedge clk)
   begin
@@ -982,5 +988,12 @@ endgenerate
 
 // ==================================================================
 
+`ifdef TOPLEVEL_axi_master
+  initial
+  begin
+    $dumpfile("axi_master.vcd");
+    $dumpvars(0,axi_master);
+  end
+`endif
 
 endmodule

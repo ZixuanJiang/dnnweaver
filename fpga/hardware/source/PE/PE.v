@@ -214,6 +214,14 @@ module PE #(
   );
 // ******************************************************************
 
+`ifdef TOPLEVEL_PE
+  initial
+  begin
+    $dumpfile("PE.vcd");
+    $dumpvars(0,PE);
+  end
+`endif
+
 
 
 endmodule
