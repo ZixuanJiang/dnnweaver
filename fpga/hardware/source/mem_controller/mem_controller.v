@@ -9,7 +9,7 @@ module mem_controller
   parameter integer BASE_ADDR_W       = ADDR_W,
   parameter integer OFFSET_ADDR_W     = ADDR_W,
   parameter integer RD_LOOP_W         = 32,
-  parameter integer TX_SIZE_WIDTH     = 10,
+  parameter integer TX_SIZE_WIDTH     = 20,
   parameter integer D_TYPE_W          = 2,
   parameter integer RD_ROM_ADDR_W     = `C_LOG_2(`max_rd_mem_idx+2),
   parameter integer WR_ROM_ADDR_W     = `C_LOG_2(`max_wr_mem_idx+2)
@@ -45,14 +45,15 @@ module mem_controller
 // ******************************************************************
 // LOCALPARAMS
 // ******************************************************************
-localparam PU_ID_W = `C_LOG_2(NUM_PU)+1;
-localparam integer STATE_W  = 3;
-localparam integer RD_ROM_WIDTH = 402;
-localparam integer WR_ROM_WIDTH = 2 + (BASE_ADDR_W + OFFSET_ADDR_W + TX_SIZE_WIDTH +
-  RD_LOOP_W);
-localparam integer RD_ROM_DEPTH = 1<<RD_ROM_ADDR_W;
-localparam integer WR_ROM_DEPTH = 1<<WR_ROM_ADDR_W;
-localparam integer IDLE = 0, RD_CFG_BUFFER = 1, RD_CFG_STREAM = 2,
+  localparam PU_ID_W = `C_LOG_2(NUM_PU)+1;
+  localparam integer STATE_W  = 3;
+  localparam integer LTYPE_W = 2;
+  localparam integer RD_ROM_WIDTH = LTYPE_W + 4 * TX_SIZE_WIDTH + 7 * ADDR_W + 3 * RD_LOOP_W;
+  localparam integer WR_ROM_WIDTH = LTYPE_W + (BASE_ADDR_W + OFFSET_ADDR_W + TX_SIZE_WIDTH +
+                                    RD_LOOP_W);
+  localparam integer RD_ROM_DEPTH = 1<<RD_ROM_ADDR_W;
+  localparam integer WR_ROM_DEPTH = 1<<WR_ROM_ADDR_W;
+  localparam integer IDLE = 0, RD_CFG_BUFFER = 1, RD_CFG_STREAM = 2,
   BUSY_BUFFER = 3, BUSY_STREAM = 4;
 // ******************************************************************
 // WIRES
@@ -74,8 +75,8 @@ localparam integer IDLE = 0, RD_CFG_BUFFER = 1, RD_CFG_STREAM = 2,
   reg  [ RD_ROM_ADDR_W        -1 : 0 ]        rd_cfg_idx_max;
   reg  [ WR_ROM_ADDR_W        -1 : 0 ]        wr_cfg_idx_max;
 
-  wire [ 2                    -1 : 0 ]        rd_l_type;
-  wire [ 2                    -1 : 0 ]        wr_l_type;
+  wire [ LTYPE_W              -1 : 0 ]        rd_l_type;
+  wire [ LTYPE_W              -1 : 0 ]        wr_l_type;
 
   wire [ BASE_ADDR_W          -1 : 0 ]        stream_write_base_addr;
   wire [ TX_SIZE_WIDTH        -1 : 0 ]        stream_write_size;

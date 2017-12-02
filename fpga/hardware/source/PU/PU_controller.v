@@ -62,10 +62,10 @@ module PU_controller
   output wire                                         bias_read_req,
 
   // Debug
-  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_kw,
-  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_kh,
-  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_iw,
-  output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_ih,
+  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_kw,
+  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_kh,
+  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_iw,
+  output wire  [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_ih,
   output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_ic,
   output wire  [ PARAM_C_WIDTH        -1 : 0 ]        dbg_oc
 );

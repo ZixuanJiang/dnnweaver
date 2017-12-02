@@ -16,10 +16,13 @@ module dnn_accelerator #(
   parameter integer TX_SIZE_WIDTH     = 20,
   parameter integer RD_LOOP_W         = 32,
   parameter integer D_TYPE_W          = 2,
-  parameter integer ROM_ADDR_W        = 3,
+  parameter integer RD_ROM_ADDR_W     = `C_LOG_2(`max_rd_mem_idx+2),
+  parameter integer WR_ROM_ADDR_W     = `C_LOG_2(`max_wr_mem_idx+2),
   parameter integer SERDES_COUNT_W    = `C_LOG_2(NUM_PE+1),
   parameter integer PE_SEL_W          = `C_LOG_2(NUM_PE),
-  parameter integer PU_ID_W           = `C_LOG_2(NUM_PU)+1
+  parameter integer PU_ID_W           = `C_LOG_2(NUM_PU)+1,
+  parameter integer LAYER_PARAM_WIDTH = 10,
+  parameter integer PARAM_C_WIDTH     = 32
 ) (
 // ******************************************************************
 // IO
@@ -29,19 +32,19 @@ module dnn_accelerator #(
   input  wire                                        start,
   output wire                                        done,
   // Debug
-  output wire [ 16                   -1 : 0 ]        dbg_kw,
-  output wire [ 16                   -1 : 0 ]        dbg_kh,
-  output wire [ 16                   -1 : 0 ]        dbg_iw,
-  output wire [ 16                   -1 : 0 ]        dbg_ih,
-  output wire [ 16                   -1 : 0 ]        dbg_ic,
-  output wire [ 16                   -1 : 0 ]        dbg_oc,
+  output wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_kw,
+  output wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_kh,
+  output wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_iw,
+  output wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        dbg_ih,
+  output wire [ PARAM_C_WIDTH        -1 : 0 ]        dbg_ic,
+  output wire [ PARAM_C_WIDTH        -1 : 0 ]        dbg_oc,
 
   output wire [ 32                   -1 : 0 ]        buffer_read_count,
   output wire [ 32                   -1 : 0 ]        stream_read_count,
   output wire [ 11                   -1 : 0 ]        inbuf_count,
   output wire [ NUM_PU               -1 : 0 ]        pu_write_valid,
-  output wire [ ROM_ADDR_W           -1 : 0 ]        wr_cfg_idx,
-  output wire [ ROM_ADDR_W           -1 : 0 ]        rd_cfg_idx,
+  output wire [ WR_ROM_ADDR_W        -1 : 0 ]        wr_cfg_idx,
+  output wire [ RD_ROM_ADDR_W        -1 : 0 ]        rd_cfg_idx,
   output wire [ NUM_PU               -1 : 0 ]        outbuf_push,
 
   output wire [ 3                    -1 : 0 ]        pu_controller_state,
@@ -93,7 +96,6 @@ module dnn_accelerator #(
   //localparam integer TID_WIDTH          = 16;
   localparam integer PAD_WIDTH          = 3;
   localparam integer STRIDE_SIZE_W      = 3;
-  localparam integer LAYER_PARAM_WIDTH  = 10;
   localparam integer L_TYPE_WIDTH       = 2;
 
   localparam integer PE_CTRL_WIDTH      = 10 + 2*PE_BUF_ADDR_WIDTH;
@@ -205,7 +207,8 @@ module dnn_accelerator #(
     .RD_LOOP_W                ( RD_LOOP_W                ),
     .TX_SIZE_WIDTH            ( TX_SIZE_WIDTH            ),
     .D_TYPE_W                 ( D_TYPE_W                 ),
-    .ROM_ADDR_W               ( ROM_ADDR_W               )
+    .RD_ROM_ADDR_W            ( RD_ROM_ADDR_W            ),
+    .WR_ROM_ADDR_W            ( WR_ROM_ADDR_W            )
   ) mem_ctrl_top ( // PORTS
 
     .clk                      ( clk                      ),

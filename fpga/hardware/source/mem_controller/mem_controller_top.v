@@ -11,9 +11,10 @@ module mem_controller_top
   parameter integer BASE_ADDR_W                       = ADDR_W,
   parameter integer OFFSET_ADDR_W                     = ADDR_W,
   parameter integer RD_LOOP_W                         = 32,
-  parameter integer TX_SIZE_WIDTH                     = 10,
+  parameter integer TX_SIZE_WIDTH                     = 20,
   parameter integer D_TYPE_W                          = 2,
-  parameter integer ROM_ADDR_W                        = 2,
+  parameter integer RD_ROM_ADDR_W                     = `C_LOG_2(`max_rd_mem_idx+2),
+  parameter integer WR_ROM_ADDR_W                     = `C_LOG_2(`max_wr_mem_idx+2),
   parameter integer ARUSER_W                          = 2,
   parameter integer RUSER_W                           = 2,
   parameter integer BUSER_W                           = 2,
@@ -102,8 +103,8 @@ module mem_controller_top
   output reg   [ 32                   -1 : 0 ]        stream_read_count,
   output wire  [ 11                   -1 : 0 ]        inbuf_count,
   output wire  [ NUM_PU               -1 : 0 ]        pu_write_valid,
-  output wire  [ ROM_ADDR_W           -1 : 0 ]        wr_cfg_idx,
-  output wire  [ ROM_ADDR_W           -1 : 0 ]        rd_cfg_idx
+  output wire  [ WR_ROM_ADDR_W        -1 : 0 ]        wr_cfg_idx,
+  output wire  [ RD_ROM_ADDR_W        -1 : 0 ]        rd_cfg_idx
 
 );
 
