@@ -1,9 +1,9 @@
 `include "dw_params.vh"
 module zynq_wrapper #(
   parameter READ_ADDR_BASE_0   = 32'h00000000,
-  parameter WRITE_ADDR_BASE_0  = 32'h02000000
+  parameter WRITE_ADDR_BASE_0  = 32'h02000000,
   parameter RD_ROM_ADDR_W      = `C_LOG_2(`max_rd_mem_idx+2),
-  parameter WR_ROM_ADDR_W      = `C_LOG_2(`max_wr_mem_idx+2),
+  parameter WR_ROM_ADDR_W      = `C_LOG_2(`max_wr_mem_idx+2)
 )
 (
   inout wire [14:0]   DDR_addr,
@@ -43,8 +43,8 @@ module zynq_wrapper #(
   wire [ NUM_PU               -1 : 0 ]        pu_write_valid;
   wire [ NUM_PU               -1 : 0 ]        outbuf_push;
 
-  wire [ WR_ROM_ADDR_W        -1 : 0 ]        wr_cfg_idx,
-  wire [ RD_ROM_ADDR_W        -1 : 0 ]        rd_cfg_idx,
+  wire [ WR_ROM_ADDR_W        -1 : 0 ]        wr_cfg_idx;
+  wire [ RD_ROM_ADDR_W        -1 : 0 ]        rd_cfg_idx;
   wire [ 3                    -1 : 0 ]        pu_controller_state;
   wire [ 2                    -1 : 0 ]        vecgen_state;
 
