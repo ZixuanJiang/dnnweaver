@@ -2,6 +2,8 @@
 module zynq_wrapper #(
   parameter READ_ADDR_BASE_0   = 32'h00000000,
   parameter WRITE_ADDR_BASE_0  = 32'h02000000
+  parameter RD_ROM_ADDR_W      = `C_LOG_2(`max_rd_mem_idx+2),
+  parameter WR_ROM_ADDR_W      = `C_LOG_2(`max_wr_mem_idx+2),
 )
 (
   inout wire [14:0]   DDR_addr,
@@ -40,8 +42,9 @@ module zynq_wrapper #(
   wire [ 11                   -1 : 0 ]        inbuf_count;
   wire [ NUM_PU               -1 : 0 ]        pu_write_valid;
   wire [ NUM_PU               -1 : 0 ]        outbuf_push;
-  wire [ ROM_ADDR_W           -1 : 0 ]        wr_cfg_idx;
-  wire [ ROM_ADDR_W           -1 : 0 ]        rd_cfg_idx;
+
+  wire [ WR_ROM_ADDR_W        -1 : 0 ]        wr_cfg_idx,
+  wire [ RD_ROM_ADDR_W        -1 : 0 ]        rd_cfg_idx,
   wire [ 3                    -1 : 0 ]        pu_controller_state;
   wire [ 2                    -1 : 0 ]        vecgen_state;
 
@@ -518,7 +521,6 @@ zc702 zynq_i (
   localparam integer TX_SIZE_WIDTH     = 20;
   localparam integer RD_LOOP_W         = 32;
   localparam integer D_TYPE_W          = 2;
-  localparam integer ROM_ADDR_W        = 3;
 
 // ==================================================================
 // Dnn Accelerator
@@ -533,8 +535,7 @@ zc702 zynq_i (
     .OFFSET_ADDR_W            ( OFFSET_ADDR_W            ),
     .RD_LOOP_W                ( RD_LOOP_W                ),
     .TX_SIZE_WIDTH            ( TX_SIZE_WIDTH            ),
-    .D_TYPE_W                 ( D_TYPE_W                 ),
-    .ROM_ADDR_W               ( ROM_ADDR_W               )
+    .D_TYPE_W                 ( D_TYPE_W                 )
   ) accelerator ( // PORTS
     .clk                      ( clk                      ),
     .reset                    ( reset                    ),
