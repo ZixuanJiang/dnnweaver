@@ -18,7 +18,7 @@ H. Sharma, J. Park, D. Mahajan, E. Amaro, J. K. Kim, C. Shao, A. Mishra, H. Esma
 
 These are the dependencies for DnnWeaver:
 ```
-1. iverilog (optional)
+1. iverilog (optional, please use the latest version)
 2. python 2.7
 3. Xilinx Vivado 2016.2
 ```
