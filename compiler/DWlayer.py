@@ -104,6 +104,8 @@ class DWMacroLayer(object):
         self.write_mem_offset = None
         self.write_mem_size = None
         self.write_mem_count = None
+        self.data_mem_batch_count = None
+        self.data_mem_batch_offset = None
         print("Macro Layer Name:\t\t{0}".format(self.name))
 
     def __str__(self):
@@ -229,10 +231,7 @@ class DWMacroLayer(object):
         print("Layer output Dim = {0}".format(self.output_dim))
 
         self.input_dim = self.PE_layer.input_dim
-        if self.Pool_layer is not None:
-            self.output_dim = self.PE_layer.output_dim
-        else:
-            self.output_dim = self.PE_layer.output_dim
+        self.output_dim = self.PE_layer.output_dim
 
         _pad = self.PE_layer.pad
         _kh = self.PE_layer.kernel_height
@@ -360,11 +359,10 @@ class DWMacroLayer(object):
         self.slice_size = max(min(rows_per_slice, _oh), 1)
         self.number_of_slices = number_of_slices
 
-        tb = []
-
         if isinstance(self.PE_layer, FCLayer):
             _ic = _ic + 1
 
+	tb = []
         for ii in range(number_of_slices):
             slice_size = min(rows_per_slice, _oh)
             if ii == 0:
@@ -431,10 +429,19 @@ class DWMacroLayer(object):
         self.data_mem_offset = self.data_mem_size * 8
         self.data_mem_count = self.get_input_read_count()
 
+        # Assign data memory read and write addresses. For !Conv, batch_count=1
+        self.data_mem_batch_count = 1
+        if isinstance(self.PE_layer, ConvLayer):
+            self.data_mem_batch_count = self.PE_layer.input_dim[0]
+
         if self.base_data_read_address is None:
             self.base_data_read_address = self.prev.base_data_write_address
-        self.base_data_write_address = self.base_data_read_address + self.data_mem_size * self.PE_layer.input_dim[1] * 8
+	self.data_mem_batch_offset = self.data_mem_offset \
+	    * self.PE_layer.input_dim[1]
+        self.base_data_write_address = self.base_data_read_address \
+            + self.data_mem_batch_offset * self.data_mem_batch_count
 
+        # Assign weight memory metrics and addresses
         self.weight_mem_size = self.get_weight_read_size() / self.axi_num_data
         self.weight_mem_offset = self.weight_mem_size * 8
         self.weight_mem_count = self.get_weight_read_count()
@@ -557,13 +564,14 @@ class DWMacroLayer(object):
         else:
             next_is_FC = False
 
+        num_pe_padding = int( ceil(float(self.num_pe) / self.axi_num_data))
+        output_dim_padding = 1
         if isinstance(self.PE_layer, ConvLayer) and not (next_is_FC):
-            output_fm_size = int(ceil(float(od[2]) / self.num_pe)) * od[3] * int(
-                ceil(float(self.num_pe) / self.axi_num_data)) * self.axi_num_data
+            output_dim_padding = int(ceil(float(od[2]) / self.num_pe)) * od[3]
         else:
-            output_fm_size = int(ceil(float(od[1] * od[2] * od[3]) / self.num_pe)) * int(
-                ceil(float(self.num_pe) / self.axi_num_data)) * \
-                             self.axi_num_data
+            output_dim_padding = int(ceil(float(od[1] * od[2] * od[3]) / self.num_pe))
+
+        output_fm_size = output_dim_padding * num_pe_padding * self.axi_num_data	
             #if next_is_FC:
                 #print("output_dm_size = {0}".format(output_fm_size))
                 #print(od)
@@ -572,10 +580,10 @@ class DWMacroLayer(object):
         self.write_mem_size = output_fm_size / self.axi_num_data
         self.write_mem_offset = self.write_mem_size * 8
 
+        count_padding = 1
         if isinstance(self.PE_layer, ConvLayer):
-            self.write_mem_count = int(ceil(float(od[1]) / self.num_pu)) * self.num_pu
-        else:
-            self.write_mem_count = self.num_pu
+            count_padding = int(ceil(float(od[1]) / self.num_pu)) * self.num_pu
+        self.write_mem_count = count_padding * self.num_pu
 
         #print("Output FM size = {0}".format(output_fm_size))
 
@@ -682,6 +690,8 @@ class DWlayer(object):
         self.write_mem_offset = None
         self.write_mem_size = None
         self.write_mem_count = None
+        self.data_mem_batch_count = None
+        self.data_mem_batch_offset = None
         self.stride = 1
         self.pad = 0
         self.kernel_width = 1
