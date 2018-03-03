@@ -138,12 +138,11 @@ module axi_master
 // ******************************************************************
 // Internal variables - Regs, Wires and LocalParams
 // ******************************************************************
+  localparam integer WSTRB_W            = AXI_DATA_WIDTH/8;
+  localparam integer NUM_PU_W           = `C_LOG_2(NUM_PU)+1;
+  localparam integer OUTBUF_DATA_W      = NUM_PU * AXI_DATA_WIDTH;
+
   wire                                        rnext;
-
-  localparam integer WSTRB_W  = AXI_DATA_WIDTH/8;
-  localparam integer NUM_PU_W = `C_LOG_2(NUM_PU)+1;
-  localparam integer OUTBUF_DATA_W = NUM_PU * AXI_DATA_WIDTH;
-
   // A fancy terminal counter, using extra bits to reduce decode logic
   localparam integer C_WLEN_COUNT_WIDTH = `C_LOG_2(C_M_AXI_WR_BURST_LEN-2)+2;
   reg  [ C_WLEN_COUNT_WIDTH   -1 : 0 ]        wlen_count;
@@ -200,17 +199,18 @@ module axi_master
   assign all_writes_done = &pu_wr_ready && wchannel_req_buf_empty && wchannel_state == WC_IDLE;
 
   reg                                         all_writes_done_d;
+
   always @(posedge clk)
     if (reset)
       all_writes_done_d <= 1'b0;
     else
       all_writes_done_d <= all_writes_done;
 
-    always @(posedge clk)
-      if (reset)
-        wr_done <= 0;
-      else
-        wr_done <= all_writes_done && !all_writes_done_d;
+  always @(posedge clk)
+    if (reset)
+      wr_done <= 0;
+    else
+      wr_done <= all_writes_done && !all_writes_done_d;
 
 
 //--------------------------------------------------------------
@@ -235,6 +235,9 @@ begin
     rd_req_buf_pop_d <= 0;
 end
 
+  /*
+  * The FIFO stores the read requests
+  */
   localparam integer RD_RQ_WIDTH = AXI_ADDR_WIDTH + TX_SIZE_WIDTH;
   fifo #(
     .DATA_WIDTH               ( RD_RQ_WIDTH              ),
@@ -252,31 +255,33 @@ end
   );
 //--------------------------------------------------------------
 
-   // READs
+  // READs
+  //wire [4-1:0] arlen = (rx_size >= 16) ? 15: (rx_size >= 8) ? 7 : (rx_size >= 4) ? 3 : (rx_size >= 2) ? 1 : 0;
   reg  [ TX_SIZE_WIDTH        -1 : 0 ]        rx_size;
-   //wire [4-1:0] arlen = (rx_size >= 16) ? 15: (rx_size >= 8) ? 7 : (rx_size >= 4) ? 3 : (rx_size >= 2) ? 1 : 0;
-   wire [4-1:0] arlen = (rx_size >= 16) ? 15: (rx_size != 0) ? (rx_size-1) : 0;
+  wire [ 4                    -1 : 0 ]        arlen;
   reg  [ 4                    -1 : 0 ]        arlen_d;
 
-   always @(posedge clk)
-   begin
-     if (reset)
-       rx_size <= 0;
-     //else if (rd_req)
-       //    rx_size <= rx_size + rd_req_size;
-       else if (rd_req_buf_pop_d)
-         rx_size <= rx_size + rx_req_size_buf;
-       else if (arvalid && M_AXI_ARREADY)
-         rx_size <= rx_size - arlen - 1;
-     end
+  assign arlen = (rx_size >= 16) ? 15: (rx_size != 0) ? (rx_size-1) : 0;
 
-   always @(posedge clk)
-   begin
-     if (reset)
-       arlen_d <= 0;
-     else if (arvalid && M_AXI_ARREADY)
-       arlen_d <= arlen;
-   end
+  always @(posedge clk)
+  begin
+    if (reset)
+      rx_size <= 0;
+    //else if (rd_req)
+       //    rx_size <= rx_size + rd_req_size;
+    else if (rd_req_buf_pop_d)
+      rx_size <= rx_size + rx_req_size_buf;
+    else if (arvalid && M_AXI_ARREADY)
+      rx_size <= rx_size - arlen - 1;
+  end
+
+  always @(posedge clk)
+  begin
+    if (reset)
+      arlen_d <= 0;
+    else if (arvalid && M_AXI_ARREADY)
+      arlen_d <= arlen;
+  end
 
 
 /////////////////
@@ -286,48 +291,48 @@ end
 //Write Address (AW)
 ////////////////////
 
-// Single threaded
-assign M_AXI_AWID = 'b0;
+  // Single threaded
+  assign M_AXI_AWID = 'b0;
 
-// The AXI address is a concatenation of the target base address + active offset range
-//assign M_AXI_AWADDR = {C_M_AXI_WRITE_TARGET[AXI_ADDR_WIDTH-1:C_OFFSET_WIDTH],awaddr_offset};
-//assign M_AXI_AWADDR = {wr_addr_d[AXI_ADDR_WIDTH-1:C_OFFSET_WIDTH],awaddr_offset};
+  // The AXI address is a concatenation of the target base address + active offset range
+  //assign M_AXI_AWADDR = {C_M_AXI_WRITE_TARGET[AXI_ADDR_WIDTH-1:C_OFFSET_WIDTH],awaddr_offset};
+  //assign M_AXI_AWADDR = {wr_addr_d[AXI_ADDR_WIDTH-1:C_OFFSET_WIDTH],awaddr_offset};
 
-//Burst LENgth is number of transaction beats, minus 1
+  //Burst LENgth is number of transaction beats, minus 1
   reg  [ 4                    -1 : 0 ]        awlen;
-assign M_AXI_AWLEN = awlen;
+  assign M_AXI_AWLEN = awlen;
 
-// Size should be AXI_DATA_WIDTH, in 2^SIZE bytes, otherwise narrow bursts are used
-assign M_AXI_AWSIZE = `C_LOG_2(AXI_DATA_WIDTH/8);
+  // Size should be AXI_DATA_WIDTH, in 2^SIZE bytes, otherwise narrow bursts are used
+  assign M_AXI_AWSIZE = `C_LOG_2(AXI_DATA_WIDTH/8);
 
-// INCR burst type is usually used, except for keyhole bursts
-assign M_AXI_AWBURST = 2'b01;
-assign M_AXI_AWLOCK = 2'b00;
+  // INCR burst type is usually used, except for keyhole bursts
+  assign M_AXI_AWBURST = 2'b01;
+  assign M_AXI_AWLOCK = 2'b00;
 
-// Not Allocated, Modifiable and Bufferable
-assign M_AXI_AWCACHE = 4'b0011;
-assign M_AXI_AWPROT = 3'h0;
-assign M_AXI_AWQOS = 4'h0;
+  // Not Allocated, Modifiable and Bufferable
+  assign M_AXI_AWCACHE = 4'b0011;
+  assign M_AXI_AWPROT = 3'h0;
+  assign M_AXI_AWQOS = 4'h0;
 
-//Set User[0] to 1 to allow Zynq coherent ACP transactions
-assign M_AXI_AWUSER = 'b1;
-assign M_AXI_AWVALID = awvalid;
+  //Set User[0] to 1 to allow Zynq coherent ACP transactions
+  assign M_AXI_AWUSER = 'b1;
+  assign M_AXI_AWVALID = awvalid;
 
 ///////////////
 //Write Data(W)
 ///////////////
-assign M_AXI_WDATA = wdata;
+  assign M_AXI_WDATA = wdata;
 
-assign M_AXI_WID = 'b0;
-assign M_AXI_WSTRB = {(AXI_DATA_WIDTH/8){1'b1}};
-assign M_AXI_WLAST = wlast;
-assign M_AXI_WUSER = 'b0;
-assign M_AXI_WVALID = wvalid;
+  assign M_AXI_WID = 'b0;
+  assign M_AXI_WSTRB = {(AXI_DATA_WIDTH/8){1'b1}};
+  assign M_AXI_WLAST = wlast;
+  assign M_AXI_WUSER = 'b0;
+  assign M_AXI_WVALID = wvalid;
 
 ////////////////////
 //Write Response (B)
 ////////////////////
-assign M_AXI_BREADY = bready;
+  assign M_AXI_BREADY = bready;
 
 ///////////////////
 //Read Address (AR)
@@ -471,65 +476,65 @@ end
 //-----------------------------------------------//
 //  READ - BEGIN
 //-----------------------------------------------//
-assign rnext = !reset & M_AXI_RVALID  & M_AXI_RREADY;
-//////////////////////
-//Read Address Channel
-//////////////////////
-//Generate ARVALID
-always @(posedge clk)
-begin
-  if (reset)
+  assign rnext = M_AXI_RVALID && M_AXI_RREADY;
+  //////////////////////
+  //Read Address Channel
+  //////////////////////
+  //Generate ARVALID
+  always @(posedge clk)
   begin
+    if (reset)
+    begin
       arvalid <= 1'b0;
-  end
-  else if (arvalid && M_AXI_ARREADY)
-  begin
+    end
+    else if (arvalid && M_AXI_ARREADY)
+    begin
       arvalid <= 1'b0;
-  end
-  else if (C_M_AXI_SUPPORTS_READ && rx_size != 0)
-  begin
+    end
+    else if (C_M_AXI_SUPPORTS_READ && rx_size != 0)
+    begin
       arvalid <= 1'b1;
-  end
-  else
-  begin
+    end
+    else
+    begin
       arvalid <= arvalid;
+    end
   end
-end
 
-always @(posedge clk)
-begin
-  if (reset)
+  always @(posedge clk)
   begin
+    if (reset)
+    begin
       araddr_offset  <= 'b0;
-  end
-  else if (rd_req_buf_pop_d)
-  begin
-    araddr_offset <= rx_addr_buf;
-  end
-  else if (arvalid && M_AXI_ARREADY)
-  begin
+    end
+    else if (rd_req_buf_pop_d)
+    begin
+      araddr_offset <= rx_addr_buf;
+    end
+    else if (arvalid && M_AXI_ARREADY)
+    begin
       araddr_offset <= araddr_offset + 'h80;
-  end
-  else if (C_M_AXI_SUPPORTS_READ && rx_size != 0)
-  begin
+    end
+    // else if (C_M_AXI_SUPPORTS_READ && rx_size != 0)
+    // begin
+      // araddr_offset <= araddr_offset;
+    // end
+    else
+    begin
       araddr_offset <= araddr_offset;
+    end
   end
-  else
-  begin
-      araddr_offset <= araddr_offset;
-  end
-end
 
 //////////////////////////////////
 //Read Data (and Response) Channel
 //////////////////////////////////
-assign rready = (C_M_AXI_SUPPORTS_READ == 1) && !inbuf_full;
+  assign rready = (C_M_AXI_SUPPORTS_READ == 1) && !inbuf_full;
 
 //-----------------------------------------------//
 //  Data Fifo Control
 //-----------------------------------------------//
-assign inbuf_push    = rnext;
-assign data_to_inbuf = M_AXI_RDATA;
+  assign inbuf_push    = rnext;
+  assign data_to_inbuf = M_AXI_RDATA;
 //-----------------------------------------------//
 
 // ******************************************************************

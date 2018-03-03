@@ -870,7 +870,7 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
 
   always @(posedge clk)
     if (reset)
-      ic_is_zero <= 0;
+      ic_is_zero <= 1;
     else if (state == RD_CFG_2 && param_ic == 0)
       ic_is_zero <= 1;
     else if (ic_inc)
