@@ -233,6 +233,11 @@ class DWMacroLayer(object):
         self.input_dim = self.PE_layer.input_dim
         self.output_dim = self.PE_layer.output_dim
 
+        # Assign data memory read and write addresses. For !Conv, batch_count= 1
+        self.data_mem_batch_count = 1
+        if isinstance(self.PE_layer, ConvLayer):
+            self.data_mem_batch_count = self.PE_layer.input_dim[0]
+
         _pad = self.PE_layer.pad
         _kh = self.PE_layer.kernel_height
         _kw = self.PE_layer.kernel_width
@@ -363,56 +368,59 @@ class DWMacroLayer(object):
             _ic = _ic + 1
 
 	tb = []
-        for ii in range(number_of_slices):
-            slice_size = min(rows_per_slice, _oh)
-            if ii == 0:
-                _pad_r_s = _pad
-            else:
-                _pad_r_s = 0
+        temp_range = [0]
+        for b in range(self.data_mem_batch_count):
 
-            if ii == (number_of_slices - 1):
-                _pad_r_e = _pad
-                if rows_per_slice * number_of_slices > self.output_dim[2]:
-                    slice_size = self.output_dim[2] % rows_per_slice
-            else:
-                _pad_r_e = 0
+            for ii in range(number_of_slices):
+                slice_size = min(rows_per_slice, _oh)
+                if ii == 0:
+                    _pad_r_s = _pad
+                else:
+                    _pad_r_s = 0
 
-            # print("slice {0} - Pad_W: {1} Pad_R_S: {2} Pad_R_E: {3}".format(ii, _pad, _pad_r_s, _pad_r_e))
-            # print("slice size = {0}".format(slice_size))
+                if ii == (number_of_slices - 1):
+                    _pad_r_e = _pad
+                    if rows_per_slice * number_of_slices > self.output_dim[2]:
+                        slice_size = self.output_dim[2] % rows_per_slice
+                else:
+                    _pad_r_e = 0
 
-            _oh = slice_size
-            _ih = (_oh - 1) * self.PE_layer.stride - _pad_r_e - _pad_r_s + _kh
+                # print("slice {0} - Pad_W: {1} Pad_R_S: {2} Pad_R_E: {3}".format(ii, _pad, _pad_r_s, _pad_r_e))
+                # print("slice size = {0}".format(slice_size))
 
-            # print("OH = {0}".format(_oh))
-            # print("IH = {0}".format(_ih))
-            # print("Pad = {0}".format(self.PE_layer.pad))
-            # print("Pad_r_s = {0}".format(_pad_r_s))
-            # print("Pad_r_e = {0}".format(_pad_r_e))
-            # print("KH = {0}".format(_kh))
-            # print("stride = {0}".format(self.PE_layer.stride))
+                _oh = slice_size
+                _ih = (_oh - 1) * self.PE_layer.stride - _pad_r_e - _pad_r_s + _kh
 
-            text_buffer = \
-                int_to_bin(serdes_count, serdes_count_bitwidth) + \
-                int_to_bin(_stride, stride_size_bitwidth) + \
-                int_to_bin(_pool_iw, pool_iw_bitwidth) + \
-                int_to_bin(_oh - 1, pool_oh_bitwidth) + \
-                int_to_bin(_pool_kernel, pool_kernel_bitwidth) + \
-                int_to_bin(_pool_enable, pool_enable_bitwidth) + \
-                int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
-                int_to_bin(_max_threads, max_threads_bitwidth) + \
-                int_to_bin(_pad, pad_bitwidth) + \
-                int_to_bin(_pad_r_s, pad_bitwidth) + \
-                int_to_bin(_pad_r_e, pad_bitwidth) + \
-                int_to_bin(_skip, skip_bitwidth) + \
-                int_to_bin(_endrow_iw, endrow_iw_bitwidth) + \
-                int_to_bin(_ic - 1, conv_ic_bitwidth) + \
-                int_to_bin(_ih - 1, conv_ih_bitwidth) + \
-                int_to_bin(_iw, conv_iw_bitwidth) + \
-                int_to_bin(_oc - 1, conv_oc_bitwidth) + \
-                int_to_bin(_kh - 1, conv_kh_bitwidth) + \
-                int_to_bin(_kw - 1, conv_kw_bitwidth) + "\n"
+                # print("OH = {0}".format(_oh))
+                # print("IH = {0}".format(_ih))
+                # print("Pad = {0}".format(self.PE_layer.pad))
+                # print("Pad_r_s = {0}".format(_pad_r_s))
+                # print("Pad_r_e = {0}".format(_pad_r_e))
+                # print("KH = {0}".format(_kh))
+                # print("stride = {0}".format(self.PE_layer.stride))
 
-            tb.append(text_buffer)
+                text_buffer = \
+                    int_to_bin(serdes_count, serdes_count_bitwidth) + \
+                    int_to_bin(_stride, stride_size_bitwidth) + \
+                    int_to_bin(_pool_iw, pool_iw_bitwidth) + \
+                    int_to_bin(_oh - 1, pool_oh_bitwidth) + \
+                    int_to_bin(_pool_kernel, pool_kernel_bitwidth) + \
+                    int_to_bin(_pool_enable, pool_enable_bitwidth) + \
+                    int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
+                    int_to_bin(_max_threads, max_threads_bitwidth) + \
+                    int_to_bin(_pad, pad_bitwidth) + \
+                    int_to_bin(_pad_r_s, pad_bitwidth) + \
+                    int_to_bin(_pad_r_e, pad_bitwidth) + \
+                    int_to_bin(_skip, skip_bitwidth) + \
+                    int_to_bin(_endrow_iw, endrow_iw_bitwidth) + \
+                    int_to_bin(_ic - 1, conv_ic_bitwidth) + \
+                    int_to_bin(_ih - 1, conv_ih_bitwidth) + \
+                    int_to_bin(_iw, conv_iw_bitwidth) + \
+                    int_to_bin(_oc - 1, conv_oc_bitwidth) + \
+                    int_to_bin(_kh - 1, conv_kh_bitwidth) + \
+                    int_to_bin(_kw - 1, conv_kw_bitwidth) + "\n"
+
+                tb.append(text_buffer)
 
         return tb
 
@@ -439,7 +447,7 @@ class DWMacroLayer(object):
 	self.data_mem_batch_offset = self.data_mem_offset \
 	    * self.PE_layer.input_dim[1]
         self.base_data_write_address = self.base_data_read_address \
-            + self.data_mem_batch_offset * self.data_mem_batch_count
+            + self.data_mem_batch_offset * self.PE_layer.input_dim[0]
 
         # Assign weight memory metrics and addresses
         self.weight_mem_size = self.get_weight_read_size() / self.axi_num_data
@@ -518,35 +526,40 @@ class DWMacroLayer(object):
         # Divide the PE's computations into slices
         self.slice_memory_reads()
 
-        for i in range(self.number_of_slices):
-            curr_slice_size = self.slice_stream_read_size[i]
-            curr_slice_addr = self.slice_stream_read_addr[i]
-            packed_stream_read_size = self.slice_packed_stream_size[i]
+        tb = []
+        temp_range = [0]
+        for b in range(self.data_mem_batch_count):
+            curr_batch_offset = self.data_mem_batch_offset * b
 
-            #print("Curr Slice Size = {0}".format(curr_slice_size))
-            #print("Stream addr = {0}".format(hex(curr_slice_addr)))
-            #print("Buffer addr = {0}".format(hex(self.buffer_read_address)))
-            #print("Buffer offset = {0}".format(self.buffer_read_offset))
-            # print('stream_read_loop0_count = {}'.format(self.stream_read_loop0_count-1))
-            # print('stream_read_loop0_offset = {}'.format(self.stream_read_loop0_offset))
-            text_buffer = \
-                int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
-                int_to_bin(packed_stream_read_size, mem_size_width) + \
-                int_to_bin(curr_slice_addr, mem_addr_width) + \
-                int_to_bin(curr_slice_size, mem_size_width) + \
-                int_to_bin(self.stream_read_loop0_offset, mem_addr_width) + \
-                int_to_bin(self.stream_read_loop1_offset, mem_addr_width) + \
-                int_to_bin(self.stream_read_loop2_offset, mem_addr_width) + \
-                int_to_bin(self.stream_read_loop0_count - 1, mem_loop_width) + \
-                int_to_bin(self.stream_read_loop1_count - 1, mem_loop_width) + \
-                int_to_bin(self.stream_read_loop2_count - 1, mem_loop_width) + \
-                int_to_bin(packed_buffer_read_size, mem_size_width) + \
-                int_to_bin(self.buffer_read_address, mem_addr_width) + \
-                int_to_bin(self.buffer_read_size, mem_size_width) + \
-                int_to_bin(self.buffer_read_offset, mem_addr_width) + \
-                int_to_bin(self.buffer_read_count - 1, mem_addr_width) + \
-                "\n"
-            tb.append(text_buffer)
+            for i in range(self.number_of_slices):
+                curr_slice_size = self.slice_stream_read_size[i]
+                curr_slice_addr = self.slice_stream_read_addr[i] + curr_batch_offset
+                packed_stream_read_size = self.slice_packed_stream_size[i]
+
+                #print("Curr Slice Size = {0}".format(curr_slice_size))
+                #print("Stream addr = {0}".format(hex(curr_slice_addr)))
+                #print("Buffer addr = {0}".format(hex(self.buffer_read_address)))
+                #print("Buffer offset = {0}".format(self.buffer_read_offset))
+                # print('stream_read_loop0_count = {}'.format(self.stream_read_loop0_count-1))
+                # print('stream_read_loop0_offset = {}'.format(self.stream_read_loop0_offset))
+                text_buffer = \
+                    int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
+                    int_to_bin(packed_stream_read_size, mem_size_width) + \
+                    int_to_bin(curr_slice_addr, mem_addr_width) + \
+                    int_to_bin(curr_slice_size, mem_size_width) + \
+                    int_to_bin(self.stream_read_loop0_offset, mem_addr_width) + \
+                    int_to_bin(self.stream_read_loop1_offset, mem_addr_width) + \
+                    int_to_bin(self.stream_read_loop2_offset, mem_addr_width) + \
+                    int_to_bin(self.stream_read_loop0_count - 1, mem_loop_width) + \
+                    int_to_bin(self.stream_read_loop1_count - 1, mem_loop_width) + \
+                    int_to_bin(self.stream_read_loop2_count - 1, mem_loop_width) + \
+                    int_to_bin(packed_buffer_read_size, mem_size_width) + \
+                    int_to_bin(self.buffer_read_address, mem_addr_width) + \
+                    int_to_bin(self.buffer_read_size, mem_size_width) + \
+                    int_to_bin(self.buffer_read_offset, mem_addr_width) + \
+                    int_to_bin(self.buffer_read_count - 1, mem_addr_width) + \
+                    "\n"
+                tb.append(text_buffer)
 
         return tb
 
@@ -580,6 +593,11 @@ class DWMacroLayer(object):
         self.write_mem_size = output_fm_size / self.axi_num_data
         self.write_mem_offset = self.write_mem_size * 8
 
+        self.data_mem_batch_offset = self.write_mem_offset \
+                * self.PE_layer.output_dim[1]
+        if self.next is not None and isinstance(self.next.PE_layer, FCLayer):
+            self.data_mem_batch_offset = self.write_mem_offset
+
         count_padding = 1
         if isinstance(self.PE_layer, ConvLayer):
             count_padding = int(ceil(float(od[1]) / self.num_pu)) * self.num_pu
@@ -593,70 +611,75 @@ class DWMacroLayer(object):
         #print("Data Write Count = {0}".format(self.write_mem_count))
 
         tb = []
-        for i in range(self.number_of_slices):
+        temp_range = [0]
+        for b in range(self.data_mem_batch_count):
+            curr_batch_offset = self.data_mem_batch_offset * b
 
-            if isinstance(self.PE_layer, ConvLayer) and not (next_is_FC):
+            for i in range(self.number_of_slices):
 
-                if i == 0:
-                    pad_r_s = self.PE_layer.pad
-                else:
-                    pad_r_s = 0
+                if isinstance(self.PE_layer, ConvLayer) and not (next_is_FC):
 
-                if i == self.number_of_slices - 1:
-                    pad_r_e = self.PE_layer.pad
-                    if i == self.number_of_slices - 1 and self.slice_size * self.number_of_slices > self.input_dim[3]:
-                        curr_slice_rows = self.input_dim[3] % self.slice_size
+                    if i == 0:
+                        pad_r_s = self.PE_layer.pad
                     else:
+                        pad_r_s = 0
+
+                    if i == self.number_of_slices - 1:
+                        pad_r_e = self.PE_layer.pad
+                        if i == self.number_of_slices - 1 and self.slice_size * self.number_of_slices > self.input_dim[3]:
+                            curr_slice_rows = self.input_dim[3] % self.slice_size
+                        else:
+                            curr_slice_rows = self.slice_size
+                    else:
+                        pad_r_e = 0
                         curr_slice_rows = self.slice_size
-                else:
-                    pad_r_e = 0
-                    curr_slice_rows = self.slice_size
 
-                if self.Pool_layer is None:
-                    _stride = 1
-                else:
-                    _stride = self.Pool_layer.stride
+                    if self.Pool_layer is None:
+                        _stride = 1
+                    else:
+                        _stride = self.Pool_layer.stride
 
-                curr_slice_rows = ceil_a_by_b(curr_slice_rows, _stride)
+                    curr_slice_rows = ceil_a_by_b(curr_slice_rows, _stride)
 
-                #print("Current write slice rows = {0}".format(curr_slice_rows))
-                #print("Current output = {0}".format(self.output_dim[2]))
+                    #print("Current write slice rows = {0}".format(curr_slice_rows))
+                    #print("Current output = {0}".format(self.output_dim[2]))
 
-                curr_slice_size = ceil_a_by_b(self.output_dim[2], self.num_pe) * \
-                                  curr_slice_rows * \
-                                  ceil_a_by_b(self.num_pe, self.axi_num_data)
-
-                curr_slice_addr = self.base_data_write_address + i * self.write_mem_offset
-
-            elif isinstance(self.PE_layer, LRNLayer):
-                curr_slice_size = ceil_a_by_b(self.output_dim[2], self.num_pe) * \
-                                  self.output_dim[3] * \
-                                  ceil_a_by_b(self.num_pe, self.axi_num_data)
-                                  #ceil_a_by_b(self.output_dim[1], self.num_pu)
-                curr_slice_addr = self.base_data_write_address
-                self.write_mem_count = self.output_dim[1]
-
-            else:
-                curr_slice_size = ceil_a_by_b(od[1] * od[2] * od[3], self.num_pe) * \
-                                  ceil_a_by_b(self.num_pe, self.axi_num_data)
-                curr_slice_addr = self.base_data_write_address
-                if next_is_FC and isinstance(self.PE_layer, ConvLayer):
-                    curr_slice_size = ceil_a_by_b(od[2] * od[3], self.num_pe) * \
+                    curr_slice_size = ceil_a_by_b(self.output_dim[2], self.num_pe) * \
+                                      curr_slice_rows * \
                                       ceil_a_by_b(self.num_pe, self.axi_num_data)
 
-            #print("Curr Slice Size = {0}".format(curr_slice_size))
-            self.write_mem_offset = curr_slice_size * 8
-            #print("Curr Slice Offset = {0}".format(self.write_mem_offset))
+                    curr_slice_addr = self.base_data_write_address + i * self.write_mem_offset
 
-            text_buffer = \
-                int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
-                int_to_bin(curr_slice_addr, mem_addr_width) + \
-                int_to_bin(curr_slice_size, mem_size_width) + \
-                int_to_bin(self.write_mem_offset, mem_addr_width) + \
-                int_to_bin(self.write_mem_count - 1, mem_loop_width) + \
-                "\n"
+                elif isinstance(self.PE_layer, LRNLayer):
+                    curr_slice_size = ceil_a_by_b(self.output_dim[2], self.num_pe) * \
+                                      self.output_dim[3] * \
+                                      ceil_a_by_b(self.num_pe, self.axi_num_data)
+                                      #ceil_a_by_b(self.output_dim[1], self.num_pu)
+                    curr_slice_addr = self.base_data_write_address
+                    self.write_mem_count = self.output_dim[1]
 
-            tb.append(text_buffer)
+                else:
+                    curr_slice_size = ceil_a_by_b(od[1] * od[2] * od[3], self.num_pe) * \
+                                      ceil_a_by_b(self.num_pe, self.axi_num_data)
+                    curr_slice_addr = self.base_data_write_address
+                    if next_is_FC and isinstance(self.PE_layer, ConvLayer):
+                        curr_slice_size = ceil_a_by_b(od[2] * od[3], self.num_pe) * \
+                                          ceil_a_by_b(self.num_pe, self.axi_num_data)
+
+                #print("Curr Slice Size = {0}".format(curr_slice_size))
+                self.write_mem_offset = curr_slice_size * 8
+                curr_slice_addr += curr_batch_offset
+                #print("Curr Slice Offset = {0}".format(self.write_mem_offset))
+
+                text_buffer = \
+                    int_to_bin(self.get_layer_type(), layer_type_bitwidth) + \
+                    int_to_bin(curr_slice_addr, mem_addr_width) + \
+                    int_to_bin(curr_slice_size, mem_size_width) + \
+                    int_to_bin(self.write_mem_offset, mem_addr_width) + \
+                    int_to_bin(self.write_mem_count - 1, mem_loop_width) + \
+                    "\n"
+
+                tb.append(text_buffer)
 
         return tb
 
