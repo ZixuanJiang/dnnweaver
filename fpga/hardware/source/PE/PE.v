@@ -3,8 +3,8 @@
 module PE #(
   // INPUT PARAMETERS
   parameter integer PE_BUF_ADDR_WIDTH   = 10,
-  parameter integer OP_WIDTH            = 16,
-  parameter integer ACC_WIDTH           = 16,
+  parameter integer OP_WIDTH            = `PRECISION_OP,
+  parameter integer ACC_WIDTH           = `PRECISION_ACC,
   parameter integer LAYER_NORM          = "NO"
 )
 (
@@ -142,7 +142,7 @@ module PE #(
   macc #(
     .OP_0_WIDTH               ( OP_WIDTH                 ),
     .OP_1_WIDTH               ( OP_WIDTH                 ),
-    .ACC_WIDTH                ( OP_WIDTH                 ),
+    .ACC_WIDTH                ( ACC_WIDTH                ),
     .OUT_WIDTH                ( OP_WIDTH                 )
   ) MACC_pe (
     .clk                      ( clk                      ),  //input

@@ -4,7 +4,7 @@ module PU
 #( // INPUT PARAMETERS
   parameter integer PU_ID             = 0,
   parameter integer OP_WIDTH          = 16,
-  parameter integer ACC_WIDTH         = 48,
+  parameter integer ACC_WIDTH         = `PRECISION_ACC,
   parameter integer NUM_PE            = 4,
   parameter integer VECGEN_CTRL_W     = 9,
   parameter integer TID_WIDTH         = 16,

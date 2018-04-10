@@ -45,7 +45,7 @@ module macc #(
     reg  signed [ACC_WIDTH-1:0]  op_add_dd;
     reg  signed [ACC_WIDTH-1:0]  product;
     wire signed [ACC_WIDTH-1:0]  data_ADD;
-    reg  signed [OUT_WIDTH-1:0]  out_reg;
+    reg  signed [ACC_WIDTH-1:0]  out_reg;
 
     wire [255:0] GND = 256'd0;
     reg enable_d;
@@ -126,14 +126,14 @@ end else begin
 
     //--// TIER 6 Regs
     assign data_ADD = (op_code_dd[2:1] == 2'd0) ? GND[ACC_WIDTH-1:0] :
-      (op_code_dd[1] == 2'd1) ? out_reg : op_add_dd;
+      (op_code_dd[1] == 2'd1) ? out_reg : op_add_dd <<< FRAC_BITS;
     always @(posedge clk)
     begin
         if (reset || clear_dd) begin
             out_reg <= 0;
         end
         else if (enable_dd) begin
-            out_reg <= product + (data_ADD <<< FRAC_BITS);
+          out_reg <= product + data_ADD;
         end
     end
 
