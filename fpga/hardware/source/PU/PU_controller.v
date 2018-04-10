@@ -176,7 +176,7 @@ module PU_controller
   wire [ PARAM_C_WIDTH        -1 : 0 ]        oc;
   wire                                        oc_inc, oc_inc_d;
 
-  wire [ LAYER_PARAM_WIDTH    -1 : 0 ]          l, l_max;
+  wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        inst_ptr, l_max;
   wire                                        l_inc, l_inc_d, l_clear;
 
   wire                                        next_fm;
@@ -210,8 +210,8 @@ module PU_controller
   reg  [ 3                    -1 : 0 ]        state_dd;
   reg  [ 3                    -1 : 0 ]        state_ddd;
   reg  [ 3                    -1 : 0 ]        next_state;
-  reg  [ CFG_WIDTH            -1 : 0 ]        cfg_rom[0:CFG_DEPTH-1];
-  reg  [ CFG_WIDTH            -1 : 0 ]        layer_params;
+  reg  [ CFG_WIDTH            -1 : 0 ]        inst_rom[0:CFG_DEPTH-1];
+  reg  [ CFG_WIDTH            -1 : 0 ]        cur_inst;
 
   wire [ SERDES_COUNT_W       -1 : 0 ]        serdes_count;
   wire [ PARAM_C_WIDTH        -1 : 0 ]        param_ic;
@@ -302,16 +302,16 @@ module PU_controller
   initial begin
     max_layers = `max_layers;
     `ifdef simulation
-      $readmemb("./..//include/pu_controller_bin.vh", cfg_rom);
+      $readmemb("./..//include/pu_controller_bin.vh", inst_rom);
     `else
-      $readmemb("pu_controller_bin.vh", cfg_rom);
+      $readmemb("pu_controller_bin.vh", inst_rom);
     `endif
   end
 
   always @(posedge clk)
   begin
     if (state != RD_CFG_1)
-      layer_params <= cfg_rom[l];
+      cur_inst <= inst_rom[inst_ptr];
   end
 
   wire [ STRIDE_SIZE_W        -1 : 0 ]        param_conv_stride;
@@ -341,7 +341,7 @@ module PU_controller
     param_iw,
     param_oc,
     param_kh,
-    param_kw} = layer_params;
+    param_kw} = cur_inst;
 
   always @(posedge clk)
     if (reset)
@@ -765,7 +765,7 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
     .MAX_COUNT                ( l_max                    ),  //input
     .OVERFLOW                 ( next_fm                  ),  //output
     .UNDERFLOW                (                          ),  //output
-    .COUNT                    ( l                        )   //output
+    .COUNT                    ( inst_ptr                 )   //output
   );
 
   assign done = next_fm && l_inc;
@@ -1817,7 +1817,7 @@ assign data_stall = !vecgen_ready && (vectorgen_pop);
 
 `ifdef simulation
   wire [ LAYER_PARAM_WIDTH    -1 : 0 ]        layer_count;
-  assign layer_count = l;
+  assign layer_count = inst_ptr;
 `endif
 
 reg [16-1:0] kw_inc_count;
