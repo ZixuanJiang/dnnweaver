@@ -12,7 +12,7 @@ module PU_controller
   parameter integer PE_OP_CODE_WIDTH        = 3,
   parameter integer LAYER_PARAM_WIDTH       = 10,
   parameter integer PARAM_C_WIDTH           = 32,
-  parameter integer MAX_LAYERS              = 64,
+  parameter integer MAX_LAYERS              = 32767,
   parameter integer VECGEN_CTRL_W           = 9,
   parameter integer TID_WIDTH               = 8,
   parameter integer PAD_WIDTH               = 3,
