@@ -7,7 +7,7 @@ module vectorgen # (
   parameter integer TID_WIDTH       = 8,
   parameter integer PAD_WIDTH       = 3,
   parameter integer STRIDE_WIDTH    = 3,
-  parameter integer MAX_KERNEL_SIZE = 11,
+  parameter integer MAX_KERNEL_SIZE = 1024,
   parameter integer MAX_STRIDE      = 4,
   parameter integer STRIDE_SIZE_W   = 3,
   parameter integer VECGEN_CFG_W    = STRIDE_SIZE_W + PAD_WIDTH,

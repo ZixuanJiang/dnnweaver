@@ -612,7 +612,7 @@ module PU_tb_driver
           status.test_fail;
         end
       end
-      write_count += NUM_PE;
+      write_count = write_count + NUM_PE;
       if (VERBOSE > 0) $display ("Write Count = %d", write_count);
       if (VERBOSE > 0) $display;
 

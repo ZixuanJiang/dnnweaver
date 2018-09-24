@@ -68,7 +68,7 @@ RESET_ZYNQ_TCL:=tcl/reset_zynq.tcl
 PS7_TCL:=tcl/ps7_init.tcl
 ###############################################################################
 all: $(BITFILE) ELF
-
+hardware: $(BITFILE)
 ###############################################################################
 ############ SIMULATION ############
 test: $(SIM_TESTS) $(DW_COMPILER_OUTPUT)

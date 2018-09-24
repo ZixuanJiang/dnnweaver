@@ -245,7 +245,7 @@ module inner_product_tb_driver
         end
       end
 
-      write_count += NUM_PE;
+      write_count = write_count + NUM_PE;
 
       if (VERBOSE==1) $display;
     end

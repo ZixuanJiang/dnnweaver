@@ -152,7 +152,7 @@ task send_inputs;
     @(negedge clk);
     for (ii=0; ii<_input_height; ii=ii+1)
     begin
-      for (jj=0; jj<_input_width; jj+=NUM_PE)
+      for (jj=0; jj<_input_width; jj = jj + NUM_PE)
       begin
         wait(write_ready);
         @(negedge clk);

@@ -135,7 +135,7 @@ module PU_tb;
     $display("**************************************************");
     $display;
 
-    for (ii=0; ii<max_layers; ii++)
+    for (ii=0; ii<max_layers; ii = ii + 1)
     begin
       {_stride, _pool_iw, _pool_oh, _pool_kernel, _pool, l_type, _max_threads, _pad, _pad_row_start, _pad_row_end, _skip, _endrow_iw, _ic, _ih, _iw, _oc, _kh, _kw} =
         u_controller.cfg_rom[ii];

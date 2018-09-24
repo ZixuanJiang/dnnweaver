@@ -65,7 +65,7 @@ module convolution_tb;
     $display("**************************************************");
     $display;
 
-    for (ii=0; ii<max_layers; ii++)
+    for (ii=0; ii<max_layers; ii = ii + 1)
     begin
       {_max_threads, _pad, _skip, _endrow_iw, _ic, _ih, _iw, _oc, _kh, _kw} =
         u_PU.u_controller.cfg_rom[ii];

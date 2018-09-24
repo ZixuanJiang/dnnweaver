@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module pooling 
+module pooling_updated
 #(  // INPUT PARAMETERS
     parameter DATA_WIDTH   = 16,
     parameter NUM_COMPARATOR = 1,
