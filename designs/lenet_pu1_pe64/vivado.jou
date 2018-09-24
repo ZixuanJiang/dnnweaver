@@ -1,0 +1,132 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Sep 21 14:32:20 2018
+# Process ID: 13492
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+llength [get_cells -filter "IS_LEAF"]
+llength [get_cells -filter "IS_LEAF == true"]
+llength [get_cells -hier -filter "IS_LEAF == true"]
+llength [get_cells -hier -filter "IS_LEAF"]
+llength [get_cells -hier -filter "IS_LEAF == true"]
+list_property -class cell
+set cell_properties [list_property -class cell]
+llength $cell_properties
+lsearch IS_LEAF $cell_properties
+lsearch LEAF $cell_properties
+file fh [open node.property]
+file fh [open node.property "w"]
+file $fh [open node.property "w"]
+set fh [open node.property "w"]
+puts $fh $node_properties
+puts $fh $node_properties
+puts $fh $cell_properties
+close $fh
+list_property -class cell
+list_property -class node
+list_property -class pin
+list_property -class cell
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+lsearch [get_cells -hier *] [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]
+lsearch [get_cells -hier *] [get_cells {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71}]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D
+get_nets [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D] -top_net_of_hierarchical_group
+get_nets -of [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D] -top_net_of_hierarchical_group
+get_nets -of [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+get_nets -of [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+get_nets -of [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D]
+get_nets -of [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+get_nets -of [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/din_delay_reg[7]/D]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/D[7]]
+get_property parent accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/D[7]
+get_property parent [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/D[7]]
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+select_objects [get_net rd_cfg_idx[0]]
+select_objects [get_nets rd_cfg_idx[0]]
+list_property -class net
+select_objects [get_nets accelerator/mem_ctrl_top/axi_rd_buffer/<const0>]
+select_objects [get_nets accelerator/mem_ctrl_top/axi_rd_buffer/<const1>]
+source ..
+source ../../../scripts/export_bookshelf_netlist.tcl
+is_power_net accelerator/mem_ctrl_top/axi_rd_buffer/<const0>
+source ../../../scripts/export_bookshelf_netlist.tcl
+is_power_net accelerator/mem_ctrl_top/axi_rd_buffer/<const0>
+source ../../../scripts/export_bookshelf_netlist.tcl
+is_power_net accelerator/mem_ctrl_top/axi_rd_buffer/<const0>
+source ../../../scripts/export_bookshelf_netlist.tcl
+is_power_net accelerator/mem_ctrl_top/axi_rd_buffer/<const0>
+source ../../../scripts/export_bookshelf_netlist.tcl
+is_power_net accelerator/mem_ctrl_top/axi_rd_buffer/<const0>
+source ../../../scripts/export_bookshelf_netlist.tcl
+is_power_net accelerator/mem_ctrl_top/axi_rd_buffer/<const0>
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+set io [get_cells clk_IBUF_BUFG_inst]
+select_objects $io
+select_objects $io
+select_objects $io
+select_objects $io
+select_objects $io
+select_objects $io
+get_property RPM_X $io
+get_property LOC $io
+get_property RMP_X $io
+get_property RMP_X [get_sites -of $io]
+get_property RPM_X [get_sites -of $io]
+get_property RPM_Y [get_sites -of $io]
+get_property RPM_Y [get_sites SLICE_X138Y479]
+get_property RPM_X [get_sites SLICE_X138Y479]
+list_property -class site
+[get_cells accelerator]
+get_property PARENT [get_cells accelerator]
+get_property PARENT [get_cells accelerator/PU_GEN[0].u_PU/bias_reg[0]]

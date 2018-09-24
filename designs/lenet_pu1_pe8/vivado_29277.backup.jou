@@ -1,0 +1,134 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 00:15:05 2018
+# Process ID: 29277
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8
+# Command line: vivado ./impl-output/post_synth.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_synth.dcp
+startgroup
+create_pblock {pblock_PE_GENBLK[0].u_PE}
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add {SLICE_X82Y110:SLICE_X85Y119 DSP48E2_X2Y44:DSP48E2_X2Y47 RAMB18_X10Y44:RAMB18_X10Y47 RAMB36_X10Y22:RAMB36_X10Y23}
+add_cells_to_pblock {pblock_PE_GENBLK[0].u_PE} [get_cells [list {accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE}]] -clear_locs
+endgroup
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X82Y117:SLICE_X85Y119 -remove {SLICE_X82Y110:SLICE_X85Y119 DSP48E2_X2Y44:DSP48E2_X2Y47 RAMB18_X10Y44:RAMB18_X10Y47 RAMB36_X10Y22:RAMB36_X10Y23} -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X82Y117:SLICE_X85Y119 -remove SLICE_X82Y117:SLICE_X85Y119 -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X82Y117:SLICE_X86Y119 -remove SLICE_X82Y117:SLICE_X85Y119 -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add {SLICE_X82Y115:SLICE_X86Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -remove SLICE_X82Y117:SLICE_X86Y119 -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add {SLICE_X82Y115:SLICE_X85Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -remove {SLICE_X82Y115:SLICE_X86Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X82Y116:SLICE_X85Y119 -remove {SLICE_X82Y115:SLICE_X85Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X82Y116:SLICE_X85Y119 -remove SLICE_X82Y116:SLICE_X85Y119 -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add {SLICE_X82Y115:SLICE_X85Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -remove SLICE_X82Y116:SLICE_X85Y119 -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add {SLICE_X80Y115:SLICE_X85Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -remove {SLICE_X82Y115:SLICE_X85Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X80Y117:SLICE_X85Y119 -remove {SLICE_X80Y115:SLICE_X85Y119 DSP48E2_X2Y46:DSP48E2_X2Y47 RAMB18_X10Y46:RAMB18_X10Y47 RAMB36_X10Y23:RAMB36_X10Y23} -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X80Y117:SLICE_X86Y119 -remove SLICE_X80Y117:SLICE_X85Y119 -locs keep_all
+resize_pblock {pblock_PE_GENBLK[0].u_PE} -add SLICE_X80Y116:SLICE_X86Y119 -remove SLICE_X80Y117:SLICE_X86Y119 -locs keep_all
+delete_pblock [get_pblocks  {pblock_PE_GENBLK[0].u_PE}]
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y47/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y46/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[2].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y45/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[3].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y44/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[4].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y43/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[5].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y42/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[6].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y41/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y40/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y47/RAMB18E2_U
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y46/RAMB18E2_L
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[2].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y45/RAMB18E2_U
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[3].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y44/RAMB18E2_L
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[4].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y43/RAMB18E2_U
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[5].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y42/RAMB18E2_L
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[6].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y41/RAMB18E2_U
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y40/RAMB18E2_L
+endgroup
+opt_design
+place_design
+route_design
+report_timing_summary
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[15]} SLICE_X85Y76/HFF2
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[14]} SLICE_X85Y72/HFF2
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[13]} SLICE_X85Y72/GFF2
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[12]} SLICE_X85Y72/FFF
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[11]} SLICE_X85Y72/CFF2
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[10]} SLICE_X85Y72/BFF
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[9]} SLICE_X85Y72/AFF
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[8]} SLICE_X85Y71/GFF2
+endgroup
+startgroup
+place_cell {accelerator/vecgen_read_count_reg[7]} SLICE_X85Y71/FFF
+endgroup
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[9]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[10]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[11]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[12]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[13]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[14]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[8]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+unplace_cell  [get_cells [list  {accelerator/vecgen_read_count_reg[7]}] -filter {((is_primitive==true && primitive_level!="INTERNAL")  && (loc!=""))}]
+get_clocks *
+create_clock -name clock_150M -period 3.3333 [get_ports clk]
+opt_design
+place_design
+route_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y48/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y47/DSP_ALU
+endgroup
+write_checkpoint /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/impl-output/post_synth.dcp -force
+write_checkpoint /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/impl-output/post_synth.dcp -force
+save_constraints

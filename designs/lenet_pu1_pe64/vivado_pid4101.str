@@ -1,0 +1,1955 @@
+/*
+
+Xilinx Vivado v2017.3 (64-bit) [Major: 2017, Minor: 3]
+SW Build: 2018833 on Wed Oct  4 19:58:07 MDT 2017
+IP Build: 2016188 on Wed Oct  4 21:52:56 MDT 2017
+
+Process ID: 4101
+License: Customer
+
+Current time: 	Fri Sep 21 10:08:06 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+OS Version: 4.9.0-8-amd64
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: :1
+Screen size: 1900x1200
+Screen resolution (DPI): 95
+Available screens: 1
+Available disk space: 80 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/usr/local/packages/Xilinx/Vivado/2017.3/tps/lnx64/jre
+JVM executable location: 	/usr/local/packages/Xilinx/Vivado/2017.3/tps/lnx64/jre/bin/java
+
+User name: 	wuxili
+User home directory: /home/polaris/wuxili
+User working directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /usr/local/packages/Xilinx/Vivado
+HDI_APPROOT: /usr/local/packages/Xilinx/Vivado/2017.3
+RDI_DATADIR: /usr/local/packages/Xilinx/Vivado/2017.3/data
+RDI_BINDIR: /usr/local/packages/Xilinx/Vivado/2017.3/bin
+
+User preferences location: /home/polaris/wuxili/.Xilinx/Vivado
+Vivado preferences directory: /home/polaris/wuxili/.Xilinx/Vivado/2017.3/vivado.xml
+Vivado layouts directory: /home/polaris/wuxili/.Xilinx/Vivado/2017.3/layouts
+PlanAhead jar file location: 	/usr/local/packages/Xilinx/Vivado/2017.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+Vivado journal file location: 	/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-4101-eda04
+
+GUI allocated memory:	161 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 900 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// [GUI Memory]: 60 MB (+60728kb) [00:00:10]
+// [Engine Memory]: 870 MB (+760449kb) [00:00:10]
+// bs (cl):  Reading checkpoint file './impl-output/post_route.dcp' : addNotify
+// Tcl Message: open_checkpoint ./impl-output/post_route.dcp 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: Command: open_checkpoint ./impl-output/post_route.dcp  Starting open_checkpoint Task  Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.13 . Memory (MB): peak = 6135.402 ; gain = 0.000 ; free physical = 28802 ; free virtual = 63525 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 935 MB. GUI used memory: 28 MB. Current time: 9/21/18 10:08:08 AM CDT
+// [Engine Memory]: 935 MB (+23276kb) [00:00:15]
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 994 MB (+12282kb) [00:00:17]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'. 
+// [Engine Memory]: 1,099 MB (+58072kb) [00:00:28]
+// [Engine Memory]: 1,259 MB (+110618kb) [00:00:33]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,259 MB. GUI used memory: 31 MB. Current time: 9/21/18 10:08:28 AM CDT
+// [Engine Memory]: 1,397 MB (+77719kb) [00:00:38]
+// [Engine Memory]: 1,552 MB (+90051kb) [00:00:43]
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,663 MB. GUI used memory: 31 MB. Current time: 9/21/18 10:08:41 AM CDT
+// [Engine Memory]: 1,663 MB (+34602kb) [00:00:48]
+// TclEventType: DESIGN_NEW
+// [Engine Memory]: 1,930 MB (+193297kb) [00:00:49]
+// [GUI Memory]: 88 MB (+25779kb) [00:00:50]
+// [GUI Memory]: 96 MB (+3869kb) [00:00:50]
+// [GUI Memory]: 113 MB (+12639kb) [00:00:51]
+// Device: addNotify
+// Xgd.load filename: /usr/local/packages/Xilinx/Vivado/2017.3/data/parts/xilinx/virtexu/devint/virtexu/xcvu095/xcvu095.xgd; ZipEntry: xcvu095_detail.xgd elapsed time: 3s
+// [GUI Memory]: 126 MB (+7517kb) [00:00:52]
+// DeviceView Instantiated
+// [GUI Memory]: 133 MB (+1037kb) [00:00:52]
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2017.3 INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e INFO: [Project 1-570] Preparing netlist for logic optimization 
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-4101-eda04/dcp3/dnn_accelerator_top.xdc] Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-4101-eda04/dcp3/dnn_accelerator_top.xdc] Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6930.875 ; gain = 59.344 ; free physical = 27542 ; free virtual = 62738 
+// Tcl Message: Restored from archive | CPU: 2.410000 secs | Memory: 52.430664 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6930.875 ; gain = 59.344 ; free physical = 27541 ; free virtual = 62738 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 76 instances were transformed.   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 64 instances   IBUF => IBUF (IBUFCTRL, INBUF): 3 instances   RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances  
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Device view-level: 0.0
+// [GUI Memory]: 147 MB (+7459kb) [00:00:53]
+// [Engine Memory]: 2,143 MB (+121583kb) [00:00:53]
+// Device view-level: 0.0
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: DESIGN_MODE_CHANGE
+// Tcl Message: INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833 
+// TclEventType: STOP_PROGRESS_DIALOG
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 6.8s
+// Device view-level: 0.0
+// Tcl Message: open_checkpoint: Time (s): cpu = 00:01:00 ; elapsed = 00:00:44 . Memory (MB): peak = 7306.195 ; gain = 1170.793 ; free physical = 27278 ; free virtual = 62412 
+// [GUI Memory]: 155 MB (+364kb) [00:00:56]
+// [GUI Memory]: 166 MB (+3688kb) [00:00:56]
+dismissDialog("Reading checkpoint file './impl-output/post_route.dcp'"); // bs (cl)
+// TclEventType: STOP_PROGRESS_DIALOG
+// [GUI Memory]: 175 MB (+474kb) [00:00:56]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,169 MB. GUI used memory: 155 MB. Current time: 9/21/18 10:08:49 AM CDT
+// [Engine Memory]: 2,281 MB (+32147kb) [00:01:19]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,288 MB. GUI used memory: 119 MB. Current time: 9/21/18 10:09:13 AM CDT
+// Tcl Command: 'rdi::info_commands {mo*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_ce*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {hi}'
+// Tcl Command: 'rdi::match_options {get_cells} {hi}'
+// [Engine Memory]: 2,817 MB (+442422kb) [00:01:36]
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {fil}'
+// Tcl Command: 'rdi::match_options {get_cells} {fil}'
+// Elapsed time: 47 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -hierarchical -filter {ref_name == }"); // aG (af, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,160 MB. GUI used memory: 117 MB. Current time: 9/21/18 10:09:38 AM CDT
+// [Engine Memory]: 3,160 MB (+212560kb) [00:01:46]
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -hierarchical -filter {ref_name == RAMD32}", true); // aG (af, cl)
+// Tcl Command: 'get_cells -hierarchical -filter {ref_name == RAMD32}'
+// Tcl Command: 'get_cells -hierarchical -filter {ref_name == RAMD32}'
+// Tcl Message: get_cells -hierarchical -filter {ref_name == RAMD32} 
+// RouteApi::initDelayMediator elapsed time: 58s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Tcl Command: 'rdi::info_commands {selec*}'
+// Tcl Command: 'rdi::info_commands {selec*}'
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// PAPropertyPanels.initPanels (RAMA (RAMD32)) elapsed time: 0.2s
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}] 
+// Tcl Message: INFO: [Coretcl 2-6] '126' objects selected. 
+selectButton(PAResourceCommand.PACommandNames_FED_TOGGLE_ROUTING_RESOURCES, (String) null); // u (f, cl): FALSE
+// Run Command: PAResourceCommand.PACommandNames_FED_TOGGLE_ROUTING_RESOURCES
+// Device view-level: 0.0
+// HMemoryUtils.trashcanNow. Engine heap size: 3,156 MB. GUI used memory: 144 MB. Current time: 9/21/18 10:09:58 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 620085, 1990987); // D (M, cl)
+// Device view-level: 1.3
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 678199, 2432904); // D (M, cl)
+// Device view-level: 2.3
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 733582, 2561631); // D (M, cl)
+// Device select: 'Cell - mem_reg_0_15_0_4'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 2919, 10193, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 724786, 2553589); // D (M, cl)
+// Device view-level: 3.8
+// HMemoryUtils.trashcanNow. Engine heap size: 3,162 MB. GUI used memory: 151 MB. Current time: 9/21/18 10:10:19 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,162 MB. GUI used memory: 148 MB. Current time: 9/21/18 10:10:21 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 732509, 2559383); // D (M, cl)
+// Device select: 'Cell - mem_reg_0_15_0_4'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 23822, 83234, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,162 MB. GUI used memory: 154 MB. Current time: 9/21/18 10:10:25 AM CDT
+// [GUI Memory]: 184 MB (+318kb) [00:03:10]
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+// [GUI Memory]: 193 MB (+293kb) [00:03:11]
+// Elapsed time: 44 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -1541018, 3358215); // D (M, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,163 MB. GUI used memory: 192 MB. Current time: 9/21/18 10:11:07 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == ram}]"); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == ram_107}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == ram_107}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == ram_107}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == ram_107}] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[8].u_PE/pe_buffer' selected. 
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == ram_*}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == ram_*}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == ram_*}]'
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == ram_*}] 
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenuItem(PAResourceOtoP.PrimitivesMenu_DEFAULT, "Default"); // ac (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,165 MB. GUI used memory: 198 MB. Current time: 9/21/18 10:11:41 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 506675, 1934282); // D (M, cl)
+// Device view-level: 2.0
+// [GUI Memory]: 203 MB (+251kb) [00:03:55]
+// [GUI Memory]: 214 MB (+543kb) [00:03:56]
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107), Leaf Cells (51)]", 99); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107), Leaf Cells (51)]", 99); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), fifo_out_delay (register__parameterized1_106)]", 95); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), fifo_out_delay (register__parameterized1_106)]", 95); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), MACC_pe (macc_104)]", 96); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), MACC_pe (macc_104)]", 96); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107), Leaf Cells (51)]", 99); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107), Leaf Cells (51)]", 99); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107), Leaf Cells (51)]", 99); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107), Leaf Cells (51)]", 99); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), pe_buffer (ram_107)]", 97); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), ReLU (activation_105)]", 98); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91), ReLU (activation_105)]", 98); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[8].u_PE (PE_91)]", 93); // aW (O, cl)
+// Elapsed time: 600 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 597279, 2075381); // D (M, cl)
+// Device select: 'Site - SLICE_X51Y246'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 1563, 5431, 1453, 710); // Y (k, cl)
+// PAPropertyPanels.initPanels (Site: SLICE_X51Y246) elapsed time: 0.2s
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -885756, 3232204); // D (M, cl)
+// Tcl Command: 'rdi::info_commands {unhigh*}'
+// Tcl Command: 'rdi::info_commands {unhigh*}'
+// Tcl Command: 'rdi::match_options {unhighlight_objects} {}'
+// Tcl Command: 'rdi::match_options {unhighlight_objects} {hei}'
+// Tcl Command: 'rdi::match_options {unhighlight_objects} {}'
+// Tcl Command: 'rdi::match_options {unhighlight_objects} {hi}'
+// Tcl Command: 'rdi::match_options {unhighlight_objects} {hie}'
+// Tcl Command: 'rdi::match_options {unhighlight_objects} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {hi}'
+// Elapsed time: 16 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "unhighlight_objects [get_cells -hier *]", true); // aG (af, cl)
+// Tcl Command: 'unhighlight_objects [get_cells -hier *]'
+// Tcl Command: 'unhighlight_objects [get_cells -hier *]'
+// TclEventType: HIGHLIGHT_REMOVE
+// Tcl Message: unhighlight_objects [get_cells -hier *] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,168 MB. GUI used memory: 221 MB. Current time: 9/21/18 10:22:55 AM CDT
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}] 
+// Tcl Message: INFO: [Coretcl 2-6] '11' objects selected. 
+// [GUI Memory]: 225 MB (+793kb) [00:16:02]
+// [GUI Memory]: 237 MB (+367kb) [00:21:07]
+// [GUI Memory]: 249 MB (+65kb) [00:33:32]
+// Elapsed time: 1746 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 859508, 3156596); // D (M, cl)
+// Device view-level: 1.9
+// DeviceOracle::getDeviceDataByteArray length(bytes): 101487
+// HMemoryUtils.trashcanNow. Engine heap size: 3,170 MB. GUI used memory: 232 MB. Current time: 9/21/18 10:52:16 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 953326, 3255944); // D (M, cl)
+// Device view-level: 3.7
+// [GUI Memory]: 262 MB (+523kb) [00:44:30]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 969478, 3265867); // D (M, cl)
+// Device select: 'Site - AK30'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 25466, 85787, 1453, 710); // Y (k, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == OBUF}] 
+// Tcl Message: INFO: [Coretcl 2-6] '94' objects selected. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]"); // aG (af, cl)
+selectButton(PAResourceCommand.PACommandNames_ZOOM_OUT, "Device_zoom_out"); // B (f, cl)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_OUT
+// Device view-level: 3.1
+// HMemoryUtils.trashcanNow. Engine heap size: 3,252 MB. GUI used memory: 191 MB. Current time: 9/21/18 10:52:42 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}] 
+// Tcl Message: INFO: [Coretcl 2-6] '11' objects selected. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == OBUF}] 
+// Tcl Message: INFO: [Coretcl 2-6] '94' objects selected. 
+// Elapsed time: 58 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), buffer_read_count_OBUF[15]_inst (OBUF)]", 20, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,253 MB. GUI used memory: 168 MB. Current time: 9/21/18 10:53:54 AM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), buffer_read_count_OBUF[15]_inst (OBUF)]", 20, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), buffer_read_count_OBUF[15]_inst (OBUF)]", 20, false, false, false, false, false, true); // aW (O, cl) - Double Click
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}] 
+// Tcl Message: INFO: [Coretcl 2-6] '11' objects selected. 
+// Elapsed time: 42 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]"); // aG (af, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]"); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}] 
+// Tcl Message: INFO: [Coretcl 2-6] '126' objects selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,254 MB. GUI used memory: 207 MB. Current time: 9/21/18 10:54:52 AM CDT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 701993, 2526537); // D (M, cl)
+// Device view-level: 2.4
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]'
+// Tcl Command: 'select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}] 
+// Tcl Message: INFO: [Coretcl 2-6] '126' objects selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,256 MB. GUI used memory: 183 MB. Current time: 9/21/18 10:55:05 AM CDT
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {lind*}'
+// Tcl Command: 'rdi::info_commands {linde*}'
+// Tcl Command: 'rdi::info_commands {linde*}'
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/u_serdes/cfg_fifo/mem_reg_0_31_0_5/RAMA' selected. 
+// Elapsed time: 10 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16)]", 305, true); // aW (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+// HMemoryUtils.trashcanNow. Engine heap size: 3,256 MB. GUI used memory: 202 MB. Current time: 9/21/18 10:55:35 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 922514, 2425728); // D (M, cl)
+// Device select: 'Clock Region - X3Y3'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 762, 408, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 941416, 2457231); // D (M, cl)
+// Device select: 'Clock Region - X3Y3'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 759, 406, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 2188933, 2728156); // D (M, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/u_serdes/cfg_fifo/mem_reg_0_31_0_5/RAMA' selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,258 MB. GUI used memory: 186 MB. Current time: 9/21/18 10:55:44 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 865809, 2425728); // D (M, cl)
+// Device view-level: 2.3
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 1029540, 2567228); // D (M, cl)
+// Device select: 'Tile - CLEL_L_X55Y185'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 3809, 9498, 1453, 710); // Y (k, cl)
+// PAPropertyPanels.initPanels (Tile: CLEL_L_X55Y185) elapsed time: 0.2s
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 207 MB. Current time: 9/21/18 10:55:53 AM CDT
+// Tcl Message: select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/u_serdes/cfg_fifo/mem_reg_0_31_0_5/RAMA' selected. 
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 878410, 2387924); // D (M, cl)
+// Device view-level: 2.4
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 207 MB. Current time: 9/21/18 10:56:05 AM CDT
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/u_serdes/cfg_fifo/mem_reg_0_31_0_5/RAMA' selected. 
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 1088617, 2516729); // D (M, cl)
+// Device select: 'Tile - CLEL_R_X58Y192'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 4672, 10801, 1453, 710); // Y (k, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 219 MB. Current time: 9/21/18 10:56:12 AM CDT
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/u_serdes/cfg_fifo/mem_reg_0_31_0_5/RAMA' selected. 
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16)]", 305, true); // aW (O, cl) - Node
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 949977, 2468263); // D (M, cl)
+// Device view-level: 4.3
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 234 MB. Current time: 9/21/18 10:56:23 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 180 MB. Current time: 9/21/18 10:56:26 AM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 952314, 2470659); // D (M, cl)
+// Device select: 'Cell - mem_reg_0_31_0_5'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 60127, 155992, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 952203, 2471530); // D (M, cl)
+// Device select: 'Cell - mem_reg_0_31_0_5'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 60120, 156047, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 950904, 2474349); // D (M, cl)
+// Device select: 'Tile - CLE_M_X51Y197'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 60038, 156225, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 952314, 2474412); // D (M, cl)
+// Device select: 'Cell - mem_reg_0_31_0_5'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 60127, 156229, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 952234, 2474412); // D (M, cl)
+// Device select: 'Cell - mem_reg_0_31_0_5'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 60122, 156229, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 211 MB. Current time: 9/21/18 10:56:31 AM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMA_D1 (RAMD32)]", 308, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMA (RAMD32)]", 307, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMA_D1 (RAMD32)]", 308, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMA (RAMD32)]", 307, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMA_D1 (RAMD32)]", 308, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,259 MB. GUI used memory: 211 MB. Current time: 9/21/18 10:56:38 AM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMB (RAMD32)]", 309, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16), RAMB_D1 (RAMD32)]", 310, false); // aW (O, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMS32}] 0]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMS32}] 0]'
+// Tcl Command: 'select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMS32}] 0]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMS32}] 0] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/u_serdes/cfg_fifo/mem_reg_0_31_0_5/RAMH' selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,260 MB. GUI used memory: 188 MB. Current time: 9/21/18 10:56:55 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 259 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {sour*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 176 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,260 MB. GUI used memory: 194 MB. Current time: 9/21/18 11:04:15 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 44, 84); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 609, 83, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set leaf_cells [get_cells -hier -filter {ref_name =~ [join leaf_cell_types \"||\"]}]"); // aG (af, cl)
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter {ref_name =~ [join leaf_cell_types "||"]}]'
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter {ref_name =~ [join leaf_cell_types "||"]}]'
+// Tcl Message: set leaf_cells [get_cells -hier -filter {ref_name =~ [join leaf_cell_types "||"]}] 
+// Tcl Message: ERROR: [Common 17-263] There was a syntax error while parsing filter expression: 'ref_name =~ [join leaf_cell_types "||"]' at position '18' 
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "puts leaf_cell_types", true); // aG (af, cl)
+// Tcl Command: 'puts leaf_cell_types'
+// Tcl Command: 'puts leaf_cell_types'
+// Tcl Message: puts leaf_cell_types 
+// Tcl Message: leaf_cell_types 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,261 MB. GUI used memory: 218 MB. Current time: 9/21/18 11:04:48 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "puts $leaf_cell_types", true); // aG (af, cl)
+// Tcl Command: 'puts $leaf_cell_types'
+// Tcl Command: 'puts $leaf_cell_types'
+// Tcl Message: puts $leaf_cell_types 
+// Tcl Message:      BUFGCE     CARRY8     DSP48E2     FDCE     FDPE     FDRE     FDSE     IBUF     LDCE     LUT1     LUT2     LUT3     LUT4     LUT5     LUT6     LUT6_2     MUXF7     MUXF8     OBUF     OBUFT     RAM32M16     RAM32X1D     RAM32X1S     RAM64X1D     RAMB18E2     RAMB36E2     SRL16E     SRLC32E  
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set leaf_cells [get_cells -hier -filter {ref_name =~ [join $leaf_cell_types \"||\"]}]", true); // aG (af, cl)
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter {ref_name =~ [join $leaf_cell_types "||"]}]'
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter {ref_name =~ [join $leaf_cell_types "||"]}]'
+// Tcl Message: set leaf_cells [get_cells -hier -filter {ref_name =~ [join $leaf_cell_types "||"]}] 
+// Tcl Message: ERROR: [Common 17-263] There was a syntax error while parsing filter expression: 'ref_name =~ [join $leaf_cell_types "||"]' at position '18' 
+// Tcl Command: 'rdi::info_commands {jo*}'
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "join $leaf_cell_types \"||\"", true); // aG (af, cl)
+// Tcl Command: 'join $leaf_cell_types "||"'
+// Tcl Command: 'join $leaf_cell_types "||"'
+// Tcl Message: join $leaf_cell_types "||" 
+// Tcl Message: BUFGCE||CARRY8||DSP48E2||FDCE||FDPE||FDRE||FDSE||IBUF||LDCE||LUT1||LUT2||LUT3||LUT4||LUT5||LUT6||LUT6_2||MUXF7||MUXF8||OBUF||OBUFT||RAM32M16||RAM32X1D||RAM32X1S||RAM64X1D||RAMB18E2||RAMB36E2||SRL16E||SRLC32E 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,261 MB. GUI used memory: 220 MB. Current time: 9/21/18 11:05:09 AM CDT
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set a [join $leaf_cell_types \"||\"]", true); // aG (af, cl)
+// Tcl Command: 'set a [join $leaf_cell_types "||"]'
+// Tcl Command: 'set a [join $leaf_cell_types "||"]'
+// Tcl Message: set a [join $leaf_cell_types "||"] 
+// Tcl Message: BUFGCE||CARRY8||DSP48E2||FDCE||FDPE||FDRE||FDSE||IBUF||LDCE||LUT1||LUT2||LUT3||LUT4||LUT5||LUT6||LUT6_2||MUXF7||MUXF8||OBUF||OBUFT||RAM32M16||RAM32X1D||RAM32X1S||RAM64X1D||RAMB18E2||RAMB36E2||SRL16E||SRLC32E 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set leaf_cells [get_cells -hier -filter {ref_name =~ $a}]", true); // aG (af, cl)
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter {ref_name =~ $a}]'
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter {ref_name =~ $a}]'
+// Tcl Message: set leaf_cells [get_cells -hier -filter {ref_name =~ $a}] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,262 MB. GUI used memory: 239 MB. Current time: 9/21/18 11:05:30 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set leaf_cells [get_cells -hier -filter \"ref_name =~ $a\"]", true); // aG (af, cl)
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter "ref_name =~ $a"]'
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter "ref_name =~ $a"]'
+// Tcl Message: set leaf_cells [get_cells -hier -filter "ref_name =~ $a"] 
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: clk_IBUF_BUFG_inst accelerator/PU_GEN[0].u_PU/pool_DUT/pool_valid_reg_bufg_place accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_1_bufg_place accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_2_bufg_place accelerator/PU_GEN[0].u_PU/u_serdes/serial_data_v_reg_bufg_place accelerator/PU_GEN[0].u_PU/u_serdes/serializer_counter/serializer_data[1023]_i_1_bufg_place accelerator/mem_ctrl_top/OUTPUT_BUFFER_GEN[0].d_unpacker/m_unpacked_write_req_i_1_bufg_place accelerator/mem_ctrl_top/u_buffer_counter/dcount[3]_i_1_bufg_place accelerator/mem_ctrl_top/u_read_info/stream_push_reg_bufg_place accelerator/vecgen/out_data[2047]_i_1_bufg_place accelerator/vecgen/padded_data[19455]_i_1_bufg_place 
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {llen*}'
+// Tcl Command: 'rdi::info_commands {llength*}'
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength $leaf_cells", true); // aG (af, cl)
+// Tcl Command: 'llength $leaf_cells'
+// Tcl Command: 'llength $leaf_cells'
+// Tcl Message: llength $leaf_cells 
+// Tcl Message: 11 
+// Tcl Command: 'rdi::info_commands {lleng*}'
+// Tcl Command: 'rdi::info_commands {llength*}'
+// Elapsed time: 49 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hier -filter \"ref_name =~ BUFGCE\"]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name =~ BUFGCE"]'
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name =~ BUFGCE"]'
+// Tcl Message: llength [get_cells -hier -filter "ref_name =~ BUFGCE"] 
+// Tcl Message: 11 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,262 MB. GUI used memory: 235 MB. Current time: 9/21/18 11:06:42 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hier -filter \"ref_name =~ BUFGCE||CARRY8\"]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name =~ BUFGCE||CARRY8"]'
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name =~ BUFGCE||CARRY8"]'
+// Tcl Message: llength [get_cells -hier -filter "ref_name =~ BUFGCE||CARRY8"] 
+// Tcl Message: 11 
+// Elapsed time: 40 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hier -filter \"ref_name == BUFGCE||CARRY8\"]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name == BUFGCE||CARRY8"]'
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name == BUFGCE||CARRY8"]'
+// Tcl Message: llength [get_cells -hier -filter "ref_name == BUFGCE||CARRY8"] 
+// Tcl Message: 11 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,262 MB. GUI used memory: 226 MB. Current time: 9/21/18 11:07:31 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hier -filter \"ref_name == {BUFGCE||CARRY8}\"]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name == {BUFGCE||CARRY8}"]'
+// Tcl Command: 'llength [get_cells -hier -filter "ref_name == {BUFGCE||CARRY8}"]'
+// Tcl Message: llength [get_cells -hier -filter "ref_name == {BUFGCE||CARRY8}"] 
+// Tcl Message: 0 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hier -filter {ref_name == \"BUFGCE||CARRY8\"}]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hier -filter {ref_name == "BUFGCE||CARRY8"}]'
+// Tcl Command: 'llength [get_cells -hier -filter {ref_name == "BUFGCE||CARRY8"}]'
+// Tcl Message: llength [get_cells -hier -filter {ref_name == "BUFGCE||CARRY8"}] 
+// Tcl Message: 0 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hier -filter ref_name == BUFGCE||CARRY8]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hier -filter ref_name == BUFGCE||CARRY8]'
+// Tcl Command: 'llength [get_cells -hier -filter ref_name == BUFGCE||CARRY8]'
+// Tcl Message: llength [get_cells -hier -filter ref_name == BUFGCE||CARRY8] 
+// Tcl Message: ERROR: [Common 17-165] Too many positional options when parsing 'BUFGCE||CARRY8', please type 'get_cells -help' for usage info. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,262 MB. GUI used memory: 204 MB. Current time: 9/21/18 11:07:55 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {help*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {help}'
+// Elapsed time: 51 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -help", true); // aG (af, cl)
+// Tcl Command: 'get_cells -help'
+// Tcl Command: 'get_cells -help'
+// Tcl Message: get_cells -help 
+// Elapsed time: 20 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 367, 246); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 367, 246, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 367, 246); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 449, 247); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 449, 247, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 449, 247); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 471, 251); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 487, 252); // dw (ad, cl)
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {lmap*}'
+// Elapsed time: 222 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set l {a b c d e}", true); // aG (af, cl)
+// Tcl Command: 'set l {a b c d e}'
+// Tcl Command: 'set l {a b c d e}'
+// Tcl Message: set l {a b c d e} 
+// Tcl Message: a b c d e 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,263 MB. GUI used memory: 204 MB. Current time: 9/21/18 11:12:53 AM CDT
+// Tcl Command: 'rdi::info_commands {d*}'
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {lmap*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lmap x $l {", true); // aG (af, cl)
+// Tcl Command: 'lmap x $l {;   set x "pre-$x"; }'
+// Tcl Command: 'lmap x $l {;   set x "pre-$x"; }'
+// Tcl Message: lmap x $l {   set x "pre-$x" } 
+// Tcl Message: invalid command name "lmap" 
+// Elapsed time: 21 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 26 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 155 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 42 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 128 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {sour*}'
+// Tcl Command: 'rdi::info_commands {source*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,264 MB. GUI used memory: 212 MB. Current time: 9/21/18 11:19:25 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {pre*}'
+// Tcl Command: 'rdi::info_commands {prefix*}'
+// Tcl Command: 'rdi::info_commands {prefix_*}'
+// Tcl Command: 'rdi::info_commands {prefix_l*}'
+// Tcl Command: 'rdi::info_commands {prefix_l*}'
+// Elapsed time: 15 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types'
+// Tcl Message: prefix_list_elements $leaf_cell_types 
+// Tcl Message: wrong # args: should be "prefix_list_elements l, prefix" 
+// Tcl Command: 'rdi::info_commands {prefix_list_elements*}'
+// Elapsed time: 20 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements{leaf_cell_types, \"ref_name == \"}", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements{leaf_cell_types, "ref_name == "}'
+// Tcl Command: 'prefix_list_elements{leaf_cell_types, "ref_name == "}'
+// Tcl Message: prefix_list_elements{leaf_cell_types, "ref_name == "} 
+// Tcl Message: extra characters after close-quote 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements{$leaf_cell_types, \"ref_name == \"}", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements{$leaf_cell_types, "ref_name == "}'
+// Tcl Command: 'prefix_list_elements{$leaf_cell_types, "ref_name == "}'
+// Tcl Message: prefix_list_elements{$leaf_cell_types, "ref_name == "} 
+// Tcl Message: extra characters after close-quote 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,264 MB. GUI used memory: 218 MB. Current time: 9/21/18 11:20:08 AM CDT
+// Elapsed time: 20 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 21 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types \"ref_name == \"", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Message: prefix_list_elements $leaf_cell_types "ref_name == " 
+// Tcl Message: can't read "l": no such variable 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,264 MB. GUI used memory: 250 MB. Current time: 9/21/18 11:20:49 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 107 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types \"ref_name == \"", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Message: prefix_list_elements $leaf_cell_types "ref_name == " 
+// Tcl Message: can't read "ls": no such variable 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 22 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,264 MB. GUI used memory: 241 MB. Current time: 9/21/18 11:23:24 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types \"ref_name == \"", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Message: prefix_list_elements $leaf_cell_types "ref_name == " 
+// Tcl Message: res 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types \"ref_name == \"", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Message: prefix_list_elements $leaf_cell_types "ref_name == " 
+// Tcl Message: res 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,264 MB. GUI used memory: 217 MB. Current time: 9/21/18 11:23:34 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types \"ref_name == \"", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Message: prefix_list_elements $leaf_cell_types "ref_name == " 
+// Tcl Message: {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} {ref_name == e} 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,264 MB. GUI used memory: 233 MB. Current time: 9/21/18 11:23:59 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "prefix_list_elements $leaf_cell_types \"ref_name == \"", true); // aG (af, cl)
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Command: 'prefix_list_elements $leaf_cell_types "ref_name == "'
+// Tcl Message: prefix_list_elements $leaf_cell_types "ref_name == " 
+// Tcl Message: {ref_name == BUFGCE} {ref_name == CARRY8} {ref_name == DSP48E2} {ref_name == FDCE} {ref_name == FDPE} {ref_name == FDRE} {ref_name == FDSE} {ref_name == IBUF} {ref_name == LDCE} {ref_name == LUT1} {ref_name == LUT2} {ref_name == LUT3} {ref_name == LUT4} {ref_name == LUT5} {ref_name == LUT6} {ref_name == LUT6_2} {ref_name == MUXF7} {ref_name == MUXF8} {ref_name == OBUF} {ref_name == OBUFT} {ref_name == RAM32M16} {ref_name == RAM32X1D} {ref_name == RAM32X1S} {ref_name == RAM64X1D} {ref_name == RAMB18E2} {ref_name == RAMB36E2} {ref_name == SRL16E} {ref_name == SRLC32E} 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 13 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 43, 339); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 645, 339, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // U (q, cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // U (q, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set filter_condition [join [prefix_list_elements $leaf_cell_types \"ref_name == \"] \"||\"]", true); // aG (af, cl)
+// Tcl Command: 'set filter_condition [join [prefix_list_elements $leaf_cell_types "ref_name == "] "||"]'
+// Tcl Command: 'set filter_condition [join [prefix_list_elements $leaf_cell_types "ref_name == "] "||"]'
+// Tcl Message: set filter_condition [join [prefix_list_elements $leaf_cell_types "ref_name == "] "||"] 
+// Tcl Message: ref_name == BUFGCE||ref_name == CARRY8||ref_name == DSP48E2||ref_name == FDCE||ref_name == FDPE||ref_name == FDRE||ref_name == FDSE||ref_name == IBUF||ref_name == LDCE||ref_name == LUT1||ref_name == LUT2||ref_name == LUT3||ref_name == LUT4||ref_name == LUT5||ref_name == LUT6||ref_name == LUT6_2||ref_name == MUXF7||ref_name == MUXF8||ref_name == OBUF||ref_name == OBUFT||ref_name == RAM32M16||ref_name == RAM32X1D||ref_name == RAM32X1S||ref_name == RAM64X1D||ref_name == RAMB18E2||ref_name == RAMB36E2||ref_name == SRL16E||ref_name == SRLC32E 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,265 MB. GUI used memory: 229 MB. Current time: 9/21/18 11:24:35 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 44, 322); // dw (ad, cl)
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // dw (ad, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set leaf_cells [get_cells -hier -filter $filter_condition]", true); // aG (af, cl)
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter $filter_condition]'
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter $filter_condition]'
+// Tcl Message: set leaf_cells [get_cells -hier -filter $filter_condition] 
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 43, 309); // dw (ad, cl)
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // dw (ad, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "puts [llength $leaf_cells]", true); // aG (af, cl)
+// Tcl Command: 'puts [llength $leaf_cells]'
+// Tcl Command: 'puts [llength $leaf_cells]'
+// Tcl Message: puts [llength $leaf_cells] 
+// Tcl Message: 52975 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 159 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 47, 506); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 47, 506, false, false, false, false, true); // dw (ad, cl) - Double Click
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set c"); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 67, 505, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set c axi_fake_reg"); // aG (af, cl)
+// Tcl Command: 'set c axi_fake_reg'
+// Tcl Command: 'set c axi_fake_reg'
+// Tcl Message: set c axi_fake_reg 
+// Tcl Message: axi_fake_reg 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,266 MB. GUI used memory: 218 MB. Current time: 9/21/18 11:27:57 AM CDT
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {of}'
+// Tcl Command: 'rdi::match_options {get_cells} {of_}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_p*}'
+// Tcl Command: 'rdi::info_commands {get_prop*}'
+// Tcl Command: 'rdi::info_commands {get_prop*}'
+// Tcl Command: 'rdi::match_options {get_property} {}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Elapsed time: 27 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property ref_name [get_cells $c]", true); // aG (af, cl)
+// Tcl Command: 'get_property ref_name [get_cells $c]'
+// Tcl Command: 'get_property ref_name [get_cells $c]'
+// Tcl Message: get_property ref_name [get_cells $c] 
+// Tcl Message: FDRE 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 24 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,267 MB. GUI used memory: 151 MB. Current time: 9/21/18 11:28:53 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {wir*}'
+// Tcl Command: 'rdi::info_commands {wirte*}'
+// Tcl Command: 'rdi::info_commands {wirte_*}'
+// Tcl Command: 'rdi::info_commands {w*}'
+// Tcl Command: 'rdi::info_commands {write*}'
+// Tcl Command: 'rdi::info_commands {write_*}'
+// Tcl Command: 'rdi::info_commands {write_book*}'
+// Tcl Command: 'rdi::info_commands {write_book*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file"); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// Tcl Message: can't read "leaf_cell_types": no such variable 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {p*}'
+// Tcl Command: 'rdi::info_commands {puts*}'
+// Elapsed time: 17 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "puts $leaf_cell_types", true); // aG (af, cl)
+// Tcl Command: 'puts $leaf_cell_types'
+// Tcl Command: 'puts $leaf_cell_types'
+// Tcl Message: puts $leaf_cell_types 
+// Tcl Message:      BUFGCE     CARRY8     DSP48E2     FDCE     FDPE     FDRE     FDSE     IBUF     LDCE     LUT1     LUT2     LUT3     LUT4     LUT5     LUT6     LUT6_2     MUXF7     MUXF8     OBUF     OBUFT     RAM32M16     RAM32X1D     RAM32X1S     RAM64X1D     RAMB18E2     RAMB36E2     SRL16E     SRLC32E  
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 55 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,267 MB. GUI used memory: 131 MB. Current time: 9/21/18 11:30:32 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// Tcl Message: can't read "lefa_cell_types": no such variable 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,267 MB. GUI used memory: 132 MB. Current time: 9/21/18 11:30:42 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// Tcl Message: can't read "leaf_cell_types": no such variable 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 32 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// Tcl Message: illegal access mode "file123" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,267 MB. GUI used memory: 158 MB. Current time: 9/21/18 11:31:19 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 3, 533); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 190, 536, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+// Elapsed time: 37 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "pwd", true); // aG (af, cl)
+// Tcl Command: 'pwd'
+// Tcl Command: 'pwd'
+// Tcl Message: pwd 
+// Tcl Message: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// Tcl Message: illegal access mode "file126" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,267 MB. GUI used memory: 150 MB. Current time: 9/21/18 11:32:28 AM CDT
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 17 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// Tcl Message: illegal access mode "file127" 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 16 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// Elapsed time: 174 seconds
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (bs)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,269 MB. GUI used memory: 256 MB. Current time: 9/21/18 11:36:11 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,269 MB. GUI used memory: 261 MB. Current time: 9/21/18 11:36:25 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 40 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// Tcl Message: illegal access mode "file128" 
+// [GUI Memory]: 277 MB (+2194kb) [01:29:27]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,269 MB. GUI used memory: 257 MB. Current time: 9/21/18 11:37:20 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// [GUI Memory]: 311 MB (+21466kb) [01:29:44]
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (bs)
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {tm*}'
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "open fh [open tmp \"w\"]", true); // aG (af, cl)
+// Tcl Command: 'open fh [open tmp "w"]'
+// Tcl Command: 'open fh [open tmp "w"]'
+// Tcl Message: open fh [open tmp "w"] 
+// Tcl Message: illegal access mode "file130" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 295 MB. Current time: 9/21/18 11:37:54 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "open fh [open \"tmp\" \"w\"]", true); // aG (af, cl)
+// Tcl Command: 'open fh [open "tmp" "w"]'
+// Tcl Command: 'open fh [open "tmp" "w"]'
+// Tcl Message: open fh [open "tmp" "w"] 
+// Tcl Message: illegal access mode "file131" 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "open fh [open \"tmp\" \"r\"]", true); // aG (af, cl)
+// Tcl Command: 'open fh [open "tmp" "r"]'
+// Tcl Command: 'open fh [open "tmp" "r"]'
+// Tcl Message: open fh [open "tmp" "r"] 
+// Tcl Message: illegal access mode "file132" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 309 MB. Current time: 9/21/18 11:38:04 AM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 28 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// bs (cl):  Tcl Command Line : addNotify
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 16 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// bs (cl):  Tcl Command Line : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 319 MB. Current time: 9/21/18 11:39:19 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {pwd*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "pwd", true); // aG (af, cl)
+// Tcl Command: 'pwd'
+// Tcl Command: 'pwd'
+// Tcl Message: pwd 
+// Tcl Message: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// [GUI Memory]: 330 MB (+2816kb) [01:31:53]
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file ~/tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Command: 'write_bookshelf_node_file ~/tmp.node'
+// Tcl Message: write_bookshelf_node_file ~/tmp.node 
+// bs (cl):  Tcl Command Line : addNotify
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node"); // aG (af, cl)
+selectButton(RDIResource.ProgressDialog_CANCEL, "Cancel"); // a (bs)
+// Tcl Message: LUT2 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 159 MB. Current time: 9/21/18 11:39:51 AM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// bs (cl):  Tcl Command Line : addNotify
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 40 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {d*}'
+// Tcl Command: 'rdi::info_commands {g*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::match_options {get_nets} {o}'
+// Tcl Command: 'rdi::match_options {get_nets} {of}'
+// Tcl Command: 'rdi::match_options {get_nets} {of}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {g*}'
+// Elapsed time: 287 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects $c", true); // aG (af, cl)
+// Tcl Command: 'get_nets -of_objects $c'
+// Tcl Command: 'get_nets -of_objects $c'
+// Tcl Message: get_nets -of_objects $c 
+// Tcl Message: ERROR: [Common 17-697] get_nets: option '-of_objects' requires explicit objects, e.g. -of_objects [get_cells lut2], implicit search for '-of_objects' using name or pattern is not supported. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 182 MB. Current time: 9/21/18 11:46:08 AM CDT
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells $c", true); // aG (af, cl)
+// Tcl Command: 'get_cells $c'
+// Tcl Command: 'get_cells $c'
+// Tcl Message: get_cells $c 
+// Tcl Message: axi_fake_reg 
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Elapsed time: 17 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects [get_cells $c]", true); // aG (af, cl)
+// Tcl Command: 'get_nets -of_objects [get_cells $c]'
+// Tcl Command: 'get_nets -of_objects [get_cells $c]'
+// Tcl Message: get_nets -of_objects [get_cells $c] 
+// Tcl Message: axi_arready clk_IBUF_BUFG <const1> accelerator_n_11 <const0> 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 202 MB. Current time: 9/21/18 11:46:35 AM CDT
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::info_commands {ge*}'
+// Tcl Command: 'rdi::info_commands {g*}'
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects $c", true); // aG (af, cl)
+// Tcl Command: 'get_nets -of_objects $c'
+// Tcl Command: 'get_nets -of_objects $c'
+// Tcl Message: get_nets -of_objects $c 
+// Tcl Message: ERROR: [Common 17-697] get_nets: option '-of_objects' requires explicit objects, e.g. -of_objects [get_cells lut2], implicit search for '-of_objects' using name or pattern is not supported. 
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking too long to process. Increasing delay to 2000 ms.
+// Tcl Command: 'rdi::info_commands {e*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "puts $c", true); // aG (af, cl)
+// Tcl Command: 'puts $c'
+// Tcl Command: 'puts $c'
+// Tcl Message: puts $c 
+// Tcl Message: axi_fake_reg 
+// Tcl Command: 'rdi::info_commands {set*}'
+// Tcl Command: 'rdi::info_commands {set_*}'
+// Tcl Command: 'rdi::info_commands {s*}'
+// Elapsed time: 30 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set nets [get_nets -of_objects [get_cells $c]]", true); // aG (af, cl)
+// Tcl Command: 'set nets [get_nets -of_objects [get_cells $c]]'
+// Tcl Command: 'set nets [get_nets -of_objects [get_cells $c]]'
+// Tcl Message: set nets [get_nets -of_objects [get_cells $c]] 
+// Tcl Message: axi_arready clk_IBUF_BUFG <const1> accelerator_n_11 <const0> 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 196 MB. Current time: 9/21/18 11:47:24 AM CDT
+// Tcl Command: 'rdi::info_commands {get_pr*}'
+// Tcl Command: 'rdi::info_commands {get_prop*}'
+// Tcl Command: 'rdi::info_commands {get_prop*}'
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {linde*}'
+// Elapsed time: 29 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property name [lindex nets 2]", true); // aG (af, cl)
+// Tcl Command: 'get_property name [lindex nets 2]'
+// Tcl Command: 'get_property name [lindex nets 2]'
+// Tcl Message: get_property name [lindex nets 2] 
+// Tcl Message: ERROR: [Common 17-161] Invalid option value '' specified for 'object'. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property name [lindex $nets 2]", true); // aG (af, cl)
+// Tcl Command: 'get_property name [lindex $nets 2]'
+// Tcl Command: 'get_property name [lindex $nets 2]'
+// Tcl Message: get_property name [lindex $nets 2] 
+// Tcl Message: <const1> 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,270 MB. GUI used memory: 206 MB. Current time: 9/21/18 11:47:59 AM CDT
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_p*}'
+// Tcl Command: 'rdi::info_commands {get_pin*}'
+// Tcl Command: 'rdi::info_commands {get_pin*}'
+// Elapsed time: 48 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set pins [get_pins -of_objects [get_cells $c]]", true); // aG (af, cl)
+// Tcl Command: 'set pins [get_pins -of_objects [get_cells $c]]'
+// Tcl Command: 'set pins [get_pins -of_objects [get_cells $c]]'
+// Tcl Message: set pins [get_pins -of_objects [get_cells $c]] 
+// Tcl Message: axi_fake_reg/Q axi_fake_reg/C axi_fake_reg/CE axi_fake_reg/D axi_fake_reg/R 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 149 MB. Current time: 9/21/18 11:48:48 AM CDT
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+// Tcl Command: 'rdi::match_options {get_nets} {of}'
+// Tcl Command: 'rdi::match_options {get_nets} {of}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_p*}'
+// Tcl Command: 'rdi::info_commands {get_pin*}'
+// Tcl Command: 'rdi::info_commands {get_pin*}'
+// Elapsed time: 36 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects [get_pins ]"); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 61, 532); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 61, 532, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 62, 533); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 107, 533); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 190, 534, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects [get_pins axi_fake_reg/C]"); // aG (af, cl)
+// Tcl Command: 'get_nets -of_objects [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_nets -of_objects [get_pins axi_fake_reg/C]'
+// Tcl Message: get_nets -of_objects [get_pins axi_fake_reg/C] 
+// Tcl Message: clk_IBUF_BUFG 
+// Tcl Command: 'rdi::info_commands {llength*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Elapsed time: 49 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_nets]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_nets]'
+// Tcl Command: 'llength [get_nets]'
+// Tcl Message: llength [get_nets] 
+// Tcl Message: 216 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 160 MB. Current time: 9/21/18 11:50:21 AM CDT
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+// Tcl Command: 'rdi::match_options {get_nets} {hi}'
+// Tcl Command: 'rdi::match_options {get_nets} {hier}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_nets -hier]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_nets -hier]'
+// Tcl Command: 'llength [get_nets -hier]'
+// Tcl Message: llength [get_nets -hier] 
+// Tcl Message: 203648 
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::info_commands {get_nets*}'
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+// Elapsed time: 39 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -help", true); // aG (af, cl)
+// Tcl Command: 'get_nets -help'
+// Tcl Command: 'get_nets -help'
+// Tcl Message: get_nets -help 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 184 MB. Current time: 9/21/18 11:51:06 AM CDT
+// Elapsed time: 30 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 150, 217); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 150, 217, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 150, 217); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 149, 221); // dw (ad, cl)
+// Elapsed time: 50 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 148, 220); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 148, 220, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 148, 220); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 176, 192); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 176, 192, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 176, 192); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 176, 192); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 176, 192, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 176, 192); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 179, 204); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 179, 204, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 179, 204); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 182, 205); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 182, 205); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 182, 205); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 182, 205, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 182, 205); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206, false, false, false, false, true); // dw (ad, cl) - Double Click
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 181, 206); // dw (ad, cl)
+// Elapsed time: 52 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 241 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {k*}'
+// Tcl Command: 'rdi::info_commands {key*}'
+// Tcl Command: 'rdi::info_commands {keyl*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "keylset x NAME {a b}", true); // aG (af, cl)
+// Tcl Command: 'keylset x NAME {a b}'
+// Tcl Command: 'keylset x NAME {a b}'
+// Tcl Message: keylset x NAME {a b} 
+// Tcl Message: invalid command name "keylset" 
+// Elapsed time: 235 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set"); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set h(a) {}", true); // aG (af, cl)
+// Tcl Command: 'set h(a) {}'
+// Tcl Command: 'set h(a) {}'
+// Tcl Message: set h(a) {} 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set h(b) {}", true); // aG (af, cl)
+// Tcl Command: 'set h(b) {}'
+// Tcl Command: 'set h(b) {}'
+// Tcl Message: set h(b) {} 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 171 MB. Current time: 9/21/18 12:02:02 PM CDT
+// Tcl Command: 'rdi::info_commands {lappe*}'
+// Tcl Command: 'rdi::info_commands {lappe*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lappend h(a) 1", true); // aG (af, cl)
+// Tcl Command: 'lappend h(a) 1'
+// Tcl Command: 'lappend h(a) 1'
+// Tcl Message: lappend h(a) 1 
+// Tcl Message: 1 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lappend h(a) 2", true); // aG (af, cl)
+// Tcl Command: 'lappend h(a) 2'
+// Tcl Command: 'lappend h(a) 2'
+// Tcl Message: lappend h(a) 2 
+// Tcl Message: 1 2 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 202 MB. Current time: 9/21/18 12:02:13 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lappend h(a) 3", true); // aG (af, cl)
+// Tcl Command: 'lappend h(a) 3'
+// Tcl Command: 'lappend h(a) 3'
+// Tcl Message: lappend h(a) 3 
+// Tcl Message: 1 2 3 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 146 MB. Current time: 9/21/18 12:32:18 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 144 MB. Current time: 9/21/18 1:02:19 PM CDT
+// Elapsed time: 4435 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 580 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 272 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,271 MB. GUI used memory: 144 MB. Current time: 9/21/18 1:32:18 PM CDT
+// Elapsed time: 555 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 17, 265); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 218, 265, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+// Elapsed time: 61 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects [get_pins axi_fake_reg/C]", true); // aG (af, cl)
+// Tcl Command: 'get_nets -of_objects [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_nets -of_objects [get_pins axi_fake_reg/C]'
+// Tcl Message: get_nets -of_objects [get_pins axi_fake_reg/C] 
+// Tcl Message: clk_IBUF_BUFG 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::match_options {get_pins} {}'
+// Tcl Command: 'rdi::match_options {get_pins} {top}'
+// Tcl Command: 'rdi::match_options {get_pins} {}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+// Tcl Command: 'rdi::match_options {get_nets} {t}'
+// Tcl Command: 'rdi::match_options {get_nets} {to}'
+// Tcl Command: 'rdi::match_options {get_nets} {top}'
+// Tcl Command: 'rdi::match_options {get_nets} {top}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of_objects [get_pins axi_fake_reg/C] -top_net_of_hierarchical_group", true); // aG (af, cl)
+// Tcl Command: 'get_nets -of_objects [get_pins axi_fake_reg/C] -top_net_of_hierarchical_group'
+// Tcl Command: 'get_nets -of_objects [get_pins axi_fake_reg/C] -top_net_of_hierarchical_group'
+// Tcl Message: get_nets -of_objects [get_pins axi_fake_reg/C] -top_net_of_hierarchical_group 
+// Tcl Message: clk_IBUF_BUFG 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,272 MB. GUI used memory: 194 MB. Current time: 9/21/18 1:40:55 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 152 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::match_options {get_nets} {of_objects}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_pro*}'
+// Tcl Command: 'rdi::info_commands {get_proper*}'
+// Elapsed time: 116 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property ref_name [get_pins axi_fake_reg/C]", true); // aG (af, cl)
+// Tcl Command: 'get_property ref_name [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_property ref_name [get_pins axi_fake_reg/C]'
+// Tcl Message: get_property ref_name [get_pins axi_fake_reg/C] 
+// Tcl Message: FDRE 
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property pin_name [get_pins axi_fake_reg/C]", true); // aG (af, cl)
+// Tcl Command: 'get_property pin_name [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_property pin_name [get_pins axi_fake_reg/C]'
+// Tcl Message: get_property pin_name [get_pins axi_fake_reg/C] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,272 MB. GUI used memory: 154 MB. Current time: 9/21/18 1:45:36 PM CDT
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property name [get_pins axi_fake_reg/C]", true); // aG (af, cl)
+// Tcl Command: 'get_property name [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_property name [get_pins axi_fake_reg/C]'
+// Tcl Message: get_property name [get_pins axi_fake_reg/C] 
+// Tcl Message: axi_fake_reg/C 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property lib_name [get_pins axi_fake_reg/C]", true); // aG (af, cl)
+// Tcl Command: 'get_property lib_name [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_property lib_name [get_pins axi_fake_reg/C]'
+// Tcl Message: get_property lib_name [get_pins axi_fake_reg/C] 
+// Tcl Command: 'rdi::info_commands {list*}'
+// Tcl Command: 'rdi::info_commands {list_a*}'
+// Tcl Command: 'rdi::info_commands {list_at*}'
+// Tcl Command: 'rdi::info_commands {list_*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "list_property pins", true); // aG (af, cl)
+// Tcl Command: 'list_property pins'
+// Tcl Command: 'list_property pins'
+// Tcl Message: list_property pins 
+// Tcl Message: ERROR: [Common 17-58] 'pins' is not a valid first class Tcl object. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,272 MB. GUI used memory: 168 MB. Current time: 9/21/18 1:45:53 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "list_property -class pin", true); // aG (af, cl)
+// Tcl Command: 'list_property -class pin'
+// Tcl Command: 'list_property -class pin'
+// Tcl Message: list_property -class pin 
+// Tcl Message: BEL BUS_DIRECTION BUS_NAME BUS_START BUS_STOP BUS_WIDTH CLASS CLOCK_DEDICATED_ROUTE CLOCK_ROOT DCI_VALUE DIRECTION ESSENTIAL_CLASSIFICATION_VALUE FB_ACTIVE HD.ASSIGNED_PPLOCS HD.CLK_SRC HD.PARTPIN_LOCS HD.PARTPIN_RANGE HD.PARTPIN_TIEOFF HD.TANDEM HOLD_DETOUR HOLD_SLACK IS_CLEAR IS_CLOCK IS_CONNECTED IS_ENABLE IS_LEAF IS_ORIG_PIN IS_PRESET IS_RESET IS_REUSED IS_SET IS_SETRESET IS_WRITE_ENABLE KEEP_PRSHELL_DISCONNECT LOGIC_VALUE NAME ORIG_PIN_NAME PARENT_CELL PIPE_ENDPOINT PIPE_STARTPOINT REF_NAME REF_PIN_NAME SETUP_SLACK TARGET_SITE_PINS 
+// Elapsed time: 23 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property ref_pin_name [get_pins axi_fake_reg/C]", true); // aG (af, cl)
+// Tcl Command: 'get_property ref_pin_name [get_pins axi_fake_reg/C]'
+// Tcl Command: 'get_property ref_pin_name [get_pins axi_fake_reg/C]'
+// Tcl Message: get_property ref_pin_name [get_pins axi_fake_reg/C] 
+// Tcl Message: C 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,272 MB. GUI used memory: 153 MB. Current time: 9/21/18 1:46:21 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 197 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 238 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {write*}'
+// Tcl Command: 'rdi::info_commands {write_*}'
+// Tcl Command: 'rdi::info_commands {write_boo*}'
+// Tcl Command: 'rdi::info_commands {write_boo*}'
+// Tcl Command: 'rdi::info_commands {write_bookshelf_n*}'
+// Tcl Command: 'rdi::info_commands {write_bookshelf_ne*}'
+// Tcl Command: 'rdi::info_commands {write_bookshelf_ne*}'
+// Elapsed time: 36 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_net_file tmp.net", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Message: write_bookshelf_net_file tmp.net 
+// Tcl Message: invalid command name "get_net" ambiguous command name "get_net": get_net_delays get_nets 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,272 MB. GUI used memory: 157 MB. Current time: 9/21/18 1:54:27 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_net_file tmp.net", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Message: write_bookshelf_net_file tmp.net 
+// Tcl Message: INFO: [Common 17-14] Message 'Vivado 12-1023' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. 
+// bs (cl):  Tcl Command Line : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 3,305 MB. GUI used memory: 146 MB. Current time: 9/21/18 1:55:23 PM CDT
+// [Engine Memory]: 3,331 MB (+13044kb) [03:47:38]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,376 MB. GUI used memory: 144 MB. Current time: 9/21/18 1:55:43 PM CDT
+// Tcl Message: can't read "net_db": variable is array 
+// Elapsed time: 88 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 27 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 486, 502); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 979, 505, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+// Tcl Command: 'rdi::info_commands {s*}'
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_p*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {get_pins*}'
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]' selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,426 MB. GUI used memory: 185 MB. Current time: 9/21/18 1:56:54 PM CDT
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), u_serdes (serdes), cfg_fifo (fifo__parameterized4), Leaf Cells (53), mem_reg_0_31_0_5 (RAM32M16)]", 305); // aW (O, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]' selected. 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]'
+// Tcl Command: 'select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg' selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,427 MB. GUI used memory: 181 MB. Current time: 9/21/18 1:57:19 PM CDT
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[0].u_PE (PE), MACC_pe (macc_353), Leaf Cells (57), out_reg_reg (DSP48E2)]", 243); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[0].u_PE (PE), MACC_pe (macc_353), Leaf Cells (57), out_reg_reg (DSP48E2)]", 243); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[0].u_PE (PE), MACC_pe (macc_353), Leaf Cells (57), out_reg_reg (DSP48E2)]", 243, true); // aW (O, cl) - Node
+// Run Command: PAResourceCommand.PACommandNames_OPEN_FILE
+dismissFileChooser();
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.1
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 935773, 1872722); // D (M, cl)
+// Device select: 'Clock Region - X3Y4'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 763, 363, 1453, 805); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 952345, 1922440); // D (M, cl)
+// Device select: 'Clock Region - X3Y4'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 762, 357, 1453, 805); // Y (k, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]'
+// Tcl Command: 'select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 3,441 MB. GUI used memory: 176 MB. Current time: 9/21/18 1:57:39 PM CDT
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg' selected. 
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 598793, 1607558); // D (M, cl)
+// Device view-level: 1.4
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 847038, 1867155); // D (M, cl)
+// Device view-level: 2.4
+// HMemoryUtils.trashcanNow. Engine heap size: 3,442 MB. GUI used memory: 205 MB. Current time: 9/21/18 1:57:42 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 949897, 1924916); // D (M, cl)
+// Device view-level: 3.5
+// HMemoryUtils.trashcanNow. Engine heap size: 3,460 MB. GUI used memory: 189 MB. Current time: 9/21/18 1:57:46 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,460 MB. GUI used memory: 191 MB. Current time: 9/21/18 1:57:54 PM CDT
+// Elapsed time: 15 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]' selected. 
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::info_commands {get_nets*}'
+// Tcl Command: 'rdi::info_commands {get_nets*}'
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+// Tcl Command: 'rdi::match_options {get_nets} {help}'
+// Elapsed time: 58 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -help", true); // aG (af, cl)
+// Tcl Command: 'get_nets -help'
+// Tcl Command: 'get_nets -help'
+// Tcl Message: get_nets -help 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,460 MB. GUI used memory: 244 MB. Current time: 9/21/18 1:59:09 PM CDT
+// Elapsed time: 26 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 72 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// Tcl Command: 'select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]' selected. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,460 MB. GUI used memory: 206 MB. Current time: 9/21/18 2:00:58 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_net_file tmp.net", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Message: write_bookshelf_net_file tmp.net 
+// bs (cl):  Tcl Command Line : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 3,486 MB. GUI used memory: 152 MB. Current time: 9/21/18 2:01:24 PM CDT
+// [Engine Memory]: 3,499 MB (+1436kb) [03:53:36]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,541 MB. GUI used memory: 146 MB. Current time: 9/21/18 2:01:44 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,588 MB. GUI used memory: 146 MB. Current time: 9/21/18 2:02:04 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,634 MB. GUI used memory: 146 MB. Current time: 9/21/18 2:02:24 PM CDT
+// Elapsed time: 91 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 55 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 31 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 101 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set h(a) {1 2 3 4}", true); // aG (af, cl)
+// Tcl Command: 'set h(a) {1 2 3 4}'
+// Tcl Command: 'set h(a) {1 2 3 4}'
+// Tcl Message: set h(a) {1 2 3 4} 
+// Tcl Message: 1 2 3 4 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set h(b) {1 2 3 4 5 6 7}", true); // aG (af, cl)
+// Tcl Command: 'set h(b) {1 2 3 4 5 6 7}'
+// Tcl Command: 'set h(b) {1 2 3 4 5 6 7}'
+// Tcl Message: set h(b) {1 2 3 4 5 6 7} 
+// Tcl Message: 1 2 3 4 5 6 7 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,665 MB. GUI used memory: 164 MB. Current time: 9/21/18 2:05:52 PM CDT
+// Tcl Command: 'rdi::info_commands {f*}'
+// Tcl Command: 'rdi::info_commands {for*}'
+// Tcl Command: 'rdi::info_commands {ara*}'
+// Tcl Command: 'rdi::info_commands {array*}'
+// Elapsed time: 13 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "for key [array names h] {", true); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {length*}'
+// Tcl Command: 'for key [array names h] {; puts "$key [llength h($key)]"; }'
+// Tcl Command: 'for key [array names h] {; puts "$key [llength h($key)]"; }'
+// Tcl Message: for key [array names h] { puts "$key [llength h($key)]" } 
+// Tcl Message: wrong # args: should be "for start test next command" 
+// Elapsed time: 26 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for key [array names h] {;     puts "$key [llength h($key)]"; }'
+// Tcl Command: 'for key [array names h] {;     puts "$key [llength h($key)]"; }'
+// Tcl Message: for key [array names h] {     puts "$key [llength h($key)]" } 
+// Tcl Message: wrong # args: should be "for start test next command" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,668 MB. GUI used memory: 168 MB. Current time: 9/21/18 2:06:41 PM CDT
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {forr*}'
+// Tcl Command: 'rdi::info_commands {foreach*}'
+// Tcl Command: 'rdi::info_commands {foreach*}'
+// Tcl Command: 'foreach key [array names h] {;     puts "$key [llength h($key)]"; }'
+// Tcl Command: 'foreach key [array names h] {;     puts "$key [llength h($key)]"; }'
+// Tcl Message: foreach key [array names h] {     puts "$key [llength h($key)]" } 
+// Tcl Message: a 1 b 1 
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'foreach key [array names h] {;     puts "$key [llength $h($key)]"; }'
+// Tcl Command: 'foreach key [array names h] {;     puts "$key [llength $h($key)]"; }'
+// Tcl Message: foreach key [array names h] {     puts "$key [llength $h($key)]" } 
+// Tcl Message: a 4 b 7 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,673 MB. GUI used memory: 180 MB. Current time: 9/21/18 2:07:29 PM CDT
+// Elapsed time: 27 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl"); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl"); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Message: write_bookshelf_net_file tmp.net 
+// bs (cl):  Tcl Command Line : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 3,676 MB. GUI used memory: 154 MB. Current time: 9/21/18 2:07:54 PM CDT
+// [Engine Memory]: 3,678 MB (+4165kb) [04:00:02]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,724 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:08:14 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,772 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:08:34 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,843 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:08:54 PM CDT
+// [Engine Memory]: 3,862 MB (+92kb) [04:01:12]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,895 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:09:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,895 MB. GUI used memory: 156 MB. Current time: 9/21/18 2:09:20 PM CDT
+// Elapsed time: 96 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_p*}'
+// Tcl Command: 'rdi::info_commands {get_pin*}'
+// Elapsed time: 88 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_pins"); // aG (af, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_net*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+// Tcl Command: 'rdi::match_options {get_nets} {to}'
+// Tcl Command: 'rdi::match_options {get_nets} {top}'
+// Elapsed time: 16 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set net [get_nets -of [get_pins accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]", true); // aG (af, cl)
+// Tcl Command: 'set net [get_nets -of [get_pins accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]'
+// Tcl Command: 'set net [get_nets -of [get_pins accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]'
+// Tcl Message: set net [get_nets -of [get_pins accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ] 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_nod*}'
+// Tcl Command: 'rdi::info_commands {get_nodes*}'
+// Tcl Command: 'rdi::info_commands {get_n*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::info_commands {get_ce*}'
+// Elapsed time: 28 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set net [get_nets -of [get_cells accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]", true); // aG (af, cl)
+// Tcl Command: 'set net [get_nets -of [get_cells accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]'
+// Tcl Command: 'set net [get_nets -of [get_cells accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]'
+// Tcl Message: set net [get_nets -of [get_cells accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ] 
+// Tcl Message: accelerator/vecgen_read_count[2] accelerator/p_0_in[4] accelerator/<const0> accelerator/vecgen_read_count[3] accelerator/p_0_in[5] accelerator/vecgen_read_count[4] accelerator/p_0_in[6] accelerator/vecgen_read_count0__0_n_0 accelerator/p_0_in[8] accelerator/vecgen_read_count[1] accelerator/p_0_in[3] accelerator/vecgen_read_count[0] accelerator/p_0_in[2] accelerator/p_0_in[1] accelerator/GND_2 accelerator/vecgen_read_count[8] accelerator/vecgen_read_count[7] accelerator/p_0_in[7] accelerator/vecgen_read_count[6] accelerator/vecgen_read_count[5] 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 73 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 25 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,907 MB. GUI used memory: 195 MB. Current time: 9/21/18 2:13:38 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_net_file tmp.net", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Command: 'write_bookshelf_net_file tmp.net'
+// Tcl Message: write_bookshelf_net_file tmp.net 
+// bs (cl):  Tcl Command Line : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 3,925 MB. GUI used memory: 152 MB. Current time: 9/21/18 2:13:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,975 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:14:14 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,023 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:14:34 PM CDT
+// [Engine Memory]: 4,055 MB (+226kb) [04:06:54]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,073 MB. GUI used memory: 147 MB. Current time: 9/21/18 2:14:54 PM CDT
+// Elapsed time: 88 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Elapsed time: 56 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_net accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_net accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]'
+// Tcl Command: 'select_objects [get_net accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]'
+// Tcl Message: select_objects [get_net accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]] 
+// Tcl Message: invalid command name "get_net" ambiguous command name "get_net": get_net_delays get_nets 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,113 MB. GUI used memory: 196 MB. Current time: 9/21/18 2:16:16 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]'
+// Tcl Command: 'select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// PAPropertyPanels.initPanels (D[7]) elapsed time: 0.2s
+// Tcl Message: select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]' selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,153 MB. GUI used memory: 176 MB. Current time: 9/21/18 2:16:23 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,153 MB. GUI used memory: 176 MB. Current time: 9/21/18 2:16:24 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,153 MB. GUI used memory: 172 MB. Current time: 9/21/18 2:16:24 PM CDT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 14 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 887744, 1896344); // D (M, cl)
+// Device view-level: 1.9
+// HMemoryUtils.trashcanNow. Engine heap size: 4,175 MB. GUI used memory: 215 MB. Current time: 9/21/18 2:16:48 PM CDT
+// Elapsed time: 56 seconds
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[62].u_PE (PE_87), fifo_out_delay (register__parameterized1_122), Nets (100), D]", 331); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[62].u_PE (PE_87), fifo_out_delay (register__parameterized1_122), Nets (100), Q]", 333); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[62].u_PE (PE_87), fifo_out_delay (register__parameterized1_122), Nets (100), Q]", 333); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[62].u_PE (PE_87), fifo_out_delay (register__parameterized1_122), Nets (100)]", 329); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[62].u_PE (PE_87), fifo_out_delay (register__parameterized1_122), Leaf Cells (65)]", 330); // aW (O, cl)
+// Elapsed time: 17 seconds
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Connectivity", 2); // i (c, cl)
+// Elapsed time: 41 seconds
+selectTableHeader(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "Cell Pin", 1); // k (O, cl)
+selectTable(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 ; I0 ; LUT2 ; 3 ; ", 2, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", 0); // k (O, cl)
+selectTable(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 ; I0 ; LUT2 ; 3 ; ", 2, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", 0, false, false, false, true, false); // k (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectTable(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 ; I0 ; LUT2 ; 3 ; ", 2, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", 0); // k (O, cl)
+selectTable(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 ; I0 ; LUT2 ; 3 ; ", 2, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", 0); // k (O, cl)
+selectTable(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 ; I0 ; LUT2 ; 3 ; ", 2, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", 0, false, false, false, false, true); // k (O, cl) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 4,177 MB. GUI used memory: 215 MB. Current time: 9/21/18 2:19:02 PM CDT
+selectTable(PAResourceItoN.InstanceTablePanel_INSTANCE_TABLE, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 ; I0 ; LUT2 ; 3 ; ", 2, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", 0, false, false, false, true, false); // k (O, cl) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Cell Properties..."); // ac (ai, cl)
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+selectLabel((HResource) null, "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer"); // k (c, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_COPY, "Copy"); // ac (ai, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 29 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "[get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]", true); // aG (af, cl)
+// Tcl Command: '[get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Command: '[get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Message: [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71] 
+// Tcl Message: invalid command name "accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71" 
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_prope*}'
+// Tcl Command: 'rdi::info_commands {get_prope*}'
+// Tcl Command: 'rdi::match_options {get_property} {}'
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property ref_name [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]", true); // aG (af, cl)
+// Tcl Command: 'get_property ref_name [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Command: 'get_property ref_name [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Message: get_property ref_name [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71] 
+// Tcl Message: LUT2 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,177 MB. GUI used memory: 247 MB. Current time: 9/21/18 2:19:51 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 18 seconds
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set filter_condition [join [prefix_list_elements $leaf_cell_types \"REF_NAME == \"] \" || \"]"); // aG (af, cl)
+// Tcl Command: 'set filter_condition [join [prefix_list_elements $leaf_cell_types "REF_NAME == "] " || "]'
+// Tcl Command: 'set filter_condition [join [prefix_list_elements $leaf_cell_types "REF_NAME == "] " || "]'
+// Tcl Message: set filter_condition [join [prefix_list_elements $leaf_cell_types "REF_NAME == "] " || "] 
+// Tcl Message: REF_NAME == BUFGCE || REF_NAME == CARRY8 || REF_NAME == DSP48E2 || REF_NAME == FDCE || REF_NAME == FDPE || REF_NAME == FDRE || REF_NAME == FDSE || REF_NAME == IBUF || REF_NAME == LDCE || REF_NAME == LUT1 || REF_NAME == LUT2 || REF_NAME == LUT3 || REF_NAME == LUT4 || REF_NAME == LUT5 || REF_NAME == LUT6 || REF_NAME == LUT6_2 || REF_NAME == MUXF7 || REF_NAME == MUXF8 || REF_NAME == OBUF || REF_NAME == OBUFT || REF_NAME == RAM32M16 || REF_NAME == RAM32X1D || REF_NAME == RAM32X1S || REF_NAME == RAM64X1D || REF_NAME == RAMB18E2 || REF_NAME == RAMB36E2 || REF_NAME == SRL16E || REF_NAME == SRLC32E 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "set leaf_cells [get_cells -hier -filter $filter_condition]"); // aG (af, cl)
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter $filter_condition]'
+// Tcl Command: 'set leaf_cells [get_cells -hier -filter $filter_condition]'
+// Tcl Message: set leaf_cells [get_cells -hier -filter $filter_condition] 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,207 MB. GUI used memory: 172 MB. Current time: 9/21/18 2:20:34 PM CDT
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {lsear*}'
+// Tcl Command: 'rdi::info_commands {lsearch*}'
+// Elapsed time: 18 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch leaf_cells"); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 235, 24); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 708, 23, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch leaf_cells"); // aG (af, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // U (q, cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // U (q, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch leaf_cells ccelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch leaf_cells ccelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch leaf_cells ccelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch leaf_cells ccelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,207 MB. GUI used memory: 178 MB. Current time: 9/21/18 2:20:56 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch leaf_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch leaf_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch leaf_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch leaf_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {w*}'
+// Tcl Command: 'rdi::info_commands {write_*}'
+// Tcl Command: 'rdi::info_commands {write_book*}'
+// Elapsed time: 13 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_bookshelf_node_file tmp.node", true); // aG (af, cl)
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Command: 'write_bookshelf_node_file tmp.node'
+// Tcl Message: write_bookshelf_node_file tmp.node 
+// bs (cl):  Tcl Command Line : addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 4,207 MB. GUI used memory: 218 MB. Current time: 9/21/18 2:21:31 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {h}'
+// Tcl Command: 'rdi::match_options {get_cells} {hier}'
+// Elapsed time: 89 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Elapsed time: 13 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells"); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 200, 86); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 705, 83); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 229, 81, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_PASTE, "Paste"); // ac (ai, cl)
+applyEnter(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71"); // aG (af, cl)
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Elapsed time: 17 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]", true); // aG (af, cl)
+// Tcl Command: 'get_nets [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Command: 'get_nets [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Message: get_nets [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71] 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 224 MB. Current time: 9/21/18 2:23:41 PM CDT
+// Tcl Command: 'rdi::match_options {get_nets} {}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_nets -of [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]", true); // aG (af, cl)
+// Tcl Command: 'get_nets -of [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Command: 'get_nets -of [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Message: get_nets -of [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71] 
+// Tcl Message: accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay_reg[7] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/D[7] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/pe_neuron_bias_d 
+// Elapsed time: 20 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 210 MB. Current time: 9/21/18 2:24:05 PM CDT
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {h}'
+// Tcl Command: 'rdi::match_options {get_cells} {help}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -help", true); // aG (af, cl)
+// Tcl Command: 'get_cells -help'
+// Tcl Command: 'get_cells -help'
+// Tcl Message: get_cells -help 
+// Tcl Command: 'rdi::info_commands {ge*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Elapsed time: 37 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_"); // aG (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 383, 252); // dw (ad, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {hi}'
+// Tcl Command: 'rdi::match_options {get_cells} {hi}'
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 101 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 209 MB. Current time: 9/21/18 2:26:30 PM CDT
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch [get_cells] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch [get_cells] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {h}'
+// Tcl Command: 'rdi::match_options {get_cells} {hi}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hierarchical ] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hierarchical ] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'lsearch [get_cells -hierarchical ] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: lsearch [get_cells -hierarchical ] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: -1 
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "s accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71"); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {g*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 198 MB. Current time: 9/21/18 2:27:12 PM CDT
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_7", true); // aG (af, cl)
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_7'
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_7'
+// Tcl Message: get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_7 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71", true); // aG (af, cl)
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Command: 'get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71'
+// Tcl Message: get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// Tcl Message: accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 191 MB. Current time: 9/21/18 2:27:17 PM CDT
+// Elapsed time: 10 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 830795, 2046824); // D (M, cl)
+// Device select: 'Tile - CLEL_R_X43Y250'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 1928, 4750, 1453, 503); // Y (k, cl)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Tcl Command: 'rdi::info_commands {sele*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// Tcl Command: 'select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71' selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 207 MB. Current time: 9/21/18 2:27:37 PM CDT
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 34 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71'
+// Tcl Command: 'lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71'
+// Tcl Message: lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71 
+// Tcl Message: -1 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}"); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}'
+// Tcl Command: 'lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}'
+// Tcl Message: lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71} 
+// Tcl Message: -1 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,208 MB. GUI used memory: 202 MB. Current time: 9/21/18 2:28:24 PM CDT
+// Elapsed time: 94 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}", true); // aG (af, cl)
+// Tcl Command: 'lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}'
+// Tcl Command: 'lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}'
+// Tcl Message: lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71} 
+// Tcl Message: -1 
+// Tcl Command: 'rdi::info_commands {get_ce*}'
+// Tcl Command: 'rdi::info_commands {ge*}'
+// Tcl Command: 'rdi::info_commands {g*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cel*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {get_cel*}'
+// Tcl Command: 'rdi::info_commands {get_c*}'
+// Tcl Command: 'rdi::info_commands {g*}'

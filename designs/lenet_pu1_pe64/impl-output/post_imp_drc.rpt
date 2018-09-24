@@ -1,0 +1,418 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
+| Date         : Sat Sep 15 01:56:20 2018
+| Host         : eda04 running 64-bit Debian GNU/Linux 9.5 (stretch)
+| Command      : report_drc -file ./impl-output/post_imp_drc.rpt
+| Design       : dnn_accelerator_top
+| Device       : xcvu095-ffvc1517-3-e
+| Speed File   : -3
+| Design State : Routed
+------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: dnn_accelerator_top
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 74
++----------+------------------+-----------------------------------------------------+------------+
+| Rule     | Severity         | Description                                         | Violations |
++----------+------------------+-----------------------------------------------------+------------+
+| NSTD-1   | Critical Warning | Unspecified I/O Standard                            | 1          |
+| UCIO-1   | Critical Warning | Unconstrained Logical Port                          | 1          |
+| CFGBVS-1 | Warning          | Missing CFGBVS and CONFIG_VOLTAGE Design Properties | 1          |
+| DPIP-2   | Warning          | Input pipelining                                    | 64         |
+| PDRC-153 | Warning          | Gated clock check                                   | 7          |
++----------+------------------+-----------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+NSTD-1#1 Critical Warning
+Unspecified I/O Standard  
+108 out of 108 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: buffer_read_count[31:0], inbuf_count[10:0], outbuf_push[0], pu_controller_state[2:0], pu_write_valid[0], rd_cfg_idx[2:0], stream_read_count[31:0], vecgen_read_count[15:0], vecgen_state[1:0], wr_cfg_idx[2:0], clk, done, reset, start.
+Related violations: <none>
+
+UCIO-1#1 Critical Warning
+Unconstrained Logical Port  
+108 out of 108 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: buffer_read_count[31:0], inbuf_count[10:0], outbuf_push[0], pu_controller_state[2:0], pu_write_valid[0], rd_cfg_idx[2:0], stream_read_count[31:0], vecgen_read_count[15:0], vecgen_state[1:0], wr_cfg_idx[2:0], clk, done, reset, start.
+Related violations: <none>
+
+CFGBVS-1#1 Warning
+Missing CFGBVS and CONFIG_VOLTAGE Design Properties  
+Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+Related violations: <none>
+
+DPIP-2#1 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#2 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[10].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[10].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#3 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[11].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[11].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#4 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[12].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[12].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#5 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[13].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[13].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#6 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[14].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[14].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#7 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[15].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[15].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#8 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[16].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[16].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#9 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[17].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[17].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#10 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[18].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[18].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#11 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[19].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[19].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#12 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#13 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[20].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[20].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#14 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[21].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[21].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#15 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[22].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[22].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#16 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[23].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[23].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#17 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[24].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[24].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#18 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[25].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[25].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#19 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[26].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[26].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#20 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[27].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[27].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#21 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[28].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[28].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#22 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[29].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[29].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#23 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[2].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[2].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#24 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[30].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[30].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#25 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[31].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[31].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#26 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[32].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[32].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#27 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[33].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[33].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#28 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[34].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[34].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#29 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[35].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[35].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#30 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[36].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[36].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#31 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[37].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[37].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#32 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[38].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[38].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#33 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[39].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[39].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#34 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[3].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[3].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#35 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[40].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[40].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#36 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[41].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[41].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#37 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[42].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[42].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#38 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[43].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[43].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#39 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[44].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[44].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#40 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[45].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[45].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#41 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[46].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[46].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#42 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[47].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[47].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#43 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[48].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[48].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#44 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[49].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[49].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#45 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[4].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[4].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#46 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[50].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[50].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#47 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[51].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[51].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#48 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[52].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[52].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#49 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[53].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[53].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#50 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[54].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[54].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#51 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[55].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[55].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#52 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[56].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[56].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#53 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[57].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[57].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#54 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[58].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[58].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#55 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[59].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[59].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#56 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[5].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[5].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#57 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[60].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[60].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#58 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[61].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[61].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#59 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#60 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[63].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[63].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#61 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[6].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[6].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#62 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#63 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[8].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[8].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-2#64 Warning
+Input pipelining  
+DSP accelerator/PU_GEN[0].u_PU/PE_GENBLK[9].u_PE/MACC_pe/out_reg_reg input accelerator/PU_GEN[0].u_PU/PE_GENBLK[9].u_PE/MACC_pe/out_reg_reg/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+PDRC-153#1 Warning
+Gated clock check  
+Net accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_1_n_0_bufg_place is a gated clock net sourced by a combinational pin accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_1/O, cell accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#2 Warning
+Gated clock check  
+Net accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_2_n_0_bufg_place is a gated clock net sourced by a combinational pin accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_2/O, cell accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#3 Warning
+Gated clock check  
+Net accelerator/PU_GEN[0].u_PU/u_serdes/serializer_counter/E[0]_bufg_place is a gated clock net sourced by a combinational pin accelerator/PU_GEN[0].u_PU/u_serdes/serializer_counter/serializer_data[1023]_i_1/O, cell accelerator/PU_GEN[0].u_PU/u_serdes/serializer_counter/serializer_data[1023]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#4 Warning
+Gated clock check  
+Net accelerator/mem_ctrl_top/OUTPUT_BUFFER_GEN[0].d_unpacker/m_unpacked_write_req0_bufg_place is a gated clock net sourced by a combinational pin accelerator/mem_ctrl_top/OUTPUT_BUFFER_GEN[0].d_unpacker/m_unpacked_write_req_i_1/O, cell accelerator/mem_ctrl_top/OUTPUT_BUFFER_GEN[0].d_unpacker/m_unpacked_write_req_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#5 Warning
+Gated clock check  
+Net accelerator/mem_ctrl_top/u_buffer_counter/data_reg[0][0]_bufg_place is a gated clock net sourced by a combinational pin accelerator/mem_ctrl_top/u_buffer_counter/dcount[3]_i_1/O, cell accelerator/mem_ctrl_top/u_buffer_counter/dcount[3]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#6 Warning
+Gated clock check  
+Net accelerator/vecgen/out_data[2047]_i_1_n_0_bufg_place is a gated clock net sourced by a combinational pin accelerator/vecgen/out_data[2047]_i_1/O, cell accelerator/vecgen/out_data[2047]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+PDRC-153#7 Warning
+Gated clock check  
+Net accelerator/vecgen/padded_data[19455]_i_1_n_0_bufg_place is a gated clock net sourced by a combinational pin accelerator/vecgen/padded_data[19455]_i_1/O, cell accelerator/vecgen/padded_data[19455]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+Related violations: <none>
+
+

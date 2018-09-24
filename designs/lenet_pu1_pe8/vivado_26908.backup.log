@@ -1,0 +1,136 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Sep 14 23:42:39 2018
+# Process ID: 26908
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8
+# Command line: vivado ./vivado/dnn.xpr
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project ./vivado/dnn.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 6247.500 ; gain = 72.094 ; free physical = 12071 ; free virtual = 59010
+update_compile_order -fileset sources_1
+save_project_as -help
+save_project_as
+
+Description: 
+Save the current project under a new name
+
+Syntax: 
+save_project_as  [-scan_for_includes] [-include_local_ip_cache] [-force]
+                 [-quiet] [-verbose] <name> [<dir>]
+
+Returns: 
+saved project object
+
+Usage: 
+  Name                       Description
+  --------------------------------------
+  [-scan_for_includes]       Scan for include files and add them to the new 
+                             project
+  [-include_local_ip_cache]  Include IP cache results in the archive
+  [-force]                   Overwrite existing project directory
+  [-quiet]                   Ignore command errors
+  [-verbose]                 Suspend message limits during command execution
+  <name>                     New name for the project to save
+  [<dir>]                    Directory where the project file is saved
+                             Default: .
+
+Categories: 
+Project
+
+Description:
+
+  Saves a currently open project file under a new name in the specified
+  directory, or in the current working directory if no other directory is
+  specified.
+
+  This command save a Vivado Design Suite project file (.xpr), or a project
+  file for the Vivado Lab Edition (.lpr), in the specified directory.
+
+  The command returns the name of the saved project, or returns an error if
+  it fails.
+
+Arguments:
+
+  -scan_for_includes - (Optional) Scans all source files and adds any
+  referenced Verilog 'include files into the project structure.
+
+  -force - (Optional) Overwrite the existing project. If the project name is
+  already define in the specified directory then you must also specify the
+  -force option for the tool to overwrite the existing project.
+
+  Note: If the existing project is currently open, the new project will
+  overwrite the existing project on the disk, but both projects will be
+  opened in the tool. In this case you should probably run the close_project
+  command prior to running create_project.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <name> - (Required) The name of the new project. This argument must appear
+  before the specified directory. Since these commands do not have
+  parameters, the tool interprets the first argument as <name> and uses the
+  second argument as <dir>. The project file is saved as <name> .xpr in the
+  Vivado Design Suite, or <name> .lpr in the Vivado Lab Edition, and is
+  written into the specified directory <dir>.
+
+  <dir> - (Optional) The directory name in which to write the new project
+  file. If the specified directory does not exist a new directory will be
+  created. If the directory is specified with the complete path, the tool
+  uses the specified path name. However, if <dir> is specified without a
+  path, the tool looks for or creates the directory in the current working
+  directory, or the directory from which the tool was launched.
+
+  Note: When creating a project in GUI-mode, the tool appends the filename
+  <name> to the directory name <dir> and creates a project directory with the
+  name <dir> /<name> and places the new project file and project data folder
+  into that project directory.
+
+Examples:
+
+  The following example saves the active project as a new project called
+  myProject in a directory called myProjectDir:
+
+    save_project_as myProject myProjectDir
+
+  Note: Because <dir> is specified as the folder name only, the tool will
+  create the project in the current working directory, or the directory from
+  which the tool was launched.
+
+  The following example saves the current project to a new project called
+  myProject in a directory called C:/Designs/myProjectDir. If you use the
+  -force argument, the tool will overwrite an existing project if one is
+  found in the specified location.
+
+    save_project_as myProject C:/Designs/myProjectDir -force
+
+See Also:
+
+   *  create_project
+   *  current_project
+   *  open_project
+save_project_as
+ERROR: [Common 17-163] Missing value for option 'name', please type 'save_project_as -help' for usage info.
+save_project_as dnn
+dnn
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 14 23:47:57 2018...

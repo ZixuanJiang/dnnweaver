@@ -1,0 +1,646 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 13:30:17 2018
+# Process ID: 25938
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+Command: open_checkpoint ./impl-output/post_route.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.09 . Memory (MB): peak = 6154.785 ; gain = 5.004 ; free physical = 9288 ; free virtual = 56593
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'.
+INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-25938-eda04/dcp3/dnn_accelerator_top.xdc]
+Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-25938-eda04/dcp3/dnn_accelerator_top.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6942.254 ; gain = 62.586 ; free physical = 8452 ; free virtual = 55824
+Restored from archive | CPU: 2.470000 secs | Memory: 53.950096 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6942.254 ; gain = 62.586 ; free physical = 8451 ; free virtual = 55823
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 76 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 64 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 3 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833
+open_checkpoint: Time (s): cpu = 00:00:57 ; elapsed = 00:00:39 . Memory (MB): peak = 7334.809 ; gain = 1185.027 ; free physical = 8257 ; free virtual = 55565
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:01:32 ; elapsed = 00:00:56 . Memory (MB): peak = 8402.316 ; gain = 1048.695 ; free physical = 7183 ; free virtual = 54487
+report_power
+Command: report_power
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
+| Date             : Tue Sep 18 17:34:22 2018
+| Host             : eda04 running 64-bit Debian GNU/Linux 9.5 (stretch)
+| Command          : report_power
+| Design           : dnn_accelerator_top
+| Device           : xcvu095-ffvc1517-3-e
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 1.666        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.687        |
+| Device Static (W)        | 0.980        |
+| Effective TJA (C/W)      | 1.1          |
+| Max Ambient (C)          | 98.1         |
+| Junction Temperature (C) | 26.9         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.161 |        3 |       --- |             --- |
+| CLB Logic                |     0.092 |    53376 |       --- |             --- |
+|   LUT as Logic           |     0.072 |    16733 |    537600 |            3.11 |
+|   Register               |     0.016 |    29679 |   1075200 |            2.76 |
+|   LUT as Shift Register  |     0.002 |       61 |     76800 |            0.08 |
+|   LUT as Distributed RAM |     0.002 |       72 |     76800 |            0.09 |
+|   CARRY8                 |    <0.001 |      316 |     67200 |            0.47 |
+|   BUFG                   |    <0.001 |       10 |       128 |            7.81 |
+|   F7/F8 Muxes            |    <0.001 |        2 |    537600 |           <0.01 |
+|   Others                 |     0.000 |      571 |       --- |             --- |
+| Signals                  |     0.138 |    46544 |       --- |             --- |
+| Block RAM                |     0.238 |       97 |      1728 |            5.61 |
+| DSPs                     |     0.006 |       64 |       768 |            8.33 |
+| I/O                      |     0.051 |      108 |       520 |           20.77 |
+| Static Power             |     0.980 |          |           |                 |
+| Total                    |     1.666 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------+-------------+-----------+-------------+------------+
+| Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++------------+-------------+-----------+-------------+------------+
+| Vccint     |       1.000 |     0.991 |       0.631 |      0.360 |
+| Vccaux     |       1.800 |     0.172 |       0.000 |      0.172 |
+| Vccaux_io  |       1.800 |     0.147 |       0.025 |      0.122 |
+| Vccint_io  |       1.000 |     0.030 |       0.001 |      0.029 |
+| Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18     |       1.800 |     0.003 |       0.003 |      0.000 |
+| Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram    |       1.000 |     0.040 |       0.004 |      0.036 |
+| MGTAVcc    |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt    |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux  |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc     |       1.800 |     0.014 |       0.000 |      0.014 |
+| MGTYVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| MGTYAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTYAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
++------------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                      |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
+| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                          |                                                                                                            |
+|                             |            |                                                       |                                                                                                            |
+| Overall confidence level    | Medium     |                                                       |                                                                                                            |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.1                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 2.2                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++------------+--------+-----------------+
+| Clock      | Domain | Constraint (ns) |
++------------+--------+-----------------+
+| clock_200M | clk    |             5.0 |
++------------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++------------------------------------------+-----------+
+| Name                                     | Power (W) |
++------------------------------------------+-----------+
+| dnn_accelerator_top                      |     0.687 |
+|   accelerator                            |     0.635 |
+|     PU_GEN[0].u_PU                       |     0.206 |
+|       PE_GENBLK[0].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[10].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[11].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[12].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[13].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[14].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[15].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[16].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[17].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[18].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[19].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[1].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[20].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[21].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[22].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[23].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[24].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[25].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[26].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[27].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[28].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[29].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[2].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[30].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[31].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[32].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[33].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[34].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[35].u_PE                 |     0.004 |
+|         MACC_pe                          |     0.002 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |     0.001 |
+|       PE_GENBLK[36].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[37].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[38].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[39].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[3].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[40].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[41].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[42].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[43].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[44].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[45].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[46].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[47].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[48].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[49].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[4].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |     0.001 |
+|       PE_GENBLK[50].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[51].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[52].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[53].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[54].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[55].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[56].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[57].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[58].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[59].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[5].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[60].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[61].u_PE                 |     0.006 |
+|         MACC_pe                          |     0.004 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         macc_en_delay                    |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|         src_2_delay                      |    <0.001 |
+|       PE_GENBLK[62].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[63].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[6].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[7].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[8].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[9].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       neuron_delay                       |     0.013 |
+|       out_sel_delay                      |     0.001 |
+|       packer                             |     0.007 |
+|       pe_neuron_bias_delay               |    <0.001 |
+|       pe_neuron_sel_delay                |    <0.001 |
+|       pool_DUT                           |     0.031 |
+|         kw2_delay1                       |    <0.001 |
+|         kw2_delay2                       |    <0.001 |
+|         pool_fifo                        |     0.005 |
+|         row_fifo                         |     0.002 |
+|         row_fifo_out_delay               |    <0.001 |
+|         sipo_output                      |     0.018 |
+|           push_delay                     |    <0.001 |
+|       pool_cfg_delay                     |    <0.001 |
+|       pool_ctrl_delay                    |    <0.001 |
+|       pu_ctrl_delay                      |     0.002 |
+|       pu_vg_data_delay                   |     0.006 |
+|       src_1_sel_delay                    |     0.004 |
+|       src_2_sel_delay                    |    <0.001 |
+|       u_serdes                           |     0.019 |
+|         cfg_fifo                         |    <0.001 |
+|           mem_reg_0_31_0_5               |    <0.001 |
+|         data_fifo                        |     0.007 |
+|         serializer_counter               |    <0.001 |
+|         sipo_output                      |     0.006 |
+|           push_delay                     |    <0.001 |
+|       u_wb                               |     0.004 |
+|       vg_mask_delay                      |     0.005 |
+|       wb_read_addr_delay                 |    <0.001 |
+|       wb_read_req_delay                  |    <0.001 |
+|     mem_ctrl_top                         |     0.266 |
+|       OUTPUT_BUFFER_GEN[0].d_unpacker    |     0.023 |
+|       OUTPUT_BUFFER_GEN[0].outbuf_iwidth |     0.017 |
+|       OUTPUT_BUFFER_GEN[0].outbuf_owidth |     0.015 |
+|         fifo_buffer                      |     0.015 |
+|       STREAM_PU_GEN[0].packer            |    <0.001 |
+|       STREAM_PU_GEN[0].stream_pu         |    <0.001 |
+|       axi_rd_buffer                      |     0.013 |
+|       buffer_read                        |     0.013 |
+|       packer                             |     0.009 |
+|       stream_fifo                        |     0.151 |
+|       u_axim                             |     0.015 |
+|         AXI_GEN[0].u_axim                |     0.015 |
+|           WBURST_COUNTER_GEN[0].wburst_C |     0.002 |
+|           awchannel_req_buf              |    <0.001 |
+|             mem_reg_0_15_0_4             |    <0.001 |
+|           pu_obuf_rd_counter             |    <0.001 |
+|           rd_req_buf                     |     0.002 |
+|             mem_reg_0_3_0_5              |    <0.001 |
+|             mem_reg_0_3_12_17            |    <0.001 |
+|             mem_reg_0_3_18_23            |    <0.001 |
+|             mem_reg_0_3_6_11             |    <0.001 |
+|           wchannel_req_buf               |    <0.001 |
+|             fifo_buffer                  |    <0.001 |
+|               mem_reg_0_15_0_4           |    <0.001 |
+|           write_buf                      |     0.007 |
+|             fifo_buffer                  |     0.007 |
+|       u_buffer_counter                   |     0.001 |
+|         read_info_fifo                   |    <0.001 |
+|         rvalid_counter                   |    <0.001 |
+|       u_mem_ctrl                         |     0.006 |
+|         buffer_read_counter              |    <0.001 |
+|         read_idx_counter                 |    <0.001 |
+|         stream_read_loop_0               |    <0.001 |
+|         stream_read_loop_1               |    <0.001 |
+|         stream_read_loop_2               |    <0.001 |
+|         stream_write_counter             |    <0.001 |
+|         write_idx_counter                |    <0.001 |
+|       u_read_info                        |     0.002 |
+|         read_info_fifo                   |     0.001 |
+|           mem_reg_0_31_0_5               |    <0.001 |
+|           mem_reg_0_31_6_11              |    <0.001 |
+|         rvalid_counter                   |    <0.001 |
+|     u_controller                         |     0.019 |
+|       FC_neuron_idx_counter              |    <0.001 |
+|       conv_stride_counter                |    <0.001 |
+|       ic_counter                         |    <0.001 |
+|       ic_inc_delay                       |    <0.001 |
+|       ih_counter                         |    <0.001 |
+|       ih_inc_delay                       |    <0.001 |
+|       iw_counter                         |    <0.001 |
+|       iw_inc_delay                       |    <0.001 |
+|       kw_counter                         |    <0.001 |
+|       l_counter                          |    <0.001 |
+|       l_inc_delay                        |    <0.001 |
+|       nextfm_delay                       |    <0.001 |
+|       oc_counter                         |    <0.001 |
+|       out_sel_delay                      |    <0.001 |
+|       p_counter                          |    <0.001 |
+|       pe_fifo_pop_delay                  |    <0.001 |
+|       pe_fifo_push_delay                 |    <0.001 |
+|       pe_flush_delay                     |    <0.001 |
+|       pe_neuron_bias_delay               |    <0.001 |
+|       pe_neuron_sel_delay                |    <0.001 |
+|       pe_sel_counter                     |    <0.001 |
+|       pe_write_valid_delay               |    <0.001 |
+|       pool_ih_counter                    |    <0.001 |
+|       pool_iw_counter                    |    <0.001 |
+|       pool_pad_row_delay                 |    <0.001 |
+|       pu_serdes_count_delay              |    <0.001 |
+|       scratch_sw_rd_delay                |    <0.001 |
+|       scratch_sw_wr_delay                |    <0.001 |
+|       src_1_sel_delay                    |    <0.001 |
+|       stride_counter                     |    <0.001 |
+|       wr_addr_clear_delay                |    <0.001 |
+|     vecgen                               |     0.144 |
+|   clk_IBUF_inst                          |    <0.001 |
+|   reset_IBUF_inst                        |     0.000 |
+|   start_IBUF_inst                        |    <0.001 |
++------------------------------------------+-----------+
+
+
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:28 ; elapsed = 00:00:13 . Memory (MB): peak = 8540.383 ; gain = 128.730 ; free physical = 6155 ; free virtual = 54152

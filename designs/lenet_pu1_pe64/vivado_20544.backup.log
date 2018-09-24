@@ -1,0 +1,1198 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 12:52:05 2018
+# Process ID: 20544
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_synth.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_synth.dcp
+Command: open_checkpoint ./impl-output/post_synth.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.09 . Memory (MB): peak = 6129.891 ; gain = 8.246 ; free physical = 11273 ; free virtual = 58642
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'.
+INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-20544-eda04/dcp3/dnn_accelerator_top.xdc]
+Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-20544-eda04/dcp3/dnn_accelerator_top.xdc]
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 76 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 64 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 3 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833
+open_checkpoint: Time (s): cpu = 00:00:54 ; elapsed = 00:00:38 . Memory (MB): peak = 7308.430 ; gain = 1187.785 ; free physical = 9598 ; free virtual = 56904
+for {set i 0} {$i < 32} {incr i} {
+  startgroup
+  place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU
+  endgroup
+}
+ERROR: [Vivado 12-1478] Could not find instance name or site name 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg'.
+for {set i 0} {$i < 32} {incr i} {
+  startgroup
+  place_cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg" DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"
+  set site "DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 32} {$i < 64} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"
+  set site "DSP48E2_X1Y[expr {$i + 64}]/DSP_ALU"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 32} {$i < 64} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"
+  set site "DSP48E2_X1Y[expr {$i + 32}]/DSP_ALU"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2) ? H : L]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+invalid bareword "H"
+in expression "(0 % 2) ? H : L";
+should be "$H" or "{H}" or "H(...)" or ...
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2) ? "H" : "L"]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+invalid bareword "H"
+in expression "(0 % 2) ? H : L";
+should be "$H" or "{H}" or "H(...)" or ...
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2) ? {H} : {L}]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+invalid bareword "H"
+in expression "(0 % 2) ? H : L";
+should be "$H" or "{H}" or "H(...)" or ...
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2)?{H}:{L}]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+ERROR: [Vivado 12-1478] Could not find instance name or site name 'DRAMB18_X10Y64/RAMB18E2_L'.
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2)?{H}:{L}]
+  set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+ERROR: [Vivado 12-610] Bel 'RAMB18E2_H' not found in Site 'RAMB18_X10Y65'
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lu [expr ($i % 2)?{H}:{U}]
+  set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+ERROR: [Vivado 12-610] Bel 'RAMB18E2_U' not found in Site 'RAMB18_X10Y64'
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lu [expr ($i % 2)?{U}:{L}]
+  set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 32} {$i < 64} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lu [expr ($i % 2)?{U}:{L}]
+  set site "RAMB18_X6Y[expr {$i + 32}]/RAMB18E2_$lu"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -227 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 8267.621 ; gain = 4.082 ; free physical = 7784 ; free virtual = 55087
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 52 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 221a13083
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7763 ; free virtual = 55066
+INFO: [Opt 31-389] Phase Retarget created 2048 cells and removed 2051 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1b8fe9d59
+
+Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7767 ; free virtual = 55071
+INFO: [Opt 31-389] Phase Constant propagation created 5120 cells and removed 12804 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 181ea415d
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7767 ; free virtual = 55071
+INFO: [Opt 31-389] Phase Sweep created 1 cells and removed 5120 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 181ea415d
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7768 ; free virtual = 55071
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 181ea415d
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7755 ; free virtual = 55059
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 8330.988 ; gain = 0.000 ; free physical = 7752 ; free virtual = 55056
+Ending Logic Optimization Task | Checksum: 208625fc9
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:15 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7752 ; free virtual = 55056
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=2.243 | TNS=0.000 |
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 132 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 64 WE to EN ports
+Number of BRAM Ports augmented: 1 newly gated: 65 Total Ports: 264
+Ending PowerOpt Patch Enables Task | Checksum: 1cc72b320
+
+Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.71 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7679 ; free virtual = 54983
+Ending Power Optimization Task | Checksum: 1cc72b320
+
+Time (s): cpu = 00:01:19 ; elapsed = 00:00:34 . Memory (MB): peak = 8800.531 ; gain = 469.543 ; free physical = 7722 ; free virtual = 55026
+
+Starting Logic Optimization Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 1 Remap
+Phase 1 Remap | Checksum: 1de3c9483
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:04 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7729 ; free virtual = 55033
+INFO: [Opt 31-389] Phase Remap created 1 cells and removed 2 cells
+Ending Logic Optimization Task | Checksum: 1de3c9483
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:04 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7729 ; free virtual = 55033
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:02:15 ; elapsed = 00:01:05 . Memory (MB): peak = 8800.531 ; gain = 536.992 ; free physical = 7730 ; free virtual = 55033
+place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -227 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7728 ; free virtual = 55032
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: eeb76277
+
+Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7728 ; free virtual = 55032
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7731 ; free virtual = 55037
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1e66335a9
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:13 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7640 ; free virtual = 54946
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 254d1a8a3
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:23 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7556 ; free virtual = 54862
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 254d1a8a3
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:23 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7555 ; free virtual = 54861
+Phase 1 Placer Initialization | Checksum: 254d1a8a3
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:24 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7555 ; free virtual = 54862
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 1df55946a
+
+Time (s): cpu = 00:01:49 ; elapsed = 00:00:47 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7427 ; free virtual = 54733
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1df55946a
+
+Time (s): cpu = 00:01:50 ; elapsed = 00:00:47 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7426 ; free virtual = 54733
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1812846c2
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:49 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7422 ; free virtual = 54728
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 1bb6c7042
+
+Time (s): cpu = 00:01:56 ; elapsed = 00:00:50 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7421 ; free virtual = 54727
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 11a72280f
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:00:50 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7420 ; free virtual = 54726
+
+Phase 3.5 IO Cut Optimizer
+Phase 3.5 IO Cut Optimizer | Checksum: 1b2b3b3a3
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:00:50 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7419 ; free virtual = 54725
+
+Phase 3.6 Timing Path Optimizer
+Phase 3.6 Timing Path Optimizer | Checksum: 1b2b3b3a3
+
+Time (s): cpu = 00:01:57 ; elapsed = 00:00:51 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7419 ; free virtual = 54725
+
+Phase 3.7 Small Shape Clustering
+Phase 3.7 Small Shape Clustering | Checksum: 151076aca
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:00:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7369 ; free virtual = 54675
+
+Phase 3.8 DP Optimization
+Phase 3.8 DP Optimization | Checksum: 18e1e0161
+
+Time (s): cpu = 00:02:27 ; elapsed = 00:01:03 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7366 ; free virtual = 54672
+
+Phase 3.9 Flow Legalize Slice Clusters
+Phase 3.9 Flow Legalize Slice Clusters | Checksum: 1a621b099
+
+Time (s): cpu = 00:02:28 ; elapsed = 00:01:03 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7366 ; free virtual = 54673
+
+Phase 3.10 Slice Area Swap
+Phase 3.10 Slice Area Swap | Checksum: 10fe3e06b
+
+Time (s): cpu = 00:02:33 ; elapsed = 00:01:07 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7325 ; free virtual = 54632
+
+Phase 3.11 Commit Slice Clusters
+Phase 3.11 Commit Slice Clusters | Checksum: 21b1f68ba
+
+Time (s): cpu = 00:02:45 ; elapsed = 00:01:11 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7343 ; free virtual = 54649
+
+Phase 3.12 Re-assign LUT pins
+Phase 3.12 Re-assign LUT pins | Checksum: 23c1ab966
+
+Time (s): cpu = 00:02:50 ; elapsed = 00:01:15 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7342 ; free virtual = 54648
+
+Phase 3.13 Pipeline Register Optimization
+Phase 3.13 Pipeline Register Optimization | Checksum: 1e4ae974b
+
+Time (s): cpu = 00:02:50 ; elapsed = 00:01:16 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7353 ; free virtual = 54659
+
+Phase 3.14 Fast Optimization
+Phase 3.14 Fast Optimization | Checksum: 1e4ae974b
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:20 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7349 ; free virtual = 54656
+Phase 3 Detail Placement | Checksum: 1e4ae974b
+
+Time (s): cpu = 00:03:02 ; elapsed = 00:01:20 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7350 ; free virtual = 54656
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: f88b4ae3
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs
+INFO: [Place 46-35] Processed net accelerator/vecgen/out_data[2047]_i_1_n_0, inserted BUFG to drive 2048 loads.
+INFO: [Place 46-35] Processed net accelerator/vecgen/padded_data[19455]_i_1_n_0, inserted BUFG to drive 2048 loads.
+INFO: [Place 46-35] Processed net accelerator/PU_GEN[0].u_PU/u_serdes/sipo_data_v, inserted BUFG to drive 1030 loads.
+INFO: [Place 46-35] Processed net accelerator/PU_GEN[0].u_PU/pool_DUT/pool_valid, inserted BUFG to drive 1030 loads.
+INFO: [Place 46-35] Processed net accelerator/mem_ctrl_top/OUTPUT_BUFFER_GEN[0].d_unpacker/m_unpacked_write_req0, inserted BUFG to drive 1028 loads.
+INFO: [Place 46-35] Processed net accelerator/mem_ctrl_top/u_buffer_counter/data_reg[0][0], inserted BUFG to drive 1028 loads.
+INFO: [Place 46-35] Processed net accelerator/mem_ctrl_top/u_read_info/stream_push, inserted BUFG to drive 1028 loads.
+INFO: [Place 46-34] Processed net accelerator/vecgen/STRIDE_DATA_GEN[17].stride_data[18431]_i_1_n_0, BUFG insertion was skipped due to possible timing degradation.
+INFO: [Place 46-35] Processed net accelerator/PU_GEN[0].u_PU/u_serdes/serializer_counter/E[0], inserted BUFG to drive 1024 loads.
+INFO: [Place 46-35] Processed net accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_1_n_0, inserted BUFG to drive 1024 loads.
+INFO: [Place 46-35] Processed net accelerator/PU_GEN[0].u_PU/pool_DUT/shifter_data[1023]_i_2_n_0, inserted BUFG to drive 1024 loads.
+INFO: [Place 46-31] BUFG insertion identified 11 candidate nets, 10 success, 0 skipped for placement/routing, 1 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 19316513a
+
+Time (s): cpu = 00:03:45 ; elapsed = 00:01:34 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7371 ; free virtual = 54678
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.390. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 11345206f
+
+Time (s): cpu = 00:04:06 ; elapsed = 00:01:52 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7375 ; free virtual = 54682
+Phase 4.1 Post Commit Optimization | Checksum: 11345206f
+
+Time (s): cpu = 00:04:07 ; elapsed = 00:01:52 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7376 ; free virtual = 54682
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 11345206f
+
+Time (s): cpu = 00:04:08 ; elapsed = 00:01:52 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7393 ; free virtual = 54699
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 1ae20f244
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7394 ; free virtual = 54700
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 1c7e35b60
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7394 ; free virtual = 54700
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c7e35b60
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7394 ; free virtual = 54700
+Ending Placer Task | Checksum: 18da246f9
+
+Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7545 ; free virtual = 54852
+INFO: [Common 17-83] Releasing license: Implementation
+28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:04:29 ; elapsed = 00:02:03 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7540 ; free virtual = 54846
+route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095'
+INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -227 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 72a7fed1 ConstDB: 0 ShapeSum: 801e7653 RouteDB: 9adbd1d5
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: e580c371
+
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:35 . Memory (MB): peak = 8850.492 ; gain = 49.961 ; free physical = 7188 ; free virtual = 54492
+Post Restoration Checksum: NetGraph: 649a3c1e NumContArr: e3314f64 Constraints: 2370a487 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 16b3c3009
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:36 . Memory (MB): peak = 8850.492 ; gain = 49.961 ; free physical = 7179 ; free virtual = 54483
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 16b3c3009
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:36 . Memory (MB): peak = 8867.020 ; gain = 66.488 ; free physical = 7103 ; free virtual = 54407
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 16b3c3009
+
+Time (s): cpu = 00:01:08 ; elapsed = 00:00:36 . Memory (MB): peak = 8867.020 ; gain = 66.488 ; free physical = 7103 ; free virtual = 54407
+
+Phase 2.4 Global Clock Net Routing
+ Number of Nodes with overlaps = 0
+Phase 2.4 Global Clock Net Routing | Checksum: 171770825
+
+Time (s): cpu = 00:01:15 ; elapsed = 00:00:42 . Memory (MB): peak = 8989.934 ; gain = 189.402 ; free physical = 6976 ; free virtual = 54280
+
+Phase 2.5 Update Timing
+Phase 2.5 Update Timing | Checksum: fc221c3c
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:00:56 . Memory (MB): peak = 9000.934 ; gain = 200.402 ; free physical = 6975 ; free virtual = 54279
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.483  | TNS=0.000  | WHS=-0.111 | THS=-8.733 |
+
+Phase 2 Router Initialization | Checksum: cfcf7dba
+
+Time (s): cpu = 00:02:26 ; elapsed = 00:01:01 . Memory (MB): peak = 9000.934 ; gain = 200.402 ; free physical = 6976 ; free virtual = 54280
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 269c9b816
+
+Time (s): cpu = 00:03:00 ; elapsed = 00:01:11 . Memory (MB): peak = 9031.926 ; gain = 231.395 ; free physical = 6939 ; free virtual = 54243
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 7130
+ Number of Nodes with overlaps = 478
+ Number of Nodes with overlaps = 62
+ Number of Nodes with overlaps = 20
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.302  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 4.1 Global Iteration 0 | Checksum: 22f695002
+
+Time (s): cpu = 00:05:36 ; elapsed = 00:02:07 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6967 ; free virtual = 54271
+
+Phase 4.2 Additional Iteration for Hold
+Phase 4.2 Additional Iteration for Hold | Checksum: 211691545
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:02:07 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6967 ; free virtual = 54271
+Phase 4 Rip-up And Reroute | Checksum: 211691545
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:02:07 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6967 ; free virtual = 54271
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 211691545
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:02:07 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6967 ; free virtual = 54271
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 211691545
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:02:07 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6966 ; free virtual = 54270
+Phase 5 Delay and Skew Optimization | Checksum: 211691545
+
+Time (s): cpu = 00:05:37 ; elapsed = 00:02:07 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6966 ; free virtual = 54270
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 287330ddb
+
+Time (s): cpu = 00:05:52 ; elapsed = 00:02:12 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6964 ; free virtual = 54269
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.302  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 22d0d86c0
+
+Time (s): cpu = 00:05:52 ; elapsed = 00:02:12 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6964 ; free virtual = 54269
+Phase 6 Post Hold Fix | Checksum: 22d0d86c0
+
+Time (s): cpu = 00:05:52 ; elapsed = 00:02:12 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6964 ; free virtual = 54269
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.23488 %
+  Global Horizontal Routing Utilization  = 1.31384 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 2d7bf32c7
+
+Time (s): cpu = 00:05:58 ; elapsed = 00:02:14 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6958 ; free virtual = 54262
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 2d7bf32c7
+
+Time (s): cpu = 00:05:58 ; elapsed = 00:02:14 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6958 ; free virtual = 54262
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 2d7bf32c7
+
+Time (s): cpu = 00:06:02 ; elapsed = 00:02:19 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6963 ; free virtual = 54267
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.302  | TNS=0.000  | WHS=0.010  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 2d7bf32c7
+
+Time (s): cpu = 00:06:02 ; elapsed = 00:02:19 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6968 ; free virtual = 54272
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:06:03 ; elapsed = 00:02:19 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 7080 ; free virtual = 54384
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:06:13 ; elapsed = 00:02:25 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 7080 ; free virtual = 54384
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+report_timing_summary: Time (s): cpu = 00:00:49 ; elapsed = 00:00:16 . Memory (MB): peak = 9160.949 ; gain = 44.152 ; free physical = 9021 ; free virtual = 56393
+write_checkpoint ./impl-output/post_route_regular.dcp
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 9160.949 ; gain = 0.000 ; free physical = 7131 ; free virtual = 54499
+INFO: [Common 17-1381] The checkpoint '/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/impl-output/post_route_regular.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 9160.949 ; gain = 0.000 ; free physical = 7181 ; free virtual = 54503
+/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/impl-output/post_route_regular.dcp
+llength [get_cells -hierarchical *]
+54629
+report_power
+Command: report_power
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
+| Date             : Tue Sep 18 17:34:14 2018
+| Host             : eda04 running 64-bit Debian GNU/Linux 9.5 (stretch)
+| Command          : report_power
+| Design           : dnn_accelerator_top
+| Device           : xcvu095-ffvc1517-3-e
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 1.660        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.681        |
+| Device Static (W)        | 0.980        |
+| Effective TJA (C/W)      | 1.1          |
+| Max Ambient (C)          | 98.1         |
+| Junction Temperature (C) | 26.9         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.163 |        3 |       --- |             --- |
+| CLB Logic                |     0.091 |    53376 |       --- |             --- |
+|   LUT as Logic           |     0.072 |    16739 |    537600 |            3.11 |
+|   Register               |     0.016 |    29679 |   1075200 |            2.76 |
+|   LUT as Shift Register  |     0.002 |       61 |     76800 |            0.08 |
+|   LUT as Distributed RAM |     0.002 |       72 |     76800 |            0.09 |
+|   CARRY8                 |    <0.001 |      316 |     67200 |            0.47 |
+|   BUFG                   |    <0.001 |       10 |       128 |            7.81 |
+|   F7/F8 Muxes            |    <0.001 |        2 |    537600 |           <0.01 |
+|   Others                 |     0.000 |      571 |       --- |             --- |
+| Signals                  |     0.131 |    46540 |       --- |             --- |
+| Block RAM                |     0.238 |       97 |      1728 |            5.61 |
+| DSPs                     |     0.006 |       64 |       768 |            8.33 |
+| I/O                      |     0.051 |      108 |       520 |           20.77 |
+| Static Power             |     0.980 |          |           |                 |
+| Total                    |     1.660 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------+-------------+-----------+-------------+------------+
+| Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++------------+-------------+-----------+-------------+------------+
+| Vccint     |       1.000 |     0.985 |       0.625 |      0.360 |
+| Vccaux     |       1.800 |     0.172 |       0.000 |      0.172 |
+| Vccaux_io  |       1.800 |     0.147 |       0.025 |      0.122 |
+| Vccint_io  |       1.000 |     0.030 |       0.001 |      0.029 |
+| Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18     |       1.800 |     0.003 |       0.003 |      0.000 |
+| Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vcco10     |       1.000 |     0.000 |       0.000 |      0.000 |
+| Vccbram    |       1.000 |     0.040 |       0.004 |      0.036 |
+| MGTAVcc    |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt    |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux  |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc     |       1.800 |     0.014 |       0.000 |      0.014 |
+| MGTYVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| MGTYAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTYAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
++------------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                      |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
+| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                          |                                                                                                            |
+|                             |            |                                                       |                                                                                                            |
+| Overall confidence level    | Medium     |                                                       |                                                                                                            |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 1.1                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 2.2                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++------------+--------+-----------------+
+| Clock      | Domain | Constraint (ns) |
++------------+--------+-----------------+
+| clock_200M | clk    |             5.0 |
++------------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++------------------------------------------+-----------+
+| Name                                     | Power (W) |
++------------------------------------------+-----------+
+| dnn_accelerator_top                      |     0.681 |
+|   accelerator                            |     0.629 |
+|     PU_GEN[0].u_PU                       |     0.204 |
+|       PE_GENBLK[0].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[10].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[11].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[12].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[13].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[14].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[15].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[16].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[17].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[18].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[19].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[1].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[20].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[21].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[22].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[23].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[24].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[25].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[26].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[27].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[28].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[29].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[2].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[30].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[31].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[32].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[33].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[34].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[35].u_PE                 |     0.003 |
+|         MACC_pe                          |     0.002 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |     0.001 |
+|       PE_GENBLK[36].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[37].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[38].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[39].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[3].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[40].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[41].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[42].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[43].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[44].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[45].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[46].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[47].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[48].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[49].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[4].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[50].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[51].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[52].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[53].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[54].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[55].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[56].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[57].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[58].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[59].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[5].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[60].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[61].u_PE                 |     0.006 |
+|         MACC_pe                          |     0.004 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         macc_en_delay                    |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|         src_2_delay                      |    <0.001 |
+|       PE_GENBLK[62].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[63].u_PE                 |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[6].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[7].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[8].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       PE_GENBLK[9].u_PE                  |     0.002 |
+|         MACC_pe                          |    <0.001 |
+|         ReLU                             |    <0.001 |
+|         fifo_out_delay                   |    <0.001 |
+|         pe_buffer                        |    <0.001 |
+|       neuron_delay                       |     0.015 |
+|       out_sel_delay                      |     0.001 |
+|       packer                             |     0.007 |
+|       pe_neuron_bias_delay               |    <0.001 |
+|       pe_neuron_sel_delay                |    <0.001 |
+|       pool_DUT                           |     0.030 |
+|         kw2_delay1                       |    <0.001 |
+|         kw2_delay2                       |    <0.001 |
+|         pool_fifo                        |     0.005 |
+|         row_fifo                         |     0.002 |
+|         row_fifo_out_delay               |    <0.001 |
+|         sipo_output                      |     0.017 |
+|           push_delay                     |    <0.001 |
+|       pool_cfg_delay                     |    <0.001 |
+|       pool_ctrl_delay                    |    <0.001 |
+|       pu_ctrl_delay                      |     0.002 |
+|       pu_vg_data_delay                   |     0.006 |
+|       src_1_sel_delay                    |     0.004 |
+|       src_2_sel_delay                    |    <0.001 |
+|       u_serdes                           |     0.019 |
+|         cfg_fifo                         |    <0.001 |
+|           mem_reg_0_31_0_5               |    <0.001 |
+|         data_fifo                        |     0.007 |
+|         serializer_counter               |    <0.001 |
+|         sipo_output                      |     0.006 |
+|           push_delay                     |    <0.001 |
+|       u_wb                               |     0.005 |
+|       vg_mask_delay                      |     0.005 |
+|       wb_read_addr_delay                 |    <0.001 |
+|       wb_read_req_delay                  |    <0.001 |
+|     mem_ctrl_top                         |     0.264 |
+|       OUTPUT_BUFFER_GEN[0].d_unpacker    |     0.024 |
+|       OUTPUT_BUFFER_GEN[0].outbuf_iwidth |     0.017 |
+|       OUTPUT_BUFFER_GEN[0].outbuf_owidth |     0.015 |
+|         fifo_buffer                      |     0.015 |
+|       STREAM_PU_GEN[0].packer            |    <0.001 |
+|       STREAM_PU_GEN[0].stream_pu         |    <0.001 |
+|       axi_rd_buffer                      |     0.012 |
+|       buffer_read                        |     0.013 |
+|       packer                             |     0.009 |
+|       stream_fifo                        |     0.149 |
+|       u_axim                             |     0.015 |
+|         AXI_GEN[0].u_axim                |     0.015 |
+|           WBURST_COUNTER_GEN[0].wburst_C |     0.002 |
+|           awchannel_req_buf              |    <0.001 |
+|             mem_reg_0_15_0_4             |    <0.001 |
+|           pu_obuf_rd_counter             |    <0.001 |
+|           rd_req_buf                     |     0.002 |
+|             mem_reg_0_3_0_5              |    <0.001 |
+|             mem_reg_0_3_12_17            |    <0.001 |
+|             mem_reg_0_3_18_23            |    <0.001 |
+|             mem_reg_0_3_6_11             |    <0.001 |
+|           wchannel_req_buf               |    <0.001 |
+|             fifo_buffer                  |    <0.001 |
+|               mem_reg_0_15_0_4           |    <0.001 |
+|           write_buf                      |     0.008 |
+|             fifo_buffer                  |     0.008 |
+|       u_buffer_counter                   |     0.001 |
+|         read_info_fifo                   |    <0.001 |
+|         rvalid_counter                   |    <0.001 |
+|       u_mem_ctrl                         |     0.005 |
+|         buffer_read_counter              |    <0.001 |
+|         read_idx_counter                 |    <0.001 |
+|         stream_read_loop_0               |    <0.001 |
+|         stream_read_loop_1               |    <0.001 |
+|         stream_read_loop_2               |    <0.001 |
+|         stream_write_counter             |    <0.001 |
+|         write_idx_counter                |    <0.001 |
+|       u_read_info                        |     0.002 |
+|         read_info_fifo                   |     0.001 |
+|           mem_reg_0_31_0_5               |    <0.001 |
+|           mem_reg_0_31_6_11              |    <0.001 |
+|         rvalid_counter                   |    <0.001 |
+|     u_controller                         |     0.019 |
+|       FC_neuron_idx_counter              |    <0.001 |
+|       conv_stride_counter                |    <0.001 |
+|       ic_counter                         |    <0.001 |
+|       ic_inc_delay                       |    <0.001 |
+|       ih_counter                         |    <0.001 |
+|       ih_inc_delay                       |    <0.001 |
+|       iw_counter                         |    <0.001 |
+|       iw_inc_delay                       |    <0.001 |
+|       kw_counter                         |    <0.001 |
+|       l_counter                          |    <0.001 |
+|       l_inc_delay                        |    <0.001 |
+|       nextfm_delay                       |    <0.001 |
+|       oc_counter                         |    <0.001 |
+|       out_sel_delay                      |    <0.001 |
+|       p_counter                          |    <0.001 |
+|       pe_fifo_pop_delay                  |    <0.001 |
+|       pe_fifo_push_delay                 |    <0.001 |
+|       pe_flush_delay                     |    <0.001 |
+|       pe_neuron_bias_delay               |    <0.001 |
+|       pe_neuron_sel_delay                |    <0.001 |
+|       pe_sel_counter                     |    <0.001 |
+|       pe_write_valid_delay               |    <0.001 |
+|       pool_ih_counter                    |    <0.001 |
+|       pool_iw_counter                    |    <0.001 |
+|       pool_pad_row_delay                 |    <0.001 |
+|       pu_serdes_count_delay              |    <0.001 |
+|       scratch_sw_rd_delay                |    <0.001 |
+|       scratch_sw_wr_delay                |    <0.001 |
+|       src_1_sel_delay                    |    <0.001 |
+|       stride_counter                     |    <0.001 |
+|       wr_addr_clear_delay                |    <0.001 |
+|     vecgen                               |     0.141 |
+|   clk_IBUF_inst                          |    <0.001 |
+|   reset_IBUF_inst                        |     0.000 |
+|   start_IBUF_inst                        |    <0.001 |
++------------------------------------------+-----------+
+
+
+0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:28 ; elapsed = 00:00:14 . Memory (MB): peak = 9196.969 ; gain = 36.020 ; free physical = 6102 ; free virtual = 54099

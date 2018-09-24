@@ -1,0 +1,4 @@
+net clk 1
+net done 1
+net reset 1
+net start 1

@@ -1,0 +1,115 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 12:52:05 2018
+# Process ID: 20544
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_synth.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_synth.dcp
+for {set i 0} {$i < 32} {incr i} {
+  startgroup
+  place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  startgroup
+  place_cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg" DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"
+  set site "DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 32} {$i < 64} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"
+  set site "DSP48E2_X1Y[expr {$i + 64}]/DSP_ALU"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 32} {$i < 64} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"
+  set site "DSP48E2_X1Y[expr {$i + 32}]/DSP_ALU"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2) ? H : L]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2) ? "H" : "L"]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2) ? {H} : {L}]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2)?{H}:{L}]
+  set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lh [expr ($i % 2)?{H}:{L}]
+  set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lu [expr ($i % 2)?{H}:{U}]
+  set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 0} {$i < 32} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lu [expr ($i % 2)?{U}:{L}]
+  set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+for {set i 32} {$i < 64} {incr i} {
+  set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"
+  set lu [expr ($i % 2)?{U}:{L}]
+  set site "RAMB18_X6Y[expr {$i + 32}]/RAMB18E2_$lu"
+  startgroup
+  place_cell $cell $site
+  endgroup
+}
+opt_design
+place_design
+route_design
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+write_checkpoint ./impl-output/post_route_regular.dcp
+llength [get_cells -hierarchical *]
+report_power

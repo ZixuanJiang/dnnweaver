@@ -1,0 +1,55 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Thu Sep 20 16:33:25 2018
+# Process ID: 19902
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+write_edif /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/project_post_route.edn
+write_verilog /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/project_post_route.v
+pwd
+source scripts/export_bookshelf_netlist.tcl
+ll
+ls
+pwd
+source ../../../scripts/export_bookshelf_netlist.tcl
+source ../../../scripts/export_bookshelf_netlist.tcl
+source ../../../scripts/export_bookshelf_netlist.tcl
+../../../scripts/export_bookshelf_netlist.tcl
+source ../../../scripts/export_bookshelf_netlist.tcl
+source ../../../scripts/export_bookshelf_netlist.tcl netlist
+source ../../../scripts/export_bookshelf_netlist.tcl netlist
+source ../../../scripts/export_bookshelf_netlist.tcl
+source ../../../scripts/export_bookshelf_netlist.tcl
+export_bookshelf_netlist
+export_bookshelf_netlist netlist
+export_bookshelf_netlist netlist
+source ../../../scripts/export_bookshelf_netlist.tcl
+export_bookshelf_netlist netlist
+export_bookshelf_netlist netlist
+get_property ref_name [get_cells -hier *]
+[sort get_property ref_name [get_cells -hier *]]
+lsort -unique [get_property ref_name [get_cells -hier *]]
+get_cells -filter {ref_name == DSP48E2}
+get_cells -filter {ref_name =~ DSP48E2}
+get_cells -hier -filter {ref_name == DSP48E2}
+highlight_objects [get_cells -hier -filter {ref_name == DSP48E2}]
+lsort -unique [get_property ref_name [get_cells -hier *]]
+highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]
+unhighlight_objects *
+unhighlight_objects [get_cells -hier *]
+highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]
+select_objects _objects [get_cells -hier -filter {ref_name == IBUFCTRL}]
+select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]
+select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]
+lsort -unique [get_property ref_name [get_cells -hier *]]
+select_objects [get_cells -hier -filter {ref_name == INBUF}]
+select_objects [get_cells -hier -filter {ref_name == OBUFT}]
+unhighlight_objects [get_cells -hier *]
+select_objects [get_cells -hier -filter {ref_name == PE}]

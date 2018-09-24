@@ -1,0 +1,1319 @@
+/*
+
+Xilinx Vivado v2017.3 (64-bit) [Major: 2017, Minor: 3]
+SW Build: 2018833 on Wed Oct  4 19:58:07 MDT 2017
+IP Build: 2016188 on Wed Oct  4 21:52:56 MDT 2017
+
+Process ID: 20544
+License: Customer
+
+Current time: 	Sat Sep 15 12:52:24 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+OS Version: 4.9.0-8-amd64
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: :1
+Screen size: 1900x1200
+Screen resolution (DPI): 95
+Available screens: 1
+Available disk space: 79 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/usr/local/packages/Xilinx/Vivado/2017.3/tps/lnx64/jre
+JVM executable location: 	/usr/local/packages/Xilinx/Vivado/2017.3/tps/lnx64/jre/bin/java
+
+User name: 	wuxili
+User home directory: /home/polaris/wuxili
+User working directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /usr/local/packages/Xilinx/Vivado
+HDI_APPROOT: /usr/local/packages/Xilinx/Vivado/2017.3
+RDI_DATADIR: /usr/local/packages/Xilinx/Vivado/2017.3/data
+RDI_BINDIR: /usr/local/packages/Xilinx/Vivado/2017.3/bin
+
+User preferences location: /home/polaris/wuxili/.Xilinx/Vivado
+Vivado preferences directory: /home/polaris/wuxili/.Xilinx/Vivado/2017.3/vivado.xml
+Vivado layouts directory: /home/polaris/wuxili/.Xilinx/Vivado/2017.3/layouts
+PlanAhead jar file location: 	/usr/local/packages/Xilinx/Vivado/2017.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+Vivado journal file location: 	/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-20544-eda04
+
+GUI allocated memory:	179 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 1,038 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: START_PROGRESS_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// bs (cl):  Reading checkpoint file './impl-output/post_synth.dcp' : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_checkpoint ./impl-output/post_synth.dcp 
+// Tcl Message: Command: open_checkpoint ./impl-output/post_synth.dcp  Starting open_checkpoint Task  Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.09 . Memory (MB): peak = 6129.891 ; gain = 8.246 ; free physical = 11273 ; free virtual = 58642 
+// [GUI Memory]: 45 MB (+44617kb) [00:00:06]
+// [Engine Memory]: 920 MB (+813656kb) [00:00:06]
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,026 MB (+61997kb) [00:00:07]
+// [GUI Memory]: 51 MB (+4403kb) [00:00:08]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,061 MB. GUI used memory: 31 MB. Current time: 9/15/18 12:52:25 PM CDT
+// [Engine Memory]: 1,078 MB (+634kb) [00:00:10]
+// [Engine Memory]: 1,239 MB (+112736kb) [00:00:25]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,330 MB. GUI used memory: 31 MB. Current time: 9/15/18 12:52:45 PM CDT
+// [Engine Memory]: 1,359 MB (+61232kb) [00:00:30]
+// [Engine Memory]: 1,638 MB (+220613kb) [00:00:35]
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,653 MB. GUI used memory: 30 MB. Current time: 9/15/18 12:52:52 PM CDT
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 55 MB (+1342kb) [00:00:37]
+// [GUI Memory]: 71 MB (+14054kb) [00:00:38]
+// [Engine Memory]: 1,942 MB (+233477kb) [00:00:38]
+// [GUI Memory]: 78 MB (+2746kb) [00:00:38]
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 2.7s
+// [GUI Memory]: 113 MB (+33104kb) [00:00:40]
+// [Engine Memory]: 2,043 MB (+3551kb) [00:00:40]
+// Device: addNotify
+// [GUI Memory]: 123 MB (+4593kb) [00:00:40]
+// Xgd.load filename: /usr/local/packages/Xilinx/Vivado/2017.3/data/parts/xilinx/virtexu/devint/virtexu/xcvu095/xcvu095.xgd; ZipEntry: xcvu095_detail.xgd elapsed time: 3.7s
+// DeviceView Instantiated
+// TclEventType: CURR_DESIGN_SET
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2017.3 INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message: Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-20544-eda04/dcp3/dnn_accelerator_top.xdc] Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-20544-eda04/dcp3/dnn_accelerator_top.xdc] 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 76 instances were transformed.   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 64 instances   IBUF => IBUF (IBUFCTRL, INBUF): 3 instances   RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances  
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Device view-level: 0.0
+// [GUI Memory]: 130 MB (+169kb) [00:00:42]
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: DESIGN_MODE_CHANGE
+// Tcl Message: INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833 
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: open_checkpoint: Time (s): cpu = 00:00:54 ; elapsed = 00:00:38 . Memory (MB): peak = 7308.430 ; gain = 1187.785 ; free physical = 9598 ; free virtual = 56904 
+dismissDialog("Reading checkpoint file './impl-output/post_synth.dcp'"); // bs (cl)
+// TclEventType: STOP_PROGRESS_DIALOG
+// HMemoryUtils.trashcanNow. Engine heap size: 2,067 MB. GUI used memory: 107 MB. Current time: 9/15/18 12:53:25 PM CDT
+// [Engine Memory]: 2,578 MB (+454534kb) [00:01:18]
+// [Engine Memory]: 2,834 MB (+133226kb) [00:01:28]
+// HMemoryUtils.trashcanNow. Engine heap size: 2,834 MB. GUI used memory: 107 MB. Current time: 9/15/18 12:53:45 PM CDT
+// [Engine Memory]: 2,990 MB (+14849kb) [00:01:33]
+// RouteApi::initDelayMediator elapsed time: 54s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// [GUI Memory]: 136 MB (+100kb) [00:07:37]
+// [GUI Memory]: 145 MB (+2568kb) [00:08:52]
+// Elapsed time: 507 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "for {set i 0} {$i < 32} {incr i} {", true); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {endgroup*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {e*}'
+// Tcl Command: 'rdi::info_commands {ex*}'
+// Tcl Command: 'rdi::info_commands {exp*}'
+// Tcl Command: 'rdi::info_commands {expr*}'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   startgroup;   place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   startgroup;   place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU;   endgroup; }'
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   startgroup   place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU   endgroup } 
+// Tcl Message: ERROR: [Vivado 12-1478] Could not find instance name or site name 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,986 MB. GUI used memory: 130 MB. Current time: 9/15/18 1:02:42 PM CDT
+// Elapsed time: 148 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 37 seconds
+selectMenuItem((HResource) null, "Copy"); // ac (ai, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {startgroup*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   startgroup;   place_cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg" DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   startgroup;   place_cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg" DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU;   endgroup; }'
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   startgroup   place_cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg" DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU   endgroup } 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Elapsed time: 66 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 18 seconds
+selectMenuItem((HResource) null, "Copy"); // ac (ai, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 16 seconds
+selectMenuItem((HResource) null, "Copy"); // ac (ai, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg";   set site "DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg";   set site "DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU";   startgroup;   place_cell $cell $site;   endgroup; }'
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// [GUI Memory]: 153 MB (+581kb) [00:14:21]
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"   set site "DSP48E2_X2Y[expr {$i + 64}]/DSP_ALU"   startgroup   place_cell $cell $site   endgroup } 
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 2,992 MB. GUI used memory: 132 MB. Current time: 9/15/18 1:06:37 PM CDT
+// Elapsed time: 30 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 775279, 2041962); // D (M, cl)
+// Device view-level: 0.9
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 32} {$i < 64} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg";   set site "DSP48E2_X1Y[expr {$i + 64}]/DSP_ALU";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 32} {$i < 64} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg";   set site "DSP48E2_X1Y[expr {$i + 64}]/DSP_ALU";   startgroup;   place_cell $cell $site;   endgroup; }'
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: for {set i 32} {$i < 64} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"   set site "DSP48E2_X1Y[expr {$i + 64}]/DSP_ALU"   startgroup   place_cell $cell $site   endgroup } 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 2,995 MB. GUI used memory: 133 MB. Current time: 9/15/18 1:07:20 PM CDT
+// Elapsed time: 33 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 32} {$i < 64} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg";   set site "DSP48E2_X1Y[expr {$i + 32}]/DSP_ALU";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 32} {$i < 64} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg";   set site "DSP48E2_X1Y[expr {$i + 32}]/DSP_ALU";   startgroup;   place_cell $cell $site;   endgroup; }'
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: for {set i 32} {$i < 64} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/MACC_pe/out_reg_reg"   set site "DSP48E2_X1Y[expr {$i + 32}]/DSP_ALU"   startgroup   place_cell $cell $site   endgroup } 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// bs (cl):  Tcl Command Line : addNotify
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 2,997 MB. GUI used memory: 153 MB. Current time: 9/15/18 1:07:45 PM CDT
+// Elapsed time: 18 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 52 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 24 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // U (q, cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_VIEW, "View"); // U (q, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {e*}'
+// Tcl Command: 'rdi::info_commands {ex*}'
+// Tcl Command: 'rdi::info_commands {expr*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands {set*}'
+// Tcl Command: 'rdi::info_commands {e*}'
+// Tcl Command: 'rdi::info_commands {ex*}'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2) ? H : L];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2) ? H : L];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lh [expr ($i % 2) ? H : L]   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"   startgroup   place_cell $cell $site   endgroup } 
+// Tcl Message: invalid bareword "H" in expression "(0 % 2) ? H : L"; should be "$H" or "{H}" or "H(...)" or ... 
+// Elapsed time: 192 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2) ? "H" : "L"];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2) ? "H" : "L"];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lh [expr ($i % 2) ? "H" : "L"]   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"   startgroup   place_cell $cell $site   endgroup } 
+// Tcl Message: invalid bareword "H" in expression "(0 % 2) ? H : L"; should be "$H" or "{H}" or "H(...)" or ... 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,998 MB. GUI used memory: 151 MB. Current time: 9/15/18 1:12:35 PM CDT
+// Elapsed time: 18 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2) ? {H} : {L}];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2) ? {H} : {L}];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lh [expr ($i % 2) ? {H} : {L}]   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"   startgroup   place_cell $cell $site   endgroup } 
+// Tcl Message: invalid bareword "H" in expression "(0 % 2) ? H : L"; should be "$H" or "{H}" or "H(...)" or ... 
+// Elapsed time: 32 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2)?{H}:{L}];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2)?{H}:{L}];   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lh [expr ($i % 2)?{H}:{L}]   set site "DRAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"   startgroup   place_cell $cell $site   endgroup } 
+// Tcl Message: ERROR: [Vivado 12-1478] Could not find instance name or site name 'DRAMB18_X10Y64/RAMB18E2_L'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 2,999 MB. GUI used memory: 143 MB. Current time: 9/15/18 1:13:24 PM CDT
+// Elapsed time: 23 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2)?{H}:{L}];   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lh [expr ($i % 2)?{H}:{L}];   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh";   startgroup;   place_cell $cell $site;   endgroup; }'
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lh [expr ($i % 2)?{H}:{L}]   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lh"   startgroup   place_cell $cell $site   endgroup } 
+// Tcl Message: ERROR: [Vivado 12-610] Bel 'RAMB18E2_H' not found in Site 'RAMB18_X10Y65' 
+// Elapsed time: 26 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 12 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lu [expr ($i % 2)?{H}:{U}];   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lu [expr ($i % 2)?{H}:{U}];   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lu [expr ($i % 2)?{H}:{U}]   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu"   startgroup   place_cell $cell $site   endgroup } 
+// Tcl Message: ERROR: [Vivado 12-610] Bel 'RAMB18E2_U' not found in Site 'RAMB18_X10Y64' 
+// Elapsed time: 29 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lu [expr ($i % 2)?{U}:{L}];   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 0} {$i < 32} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lu [expr ($i % 2)?{U}:{L}];   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu";   startgroup;   place_cell $cell $site;   endgroup; }'
+// TclEventType: LOC_CONSTRAINT_REMOVE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// Tcl Message: for {set i 0} {$i < 32} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lu [expr ($i % 2)?{U}:{L}]   set site "RAMB18_X10Y[expr {$i + 64}]/RAMB18E2_$lu"   startgroup   place_cell $cell $site   endgroup } 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,000 MB. GUI used memory: 141 MB. Current time: 9/15/18 1:15:08 PM CDT
+// Elapsed time: 23 seconds
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 610922, 2525773); // D (M, cl)
+// Device view-level: 3.0
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 621725, 2549578); // D (M, cl)
+// Device select: 'Site - RAMB18_X6Y75'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 6398, 26237, 1453, 520); // Y (k, cl)
+// PAPropertyPanels.initPanels (Site: RAMB18_X6Y75) elapsed time: 0.3s
+// [GUI Memory]: 162 MB (+1545kb) [00:23:22]
+// Elapsed time: 20 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'for {set i 32} {$i < 64} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lu [expr ($i % 2)?{U}:{L}];   set site "RAMB18_X6Y[expr {$i + 32}]/RAMB18E2_$lu";   startgroup;   place_cell $cell $site;   endgroup; }'
+// Tcl Command: 'for {set i 32} {$i < 64} {incr i} {;   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0";   set lu [expr ($i % 2)?{U}:{L}];   set site "RAMB18_X6Y[expr {$i + 32}]/RAMB18E2_$lu";   startgroup;   place_cell $cell $site;   endgroup; }'
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: for {set i 32} {$i < 64} {incr i} {   set cell "accelerator/PU_GEN[0].u_PU/PE_GENBLK[$i].u_PE/pe_buffer/mem_reg_bram_0"   set lu [expr ($i % 2)?{U}:{L}]   set site "RAMB18_X6Y[expr {$i + 32}]/RAMB18E2_$lu"   startgroup   place_cell $cell $site   endgroup } 
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: LOC_CONSTRAINT_ADD
+// HMemoryUtils.trashcanNow. Engine heap size: 3,007 MB. GUI used memory: 139 MB. Current time: 9/15/18 1:16:03 PM CDT
+// Elapsed time: 24 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Device select: 'Tile - CLEL_R_X31Y187'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 6332, 26252, 1453, 520); // Y (k, cl)
+// [Engine Memory]: 3,149 MB (+9955kb) [00:23:55]
+// PAPropertyPanels.initPanels (Tile: CLEL_R_X31Y187) elapsed time: 0.2s
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 615311, 2551035); // D (M, cl)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+// [GUI Memory]: 171 MB (+220kb) [00:23:57]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 363381, 1945560); // D (M, cl)
+// Device view-level: 0.8
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 602980, 2690158); // D (M, cl)
+// Device select: 'Clock Region - X1Y2'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 619, 1332, 1453, 520); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,146 MB. GUI used memory: 153 MB. Current time: 9/15/18 1:16:16 PM CDT
+// Tcl Command: 'rdi::info_commands {opt*}'
+// Tcl Command: 'rdi::info_commands {opt*}'
+// Tcl Command: 'rdi::info_commands {p*}'
+// Tcl Command: 'rdi::info_commands {pl*}'
+// Tcl Command: 'rdi::info_commands {opt*}'
+// Tcl Command: 'rdi::info_commands {opt_*}'
+// Elapsed time: 34 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "opt_design", true); // aG (af, cl)
+// Tcl Command: 'opt_design'
+// Tcl Command: 'opt_design'
+// TclEventType: NETLIST_UPDATE
+// Tcl Message: opt_design 
+// Tcl Message: Command: opt_design Attempting to get a license for feature 'Implementation' and/or device 'xcvu095' 
+// Tcl Message: INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095' INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -227 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases. 
+// Tcl Message: Running DRC as a precondition to command opt_design  Starting DRC Task 
+// Tcl Message: INFO: [DRC 23-27] Running DRC with 8 threads 
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: INFO: [Project 1-461] DRC finished with 0 Errors INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information. 
+// Tcl Message:  Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 8267.621 ; gain = 4.082 ; free physical = 7784 ; free virtual = 55087 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. 
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message:  Starting Logic Optimization Task 
+// Tcl Message:  Phase 1 Retarget 
+// TclEventType: NETLIST_UPDATE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,205 MB. GUI used memory: 127 MB. Current time: 9/15/18 1:17:05 PM CDT
+// Tcl Message: INFO: [Opt 31-138] Pushed 1 inverter(s) to 52 load pin(s). 
+// Tcl Message: INFO: [Opt 31-49] Retargeted 0 cell(s). 
+// Tcl Message: Phase 1 Retarget | Checksum: 221a13083  Time (s): cpu = 00:00:11 ; elapsed = 00:00:04 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7763 ; free virtual = 55066 
+// Tcl Message: INFO: [Opt 31-389] Phase Retarget created 2048 cells and removed 2051 cells 
+// Tcl Message:  Phase 2 Constant propagation 
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Phase 2 Constant propagation | Checksum: 1b8fe9d59  Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7767 ; free virtual = 55071 
+// Tcl Message: INFO: [Opt 31-389] Phase Constant propagation created 5120 cells and removed 12804 cells 
+// Tcl Message:  Phase 3 Sweep 
+// Tcl Message: Phase 3 Sweep | Checksum: 181ea415d  Time (s): cpu = 00:00:18 ; elapsed = 00:00:12 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7767 ; free virtual = 55071 
+// Tcl Message: INFO: [Opt 31-389] Phase Sweep created 1 cells and removed 5120 cells 
+// Tcl Message:  Phase 4 BUFG optimization 
+// Tcl Message: Phase 4 BUFG optimization | Checksum: 181ea415d  Time (s): cpu = 00:00:20 ; elapsed = 00:00:14 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7768 ; free virtual = 55071 
+// Tcl Message: INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells 
+// Tcl Message:  Phase 5 Shift Register Optimization 
+// Tcl Message: Phase 5 Shift Register Optimization | Checksum: 181ea415d  Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7755 ; free virtual = 55059 
+// Tcl Message: INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells 
+// Tcl Message:  Starting Connectivity Check Task  Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 8330.988 ; gain = 0.000 ; free physical = 7752 ; free virtual = 55056 Ending Logic Optimization Task | Checksum: 208625fc9  Time (s): cpu = 00:00:22 ; elapsed = 00:00:15 . Memory (MB): peak = 8330.988 ; gain = 63.367 ; free physical = 7752 ; free virtual = 55056 
+// Tcl Message:  Starting Power Optimization Task 
+// Tcl Message: INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns. 
+// Tcl Message: INFO: [Pwropt 34-9] Applying IDT optimizations ... INFO: [Pwropt 34-10] Applying ODC optimizations ... INFO: [Timing 38-35] Done setting XDC timing constraints. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,469 MB. GUI used memory: 114 MB. Current time: 9/15/18 1:17:25 PM CDT
+// [Engine Memory]: 3,469 MB (+170237kb) [00:25:10]
+// Tcl Message: INFO: [Physopt 32-619] Estimated Timing Summary | WNS=2.243 | TNS=0.000 | 
+// [Engine Memory]: 3,645 MB (+2564kb) [00:25:25]
+// Tcl Message: Running Vector-less Activity Propagation... 
+// Tcl Message:  Finished Running Vector-less Activity Propagation 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,730 MB. GUI used memory: 114 MB. Current time: 9/15/18 1:17:45 PM CDT
+// TclEventType: POWER_CNS_STALE
+// Tcl Message:   Starting PowerOpt Patch Enables Task 
+// Tcl Message: INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 132 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated. INFO: [Pwropt 34-201] Structural ODC has moved 64 WE to EN ports 
+// Tcl Message: Number of BRAM Ports augmented: 1 newly gated: 65 Total Ports: 264 
+// Tcl Message: Ending PowerOpt Patch Enables Task | Checksum: 1cc72b320  Time (s): cpu = 00:00:00.73 ; elapsed = 00:00:00.71 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7679 ; free virtual = 54983 Ending Power Optimization Task | Checksum: 1cc72b320  Time (s): cpu = 00:01:19 ; elapsed = 00:00:34 . Memory (MB): peak = 8800.531 ; gain = 469.543 ; free physical = 7722 ; free virtual = 55026  Starting Logic Optimization Task 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. 
+// Tcl Message:  Phase 1 Remap 
+// TclEventType: NETLIST_UPDATE
+// Tcl Message: Phase 1 Remap | Checksum: 1de3c9483  Time (s): cpu = 00:00:15 ; elapsed = 00:00:04 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7729 ; free virtual = 55033 
+// Tcl Message: INFO: [Opt 31-389] Phase Remap created 1 cells and removed 2 cells 
+// Tcl Message: Ending Logic Optimization Task | Checksum: 1de3c9483  Time (s): cpu = 00:00:15 ; elapsed = 00:00:04 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7729 ; free virtual = 55033 
+// Tcl Message: INFO: [Common 17-83] Releasing license: Implementation 
+// Tcl Message: 24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered. opt_design completed successfully 
+// Tcl Message: opt_design: Time (s): cpu = 00:02:15 ; elapsed = 00:01:05 . Memory (MB): peak = 8800.531 ; gain = 536.992 ; free physical = 7730 ; free virtual = 55033 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,605 MB. GUI used memory: 114 MB. Current time: 9/15/18 1:17:57 PM CDT
+// Elapsed time: 66 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {p*}'
+// Tcl Command: 'rdi::info_commands {pla*}'
+// Tcl Command: 'rdi::info_commands {plac*}'
+// Tcl Command: 'rdi::info_commands {place*}'
+// Tcl Command: 'rdi::info_commands {place_d*}'
+// Tcl Command: 'rdi::info_commands {place_desio*}'
+// Tcl Command: 'rdi::info_commands {place_desi*}'
+// Tcl Command: 'rdi::info_commands {place_design*}'
+// Elapsed time: 23 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "place_design", true); // aG (af, cl)
+// Tcl Command: 'place_design'
+// Tcl Command: 'place_design'
+// Tcl Message: place_design 
+// Tcl Message: Command: place_design Attempting to get a license for feature 'Implementation' and/or device 'xcvu095' 
+// Tcl Message: INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095' INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -227 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases. INFO: [DRC 23-27] Running DRC with 8 threads INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information. 
+// Tcl Message: Running DRC as a precondition to command place_design 
+// Tcl Message: INFO: [DRC 23-27] Running DRC with 8 threads 
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information. 
+// Tcl Message:  Starting Placer Task 
+// Tcl Message: INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs 
+// Tcl Message:  Phase 1 Placer Initialization  Phase 1.1 Placer Initialization Netlist Sorting 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7728 ; free virtual = 55032 
+// Tcl Message: Phase 1.1 Placer Initialization Netlist Sorting | Checksum: eeb76277  Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.14 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7728 ; free virtual = 55032 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. 
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// TclEventType: NETLIST_UPDATE
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7731 ; free virtual = 55037 
+// Tcl Message:  Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 1e66335a9  Time (s): cpu = 00:00:35 ; elapsed = 00:00:13 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7640 ; free virtual = 54946  Phase 1.3 Build Placer Netlist Model 
+// Tcl Message: Phase 1.3 Build Placer Netlist Model | Checksum: 254d1a8a3  Time (s): cpu = 00:01:02 ; elapsed = 00:00:23 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7556 ; free virtual = 54862  Phase 1.4 Constrain Clocks/Macros Phase 1.4 Constrain Clocks/Macros | Checksum: 254d1a8a3  Time (s): cpu = 00:01:02 ; elapsed = 00:00:23 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7555 ; free virtual = 54861 Phase 1 Placer Initialization | Checksum: 254d1a8a3  Time (s): cpu = 00:01:03 ; elapsed = 00:00:24 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7555 ; free virtual = 54862  Phase 2 Global Placement 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: Phase 2 Global Placement | Checksum: 1df55946a  Time (s): cpu = 00:01:49 ; elapsed = 00:00:47 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7427 ; free virtual = 54733  Phase 3 Detail Placement  Phase 3.1 Commit Multi Column Macros Phase 3.1 Commit Multi Column Macros | Checksum: 1df55946a  Time (s): cpu = 00:01:50 ; elapsed = 00:00:47 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7426 ; free virtual = 54733 
+// Tcl Message:  Phase 3.2 Commit Most Macros & LUTRAMs 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1812846c2  Time (s): cpu = 00:01:56 ; elapsed = 00:00:49 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7422 ; free virtual = 54728  Phase 3.3 Area Swap Optimization Phase 3.3 Area Swap Optimization | Checksum: 1bb6c7042  Time (s): cpu = 00:01:56 ; elapsed = 00:00:50 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7421 ; free virtual = 54727  Phase 3.4 Pipeline Register Optimization Phase 3.4 Pipeline Register Optimization | Checksum: 11a72280f  Time (s): cpu = 00:01:57 ; elapsed = 00:00:50 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7420 ; free virtual = 54726  Phase 3.5 IO Cut Optimizer 
+// Tcl Message: Phase 3.5 IO Cut Optimizer | Checksum: 1b2b3b3a3  Time (s): cpu = 00:01:57 ; elapsed = 00:00:50 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7419 ; free virtual = 54725  Phase 3.6 Timing Path Optimizer Phase 3.6 Timing Path Optimizer | Checksum: 1b2b3b3a3  Time (s): cpu = 00:01:57 ; elapsed = 00:00:51 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7419 ; free virtual = 54725 
+// Tcl Message:  Phase 3.7 Small Shape Clustering 
+// Tcl Message: Phase 3.7 Small Shape Clustering | Checksum: 151076aca  Time (s): cpu = 00:02:02 ; elapsed = 00:00:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7369 ; free virtual = 54675  Phase 3.8 DP Optimization 
+// Tcl Message: Phase 3.8 DP Optimization | Checksum: 18e1e0161  Time (s): cpu = 00:02:27 ; elapsed = 00:01:03 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7366 ; free virtual = 54672  Phase 3.9 Flow Legalize Slice Clusters 
+// Tcl Message: Phase 3.9 Flow Legalize Slice Clusters | Checksum: 1a621b099  Time (s): cpu = 00:02:28 ; elapsed = 00:01:03 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7366 ; free virtual = 54673  Phase 3.10 Slice Area Swap 
+// Tcl Message: Phase 3.10 Slice Area Swap | Checksum: 10fe3e06b  Time (s): cpu = 00:02:33 ; elapsed = 00:01:07 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7325 ; free virtual = 54632  Phase 3.11 Commit Slice Clusters 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: Phase 3.11 Commit Slice Clusters | Checksum: 21b1f68ba  Time (s): cpu = 00:02:45 ; elapsed = 00:01:11 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7343 ; free virtual = 54649  Phase 3.12 Re-assign LUT pins 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: Phase 3.12 Re-assign LUT pins | Checksum: 23c1ab966  Time (s): cpu = 00:02:50 ; elapsed = 00:01:15 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7342 ; free virtual = 54648  Phase 3.13 Pipeline Register Optimization Phase 3.13 Pipeline Register Optimization | Checksum: 1e4ae974b  Time (s): cpu = 00:02:50 ; elapsed = 00:01:16 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7353 ; free virtual = 54659  Phase 3.14 Fast Optimization 
+// Tcl Message: Phase 3.14 Fast Optimization | Checksum: 1e4ae974b  Time (s): cpu = 00:03:02 ; elapsed = 00:01:20 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7349 ; free virtual = 54656 Phase 3 Detail Placement | Checksum: 1e4ae974b  Time (s): cpu = 00:03:02 ; elapsed = 00:01:20 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7350 ; free virtual = 54656  Phase 4 Post Placement Optimization and Clean-Up  Phase 4.1 Post Commit Optimization 
+// Tcl Message: INFO: [Timing 38-35] Done setting XDC timing constraints. 
+// Tcl Message:  Phase 4.1.1 Post Placement Optimization 
+// Tcl Message: Post Placement Optimization Initialization | Checksum: f88b4ae3  Phase 4.1.1.1 BUFG Insertion 
+// Tcl Message: INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 8 CPUs 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: INFO: [Place 46-35] Processed net accelerator/vecgen/out_data[2047]_i_1_n_0, inserted BUFG to drive 2048 loads. INFO: [Place 46-35] Processed net accelerator/vecgen/padded_data[19455]_i_1_n_0, inserted BUFG to drive 2048 loads. 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: Phase 4.1.1.1 BUFG Insertion | Checksum: 19316513a  Time (s): cpu = 00:03:45 ; elapsed = 00:01:34 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7371 ; free virtual = 54678 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message: INFO: [Place 30-746] Post Placement Timing Summary WNS=0.390. For the most accurate timing information please run report_timing. 
+// Tcl Message: Phase 4.1.1 Post Placement Optimization | Checksum: 11345206f  Time (s): cpu = 00:04:06 ; elapsed = 00:01:52 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7375 ; free virtual = 54682 
+// Tcl Message: Phase 4.1 Post Commit Optimization | Checksum: 11345206f  Time (s): cpu = 00:04:07 ; elapsed = 00:01:52 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7376 ; free virtual = 54682  Phase 4.2 Post Placement Cleanup Phase 4.2 Post Placement Cleanup | Checksum: 11345206f  Time (s): cpu = 00:04:08 ; elapsed = 00:01:52 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7393 ; free virtual = 54699 
+// Tcl Message:  Phase 4.3 Placer Reporting Phase 4.3 Placer Reporting | Checksum: 1ae20f244  Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7394 ; free virtual = 54700  Phase 4.4 Final Placement Cleanup Phase 4.4 Final Placement Cleanup | Checksum: 1c7e35b60  Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7394 ; free virtual = 54700 Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1c7e35b60  Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7394 ; free virtual = 54700 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 3,608 MB. GUI used memory: 105 MB. Current time: 9/15/18 1:20:21 PM CDT
+// Engine heap size: 3,608 MB. GUI used memory: 106 MB. Current time: 9/15/18 1:20:22 PM CDT
+// TclEventType: DESIGN_CLOSE
+// Tcl Message: Ending Placer Task | Checksum: 18da246f9  Time (s): cpu = 00:04:09 ; elapsed = 00:01:54 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7545 ; free virtual = 54852 
+// TclEventType: DESIGN_CLOSE
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 3,608 MB. GUI used memory: 38 MB. Current time: 9/15/18 1:20:22 PM CDT
+// TclEventType: DESIGN_NEW
+// Device: addNotify
+// Xgd.load filename: /usr/local/packages/Xilinx/Vivado/2017.3/data/parts/xilinx/virtexu/devint/virtexu/xcvu095/xcvu095.xgd; ZipEntry: xcvu095_detail.xgd elapsed time: 2s
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 1.1s
+// DeviceView Instantiated
+// TclEventType: NETLIST_UPDATE
+// Device view-level: 0.0
+// Device view-level: 0.0
+// Tcl Message: INFO: [Common 17-83] Releasing license: Implementation 
+// Tcl Message: 28 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered. place_design completed successfully 
+// Tcl Message: place_design: Time (s): cpu = 00:04:29 ; elapsed = 00:02:03 . Memory (MB): peak = 8800.531 ; gain = 0.000 ; free physical = 7540 ; free virtual = 54846 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,679 MB. GUI used memory: 166 MB. Current time: 9/15/18 1:20:26 PM CDT
+// Elapsed time: 124 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 4.6s
+// Device view-level: 0.0
+// RouteApi::initDelayMediator elapsed time: 4.9s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// [GUI Memory]: 180 MB (+497kb) [00:31:48]
+// Tcl Command: 'rdi::info_commands {route_*}'
+// Tcl Command: 'rdi::info_commands {route_d*}'
+// Tcl Command: 'rdi::info_commands {route_de*}'
+// Elapsed time: 414 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "route_design", true); // aG (af, cl)
+// Tcl Command: 'route_design'
+// Tcl Command: 'route_design'
+// Tcl Message: route_design 
+// Tcl Message: Command: route_design Attempting to get a license for feature 'Implementation' and/or device 'xcvu095' 
+// Tcl Message: INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xcvu095' INFO: [Common 17-1223] The version limit for your license is '2018.01' and will expire in -227 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases. 
+// Tcl Message: Running DRC as a precondition to command route_design 
+// Tcl Message: INFO: [DRC 23-27] Running DRC with 8 threads 
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information. 
+// Tcl Message:  
+// Tcl Message:  Starting Routing Task 
+// Tcl Message: INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs 
+// Tcl Message: Checksum: PlaceDB: 72a7fed1 ConstDB: 0 ShapeSum: 801e7653 RouteDB: 9adbd1d5 
+// Tcl Message:  Phase 1 Build RT Design 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,775 MB. GUI used memory: 113 MB. Current time: 9/15/18 1:27:40 PM CDT
+// Tcl Message: Phase 1 Build RT Design | Checksum: e580c371  Time (s): cpu = 00:01:06 ; elapsed = 00:00:35 . Memory (MB): peak = 8850.492 ; gain = 49.961 ; free physical = 7188 ; free virtual = 54492 
+// Tcl Message: Post Restoration Checksum: NetGraph: 649a3c1e NumContArr: e3314f64 Constraints: 2370a487 Timing: 0 
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message:  Phase 2 Router Initialization  Phase 2.1 Create Timer Phase 2.1 Create Timer | Checksum: 16b3c3009  Time (s): cpu = 00:01:07 ; elapsed = 00:00:36 . Memory (MB): peak = 8850.492 ; gain = 49.961 ; free physical = 7179 ; free virtual = 54483  Phase 2.2 Fix Topology Constraints Phase 2.2 Fix Topology Constraints | Checksum: 16b3c3009  Time (s): cpu = 00:01:07 ; elapsed = 00:00:36 . Memory (MB): peak = 8867.020 ; gain = 66.488 ; free physical = 7103 ; free virtual = 54407  Phase 2.3 Pre Route Cleanup Phase 2.3 Pre Route Cleanup | Checksum: 16b3c3009  Time (s): cpu = 00:01:08 ; elapsed = 00:00:36 . Memory (MB): peak = 8867.020 ; gain = 66.488 ; free physical = 7103 ; free virtual = 54407 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,921 MB. GUI used memory: 111 MB. Current time: 9/15/18 1:28:05 PM CDT
+// [Engine Memory]: 3,921 MB (+98320kb) [00:35:51]
+// Tcl Message:  Phase 2.4 Global Clock Net Routing 
+// Tcl Message:  Number of Nodes with overlaps = 0 
+// Tcl Message: Phase 2.4 Global Clock Net Routing | Checksum: 171770825  Time (s): cpu = 00:01:15 ; elapsed = 00:00:42 . Memory (MB): peak = 8989.934 ; gain = 189.402 ; free physical = 6976 ; free virtual = 54280 
+// Tcl Message:  Phase 2.5 Update Timing 
+// Tcl Message: Phase 2.5 Update Timing | Checksum: fc221c3c  Time (s): cpu = 00:02:02 ; elapsed = 00:00:56 . Memory (MB): peak = 9000.934 ; gain = 200.402 ; free physical = 6975 ; free virtual = 54279 
+// Tcl Message: INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.483  | TNS=0.000  | WHS=-0.111 | THS=-8.733 |  
+// Tcl Message: Phase 2 Router Initialization | Checksum: cfcf7dba  Time (s): cpu = 00:02:26 ; elapsed = 00:01:01 . Memory (MB): peak = 9000.934 ; gain = 200.402 ; free physical = 6976 ; free virtual = 54280  Phase 3 Initial Routing 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,963 MB. GUI used memory: 111 MB. Current time: 9/15/18 1:28:30 PM CDT
+// Tcl Message: Phase 3 Initial Routing | Checksum: 269c9b816  Time (s): cpu = 00:03:00 ; elapsed = 00:01:11 . Memory (MB): peak = 9031.926 ; gain = 231.395 ; free physical = 6939 ; free virtual = 54243  Phase 4 Rip-up And Reroute  Phase 4.1 Global Iteration 0 
+// Tcl Message:  Number of Nodes with overlaps = 7130 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,035 MB. GUI used memory: 111 MB. Current time: 9/15/18 1:28:55 PM CDT
+// Tcl Message:  Number of Nodes with overlaps = 478 
+// Tcl Message:  Number of Nodes with overlaps = 62 
+// Tcl Message:  Number of Nodes with overlaps = 20 
+// Tcl Message:  Number of Nodes with overlaps = 6 
+// Tcl Message:  Number of Nodes with overlaps = 1 
+// Tcl Message:  Number of Nodes with overlaps = 1 
+// Tcl Message:  Number of Nodes with overlaps = 1 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// Tcl Message:  Number of Nodes with overlaps = 1  Number of Nodes with overlaps = 0 
+// Tcl Message: INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.302  | TNS=0.000  | WHS=0.010  | THS=0.000  |  
+// Tcl Message: Phase 6.1.1 Update Timing | Checksum: 287330ddb  Time (s): cpu = 00:05:52 ; elapsed = 00:02:12 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6964 ; free virtual = 54269 
+// Tcl Message: INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.302  | TNS=0.000  | WHS=0.010  | THS=0.000  |  
+// Tcl Message: Phase 6.1 Hold Fix Iter | Checksum: 22d0d86c0  Time (s): cpu = 00:05:52 ; elapsed = 00:02:12 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6964 ; free virtual = 54269 Phase 6 Post Hold Fix | Checksum: 22d0d86c0  Time (s): cpu = 00:05:52 ; elapsed = 00:02:12 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6964 ; free virtual = 54269  Phase 7 Route finalize 
+// Tcl Message:  Router Utilization Summary   Global Vertical Routing Utilization    = 1.23488 %   Global Horizontal Routing Utilization  = 1.31384 %   Routable Net Status*   *Does not include unroutable nets such as driverless and loadless.   Run report_route_status for detailed report.   Number of Failed Nets               = 0   Number of Unrouted Nets             = 0   Number of Partially Routed Nets     = 0   Number of Node Overlaps             = 0  
+// Tcl Message: Phase 7 Route finalize | Checksum: 2d7bf32c7  Time (s): cpu = 00:05:58 ; elapsed = 00:02:14 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6958 ; free virtual = 54262  Phase 8 Verifying routed nets 
+// Tcl Message:   Verification completed successfully 
+// Tcl Message: Phase 8 Verifying routed nets | Checksum: 2d7bf32c7  Time (s): cpu = 00:05:58 ; elapsed = 00:02:14 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6958 ; free virtual = 54262  Phase 9 Depositing Routes 
+// TclEventType: PLACEDB_MODIFIY_PRE
+// TclEventType: ROUTE_DESIGN
+// Tcl Message: Phase 9 Depositing Routes | Checksum: 2d7bf32c7  Time (s): cpu = 00:06:02 ; elapsed = 00:02:19 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6963 ; free virtual = 54267  Phase 10 Post Router Timing 
+// Tcl Message: INFO: [Route 35-57] Estimated Timing Summary | WNS=0.302  | TNS=0.000  | WHS=0.010  | THS=0.000  |  INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary. 
+// Tcl Message: Phase 10 Post Router Timing | Checksum: 2d7bf32c7  Time (s): cpu = 00:06:02 ; elapsed = 00:02:19 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 6968 ; free virtual = 54272 
+// Tcl Message: INFO: [Route 35-16] Router Completed Successfully 
+// Tcl Message:  Time (s): cpu = 00:06:03 ; elapsed = 00:02:19 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 7080 ; free virtual = 54384 
+// Tcl Message:  Routing Is Done. 
+// Tcl Message: INFO: [Common 17-83] Releasing license: Implementation 
+// Tcl Message: 13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered. route_design completed successfully 
+// Tcl Message: route_design: Time (s): cpu = 00:06:13 ; elapsed = 00:02:25 . Memory (MB): peak = 9112.926 ; gain = 312.395 ; free physical = 7080 ; free virtual = 54384 
+// Elapsed time: 145 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 17 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 19 seconds
+selectTab((HResource) null, (HResource) null, "Timing", 2); // aF (Q, cl)
+selectButton(PAResourceTtoZ.TimingGettingStartedPanel_REPORT_TIMING_SUMMARY, "Report Timing Summary"); // h (N, cl)
+// aF (cl): Report Timing Summary: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aF)
+dismissDialog("Report Timing Summary"); // aF (cl)
+// TclEventType: TIMING_RESULTS_STALE
+// Tcl Message: report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1 
+// Tcl Message: INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: min_max. INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs 
+// bs (cl):  Report Timing Summary : addNotify
+// TclEventType: TIMING_RESULTS_STALE
+// TclEventType: TIMING_SUMMARY_UPDATED
+// Tcl Message: report_timing_summary: Time (s): cpu = 00:00:49 ; elapsed = 00:00:16 . Memory (MB): peak = 9160.949 ; gain = 44.152 ; free physical = 9021 ; free virtual = 56393 
+// Elapsed time: 15 seconds
+dismissDialog("Report Timing Summary"); // bs (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,067 MB. GUI used memory: 117 MB. Current time: 9/15/18 1:30:45 PM CDT
+// Elapsed time: 60 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aF (Q, cl)
+// Device view-level: 0.0
+// HMemoryUtils.trashcanNow. Engine heap size: 4,067 MB. GUI used memory: 142 MB. Current time: 9/15/18 1:31:47 PM CDT
+// Elapsed time: 15 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 16 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 15 seconds
+selectTab((HResource) null, (HResource) null, "Timing", 2); // aF (Q, cl)
+// Elapsed time: 553 seconds
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115)]", 2); // aW (O, cl)
+// Elapsed time: 19 seconds
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115)]", 2); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator)]", 3); // aW (O, cl)
+// Elapsed time: 14 seconds
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU)]", 7); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU)]", 7); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU)]", 7); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU)]", 7); // aW (O, cl)
+// PAPropertyPanels.initPanels (u_controller (PU_controller)) elapsed time: 0.8s
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), u_controller (PU_controller)]", 8, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), u_controller (PU_controller)]", 8, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), mem_ctrl_top (mem_controller_top)]", 6, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), mem_ctrl_top (mem_controller_top)]", 6, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), vecgen (vectorgen__parameterized0)]", 9, false, true, false, false, false, false); // aW (O, cl) - Shift Key
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), vecgen (vectorgen__parameterized0)]", 9, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenuItem(PAResourceOtoP.PrimitivesMenu_CYCLE_COLORS, "Cycle Colors"); // ac (cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -382844, 1755641); // D (M, cl)
+// Device view-level: 0.7
+selectButton(PAResourceAtoD.DesignTimingSumSectionPanel_WORST_NEGATIVE_SLACK, "0.303 ns"); // h (N, cl)
+// PAPropertyPanels.initPanels (Path 1) elapsed time: 0.7s
+// Elapsed time: 50 seconds
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU)]", 7); // aW (O, cl)
+// Elapsed time: 11 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aF (Q, cl)
+// Tcl Command: 'rdi::info_commands {w*}'
+// Tcl Command: 'rdi::info_commands {write*}'
+// Tcl Command: 'rdi::info_commands {write_ch*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 32 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "write_checkpoint ./impl-output/post_route_regular.dcp", true); // aG (af, cl)
+// Tcl Command: 'write_checkpoint ./impl-output/post_route_regular.dcp'
+// Tcl Command: 'write_checkpoint ./impl-output/post_route_regular.dcp'
+// Tcl Message: write_checkpoint ./impl-output/post_route_regular.dcp 
+// Tcl Message: Writing placer database... 
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: Writing XDEF routing. Writing XDEF routing logical nets. Writing XDEF routing special nets. 
+// Tcl Message: Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 9160.949 ; gain = 0.000 ; free physical = 7131 ; free virtual = 54499 
+// Tcl Message: INFO: [Common 17-1381] The checkpoint '/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/impl-output/post_route_regular.dcp' has been generated. 
+// Tcl Message: write_checkpoint: Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 9160.949 ; gain = 0.000 ; free physical = 7181 ; free virtual = 54503 
+// Tcl Message: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/impl-output/post_route_regular.dcp 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,075 MB. GUI used memory: 159 MB. Current time: 9/15/18 1:44:41 PM CDT
+// Elapsed time: 12 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), mem_ctrl_top (mem_controller_top)]", 6, true); // aW (O, cl) - Node
+// [GUI Memory]: 189 MB (+131kb) [00:52:35]
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), vecgen (vectorgen__parameterized0)]", 9, false, true, false, false, false, false); // aW (O, cl) - Shift Key
+// [GUI Memory]: 199 MB (+450kb) [00:52:36]
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), vecgen (vectorgen__parameterized0)]", 9, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenuItem(PAResourceOtoP.PrimitivesMenu_UNHIGHLIGHT_LEAF_CELLS, "Unhighlight Leaf Cells"); // ac (ai, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), mem_ctrl_top (mem_controller_top)]", 6); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), mem_ctrl_top (mem_controller_top)]", 6); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU)]", 7); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[0].u_PE (PE)]", 13, true); // aW (O, cl) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[63].u_PE (PE_88)]", 76, true, true, false, false, false, false); // aW (O, cl) - Shift Key - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[63].u_PE (PE_88)]", 76, true, false, false, false, true, false); // aW (O, cl) - Popup Trigger - Node
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenu(PAResourceOtoP.PrimitivesMenu_HIGHLIGHT_LEAF_CELLS, "Highlight Leaf Cells"); // Z (ai, cl)
+selectMenuItem(PAResourceOtoP.PrimitivesMenu_CYCLE_COLORS, "Cycle Colors"); // ac (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,075 MB. GUI used memory: 209 MB. Current time: 9/15/18 1:45:11 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 498083, 2100022); // D (M, cl)
+// Device view-level: 1.1
+// [GUI Memory]: 216 MB (+7222kb) [00:53:00]
+// [GUI Memory]: 227 MB (+361kb) [00:53:02]
+// Tcl Command: 'rdi::info_commands {linded*}'
+// Tcl Command: 'rdi::info_commands {lind*}'
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {lleng*}'
+// Tcl Command: 'rdi::info_commands {llength*}'
+// Tcl Command: 'rdi::info_commands {cet*}'
+// Tcl Command: 'rdi::info_commands {cet_cel*}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {h}'
+// Tcl Command: 'rdi::match_options {get_cells} {hier}'
+// Tcl Command: 'rdi::match_options {get_cells} {hier}'
+// Elapsed time: 76 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "llength [get_cells -hierarchical *]", true); // aG (af, cl)
+// Tcl Command: 'llength [get_cells -hierarchical *]'
+// Tcl Command: 'llength [get_cells -hierarchical *]'
+// Tcl Message: llength [get_cells -hierarchical *] 
+// Tcl Message: 54629 
+// [GUI Memory]: 239 MB (+312kb) [00:54:40]
+// Elapsed time: 27 seconds
+selectTab((HResource) null, (HResource) null, "Timing", 2); // aF (Q, cl)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 1 ; 0.30264503 ; 1 ; 1 ; 124 ; accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[26].u_PE/MACC_pe/op_add_d_reg[12]/D ; 4.492999 ; 0.137 ; 4.356 ; 5.0 ; clock_200M ; clock_200M ; ", 0, "accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C", 5); // i (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,075 MB. GUI used memory: 221 MB. Current time: 9/15/18 1:47:00 PM CDT
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 2 ; 0.30464342 ; 1 ; 1 ; 64 ; accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[8]/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[27].u_PE/MACC_pe/op_add_d_reg[8]/D ; 4.564 ; 0.163 ; 4.401 ; 5.0 ; clock_200M ; clock_200M ; ", 1, "accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[8]/C", 5); // i (O, cl)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 3 ; 0.3166445 ; 1 ; 1 ; 124 ; accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[22].u_PE/MACC_pe/op_add_d_reg[1]/D ; 4.4449997 ; 0.164 ; 4.281 ; 5.0 ; clock_200M ; clock_200M ; ", 2, "accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C", 5); // i (O, cl)
+// [GUI Memory]: 251 MB (+109kb) [00:54:49]
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 4 ; 0.3176437 ; 1 ; 1 ; 64 ; accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[8]/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[24].u_PE/MACC_pe/op_add_d_reg[8]/D ; 4.5450006 ; 0.163 ; 4.382 ; 5.0 ; clock_200M ; clock_200M ; ", 3, "accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[8]/C", 5); // i (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,076 MB. GUI used memory: 245 MB. Current time: 9/15/18 1:47:06 PM CDT
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 5 ; 0.3366445 ; 1 ; 1 ; 64 ; accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[8]/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[26].u_PE/MACC_pe/op_add_d_reg[8]/D ; 4.531999 ; 0.136 ; 4.396 ; 5.0 ; clock_200M ; clock_200M ; ", 4, "accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[8]/C", 5); // i (O, cl)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 6 ; 0.3456444 ; 1 ; 1 ; 64 ; accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[15]/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[3].u_PE/MACC_pe/op_add_d_reg[15]/D ; 4.4449997 ; 0.256 ; 4.1889997 ; 5.0 ; clock_200M ; clock_200M ; ", 5, "accelerator/PU_GEN[0].u_PU/wb_bias_data_reg[15]/C", 5); // i (O, cl)
+// [GUI Memory]: 264 MB (+843kb) [00:54:53]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 257 MB. Current time: 9/15/18 1:47:09 PM CDT
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 7 ; 0.35364422 ; 1 ; 1 ; 124 ; accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[22].u_PE/MACC_pe/op_add_d_reg[6]/D ; 4.409 ; 0.137 ; 4.2720003 ; 5.0 ; clock_200M ; clock_200M ; ", 6, "accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C", 5); // i (O, cl)
+// [GUI Memory]: 279 MB (+2038kb) [00:54:55]
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 8 ; 0.36764324 ; 1 ; 1 ; 124 ; accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[22].u_PE/MACC_pe/op_add_d_reg[3]/D ; 4.3920007 ; 0.164 ; 4.228 ; 5.0 ; clock_200M ; clock_200M ; ", 7, "accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C", 5); // i (O, cl)
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 9 ; 0.36964476 ; 0 ; 1 ; 175 ; accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__21/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[29].u_PE/MACC_pe/enable_d_reg/R ; 4.431 ; 0.102 ; 4.329 ; 5.0 ; clock_200M ; clock_200M ; ", 8, "accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__21/C", 5); // i (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 287 MB. Current time: 9/15/18 1:47:13 PM CDT
+selectTable(PAResourceTtoZ.TimingItemFlatTablePanel_TABLE, "Path 10 ; 0.37264368 ; 1 ; 1 ; 124 ; accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C ; accelerator/PU_GEN[0].u_PU/PE_GENBLK[22].u_PE/MACC_pe/op_add_d_reg[9]/D ; 4.388 ; 0.164 ; 4.224 ; 5.0 ; clock_200M ; clock_200M ; ", 9, "accelerator/PU_GEN[0].u_PU/pu_ctrl_delay/REGISTER_STAGES[2].din_delay_reg[63]_rep__2/C", 5); // i (O, cl)
+// [GUI Memory]: 296 MB (+3112kb) [00:54:59]
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 189 MB. Current time: 9/15/18 2:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 2:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 3:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 3:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 121 MB. Current time: 9/15/18 4:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 4:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 5:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 5:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 6:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 6:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 7:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 7:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 8:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 8:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 9:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 9:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 10:17:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 10:47:15 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 11:17:16 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/15/18 11:47:16 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 12:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 12:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 1:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 1:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 2:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 2:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 3:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 3:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 4:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 4:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 5:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 5:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 6:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 6:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 7:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 7:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 8:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 8:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 9:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 9:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 10:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 10:47:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 11:17:16 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 11:47:17 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 12:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 12:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 1:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 1:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 2:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 2:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 3:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 3:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 4:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 4:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 5:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 5:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 6:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 6:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 121 MB. Current time: 9/16/18 7:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 7:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 8:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 8:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 9:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 9:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 10:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 10:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 11:17:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/16/18 11:47:17 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 12:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 12:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 1:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 1:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 2:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 2:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 3:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 3:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 4:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 4:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 5:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 5:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 6:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 6:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 7:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 7:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 8:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 8:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 9:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 9:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 10:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 10:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 11:17:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 11:47:18 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 12:17:18 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 12:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 1:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 1:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 2:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 2:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 3:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 3:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 4:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 4:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 5:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 5:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 6:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 6:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 7:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 7:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 8:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 8:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 9:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 9:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 10:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 10:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 11:17:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/17/18 11:47:19 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 12:17:19 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 12:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 1:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 1:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 2:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 2:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 121 MB. Current time: 9/18/18 3:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 3:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 4:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 4:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 5:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 5:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 6:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 6:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 7:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 7:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 8:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 8:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 9:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 9:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 10:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 10:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 11:17:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 11:47:20 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 12:17:20 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 121 MB. Current time: 9/18/18 12:47:20 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 1:17:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 1:47:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 2:17:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 2:47:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 3:17:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 3:47:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 4:17:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 120 MB. Current time: 9/18/18 4:47:21 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 121 MB. Current time: 9/18/18 5:17:21 PM CDT
+// Elapsed time: 272427 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aF (Q, cl)
+// Elapsed time: 95 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectTab((HResource) null, (HResource) null, "Timing", 2); // aF (Q, cl)
+// Elapsed time: 125 seconds
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aF (Q, cl)
+// Tcl Command: 'rdi::info_commands {re*}'
+// Tcl Command: 'rdi::info_commands {repor*}'
+// Tcl Command: 'rdi::info_commands {re*}'
+// Tcl Command: 'rdi::info_commands {rep*}'
+// Tcl Command: 'rdi::info_commands {re*}'
+// Tcl Command: 'rdi::info_commands {repor*}'
+// Tcl Command: 'rdi::info_commands {report*}'
+// Tcl Command: 'rdi::info_commands {report_*}'
+// Tcl Command: 'rdi::info_commands {report_po*}'
+// Elapsed time: 157 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "report_power", true); // aG (af, cl)
+// Tcl Command: 'report_power'
+// Tcl Command: 'report_power'
+// Tcl Message: report_power 
+// Tcl Message: Command: report_power 
+// [Engine Memory]: 4,117 MB (+138kb) [76:41:47]
+// bs (cl):  Tcl Command Line : addNotify
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Message: Running Vector-less Activity Propagation... 
+// Tcl Message:  Finished Running Vector-less Activity Propagation 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,138 MB. GUI used memory: 120 MB. Current time: 9/18/18 5:34:06 PM CDT
+// TclEventType: POWER_UPDATED
+// Tcl Message: 0 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered. report_power completed successfully 
+// Tcl Message: report_power: Time (s): cpu = 00:00:28 ; elapsed = 00:00:14 . Memory (MB): peak = 9196.969 ; gain = 36.020 ; free physical = 6102 ; free virtual = 54099 
+// HMemoryUtils.trashcanNow. Engine heap size: 4,077 MB. GUI used memory: 158 MB. Current time: 9/18/18 5:34:15 PM CDT
+// Elapsed time: 12 seconds
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 154 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 158 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,078 MB. GUI used memory: 129 MB. Current time: 9/18/18 6:04:16 PM CDT
+// Elapsed time: 2588 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 53 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "report_power"); // aG (af, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 1023062, 2324989); // D (M, cl)
+// Device view-level: 3.5
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.1
+// HMemoryUtils.trashcanNow. Engine heap size: 4,078 MB. GUI used memory: 181 MB. Current time: 9/18/18 6:23:35 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 846963, 2109095); // D (M, cl)
+// Device view-level: 1.8
+// DeviceOracle::getDeviceDataByteArray length(bytes): 146451
+// Run Command: RDIResourceCommand.RDICommands_FIND
+// g (cl): Find: addNotify
+// Elapsed time: 47 seconds
+dismissDialog("Find"); // g (cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 160 MB. Current time: 9/18/18 6:53:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 7:23:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 7:53:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 8:23:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 8:53:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 9:23:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 9:53:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 10:23:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 10:53:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 11:23:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/18/18 11:53:36 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 12:23:36 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 12:53:36 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 1:23:36 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 1:53:37 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 2:23:37 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 2:53:37 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 4,080 MB. GUI used memory: 125 MB. Current time: 9/19/18 3:23:37 AM CDT

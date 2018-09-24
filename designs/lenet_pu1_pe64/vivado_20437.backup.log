@@ -1,0 +1,59 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 12:51:36 2018
+# Process ID: 20437
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+Command: open_checkpoint ./impl-output/post_route.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.09 . Memory (MB): peak = 6146.094 ; gain = 0.000 ; free physical = 12373 ; free virtual = 59675
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'.
+INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-20437-eda04/dcp3/dnn_accelerator_top.xdc]
+Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-20437-eda04/dcp3/dnn_accelerator_top.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6941.613 ; gain = 62.586 ; free physical = 10885 ; free virtual = 58325
+Restored from archive | CPU: 2.600000 secs | Memory: 54.740929 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 6941.613 ; gain = 62.586 ; free physical = 10884 ; free virtual = 58324
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 76 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 64 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 3 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833
+open_checkpoint: Time (s): cpu = 00:01:01 ; elapsed = 00:00:40 . Memory (MB): peak = 7366.148 ; gain = 1221.812 ; free physical = 10573 ; free virtual = 57950
+unhighlight_objects *
+ERROR: [Common 17-161] Invalid option value '*' specified for 'objects'.
+unhighlight_objects [get_cells -hierarchical *]
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[63].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y110/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[63].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y109/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[60].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y107/RAMB18E2_U
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[60].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y106/RAMB18E2_L
+endgroup
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 15 13:30:05 2018...

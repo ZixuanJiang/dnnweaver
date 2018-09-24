@@ -1,0 +1,188 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Sep 21 10:07:31 2018
+# Process ID: 4101
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+get_cells -hierarchical -filter {ref_name == RAMD32}
+select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]
+select_objects [get_cells -hierarchical -filter {ref_name == ram_107}]
+select_objects [get_cells -hierarchical -filter {ref_name == ram_*}]
+unhighlight_objects [get_cells -hier *]
+select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]
+select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]
+select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]
+select_objects [get_cells -hierarchical -filter {ref_name == OBUF}]
+select_objects [get_cells -hierarchical -filter {ref_name == OBUFT}]
+select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]
+select_objects [get_cells -hierarchical -filter {ref_name == RAMD32}]
+select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]
+select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]
+select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]
+select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]
+select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMD32}] 0]
+select_objects [lindex [get_cells -hierarchical -filter {ref_name == RAMS32}] 0]
+source ../../../scripts/export_bookshelf_netlist.tcl
+set leaf_cells [get_cells -hier -filter {ref_name =~ [join leaf_cell_types "||"]}]
+puts leaf_cell_types
+puts $leaf_cell_types
+set leaf_cells [get_cells -hier -filter {ref_name =~ [join $leaf_cell_types "||"]}]
+join $leaf_cell_types "||"
+set a [join $leaf_cell_types "||"]
+set leaf_cells [get_cells -hier -filter {ref_name =~ $a}]
+set leaf_cells [get_cells -hier -filter "ref_name =~ $a"]
+llength $leaf_cells
+llength [get_cells -hier -filter "ref_name =~ BUFGCE"]
+llength [get_cells -hier -filter "ref_name =~ BUFGCE||CARRY8"]
+llength [get_cells -hier -filter "ref_name == BUFGCE||CARRY8"]
+llength [get_cells -hier -filter "ref_name == {BUFGCE||CARRY8}"]
+llength [get_cells -hier -filter {ref_name == "BUFGCE||CARRY8"}]
+llength [get_cells -hier -filter ref_name == BUFGCE||CARRY8]
+get_cells -help
+set l {a b c d e}
+lmap x $l {
+  set x "pre-$x"
+}
+source ../../../scripts/export_bookshelf_netlist.tcl
+prefix_list_elements $leaf_cell_types
+prefix_list_elements{leaf_cell_types, "ref_name == "}
+prefix_list_elements{$leaf_cell_types, "ref_name == "}
+prefix_list_elements $leaf_cell_types "ref_name == "
+source ../../../scripts/export_bookshelf_netlist.tcl
+prefix_list_elements $leaf_cell_types "ref_name == "
+source ../../../scripts/export_bookshelf_netlist.tcl
+prefix_list_elements $leaf_cell_types "ref_name == "
+prefix_list_elements $leaf_cell_types "ref_name == "
+source ../../../scripts/export_bookshelf_netlist.tcl
+prefix_list_elements $leaf_cell_types "ref_name == "
+source ../../../scripts/export_bookshelf_netlist.tcl
+prefix_list_elements $leaf_cell_types "ref_name == "
+set filter_condition [join [prefix_list_elements $leaf_cell_types "ref_name == "] "||"]
+set leaf_cells [get_cells -hier -filter $filter_condition]
+puts [llength $leaf_cells]
+set c axi_fake_reg
+get_property ref_name [get_cells $c]
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file tmp.node
+puts $leaf_cell_types
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file tmp.node
+pwd
+write_bookshelf_node_file tmp.node
+write_bookshelf_node_file ~/tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file ~/tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file ~/tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file ~/tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file ~/tmp.node
+open fh [open tmp "w"]
+open fh [open "tmp" "w"]
+open fh [open "tmp" "r"]
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file ~/tmp.node
+write_bookshelf_node_file tmp.node
+pwd
+write_bookshelf_node_file ~/tmp.node
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_node_file tmp.node
+get_nets -of_objects $c
+get_cells $c
+get_nets -of_objects [get_cells $c]
+get_nets -of_objects $c
+puts $c
+set nets [get_nets -of_objects [get_cells $c]]
+get_property name [lindex nets 2]
+get_property name [lindex $nets 2]
+set pins [get_pins -of_objects [get_cells $c]]
+get_nets -of_objects [get_pins axi_fake_reg/C]
+llength [get_nets]
+llength [get_nets -hier]
+get_nets -help
+keylset x NAME {a b}
+set h(a) {}
+set h(b) {}
+lappend h(a) 1
+lappend h(a) 2
+lappend h(a) 3
+get_nets -of_objects [get_pins axi_fake_reg/C]
+get_nets -of_objects [get_pins axi_fake_reg/C] -top_net_of_hierarchical_group
+get_property ref_name [get_pins axi_fake_reg/C]
+get_property pin_name [get_pins axi_fake_reg/C]
+get_property name [get_pins axi_fake_reg/C]
+get_property lib_name [get_pins axi_fake_reg/C]
+list_property pins
+list_property -class pin
+get_property ref_pin_name [get_pins axi_fake_reg/C]
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]
+select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]
+select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]
+select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg]
+select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]
+get_nets -help
+select_objects [get_pins accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE/MACC_pe/out_reg_reg/PCOUT[23]]
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+set h(a) {1 2 3 4}
+set h(b) {1 2 3 4 5 6 7}
+for key [array names h] {
+puts "$key [llength h($key)]"
+}
+for key [array names h] {
+    puts "$key [llength h($key)]"
+}
+foreach key [array names h] {
+    puts "$key [llength h($key)]"
+}
+foreach key [array names h] {
+    puts "$key [llength $h($key)]"
+}
+source ../../../scripts/export_bookshelf_netlist.tcl
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+set net [get_nets -of [get_pins accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]
+set net [get_nets -of [get_cells accelerator/vecgen_read_count0__0] -top_net_of_hierarchical_group ]
+source ../../../scripts/export_bookshelf_netlist.tcl
+write_bookshelf_net_file tmp.net
+select_objects [get_net accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+select_objects [get_nets accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/fifo_out_delay/D[7]]
+[get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]
+get_property ref_name [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]
+set filter_condition [join [prefix_list_elements $leaf_cell_types "REF_NAME == "] " || "]
+set leaf_cells [get_cells -hier -filter $filter_condition]
+lsearch leaf_cells ccelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+lsearch leaf_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+write_bookshelf_node_file tmp.node
+lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+get_nets [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]
+get_nets -of [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]
+lsearch [get_cells -hier *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+get_cells -help
+lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+lsearch [get_cells] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+lsearch [get_cells -hierarchical ] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_7
+get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71
+select_objects [get_cells accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[7]_i_71]
+lsearch [get_cells -hierarchical *] accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71
+lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}
+lsearch [get_cells -hierarchical *] {accelerator/PU_GEN[0].u_PU/PE_GENBLK[62].u_PE/pe_buffer/din_delay[8]_i_71}

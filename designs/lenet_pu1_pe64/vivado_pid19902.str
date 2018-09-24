@@ -1,0 +1,815 @@
+/*
+
+Xilinx Vivado v2017.3 (64-bit) [Major: 2017, Minor: 3]
+SW Build: 2018833 on Wed Oct  4 19:58:07 MDT 2017
+IP Build: 2016188 on Wed Oct  4 21:52:56 MDT 2017
+
+Process ID: 19902
+License: Customer
+
+Current time: 	Thu Sep 20 16:34:01 CDT 2018
+Time zone: 	Central Standard Time (America/Chicago)
+
+OS: PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+OS Version: 4.9.0-8-amd64
+OS Architecture: amd64
+Available processors (cores): 8
+
+Display: :1
+Screen size: 1900x1200
+Screen resolution (DPI): 95
+Available screens: 1
+Available disk space: 80 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/usr/local/packages/Xilinx/Vivado/2017.3/tps/lnx64/jre
+JVM executable location: 	/usr/local/packages/Xilinx/Vivado/2017.3/tps/lnx64/jre/bin/java
+
+User name: 	wuxili
+User home directory: /home/polaris/wuxili
+User working directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /usr/local/packages/Xilinx/Vivado
+HDI_APPROOT: /usr/local/packages/Xilinx/Vivado/2017.3
+RDI_DATADIR: /usr/local/packages/Xilinx/Vivado/2017.3/data
+RDI_BINDIR: /usr/local/packages/Xilinx/Vivado/2017.3/bin
+
+User preferences location: /home/polaris/wuxili/.Xilinx/Vivado
+Vivado preferences directory: /home/polaris/wuxili/.Xilinx/Vivado/2017.3/vivado.xml
+Vivado layouts directory: /home/polaris/wuxili/.Xilinx/Vivado/2017.3/layouts
+PlanAhead jar file location: 	/usr/local/packages/Xilinx/Vivado/2017.3/lib/classes/planAhead.jar
+Vivado log file location: 	/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+Vivado journal file location: 	/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-19902-eda04
+
+GUI allocated memory:	162 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 911 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: START_PROGRESS_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: START_PROGRESS_DIALOG
+// bs (cl):  Reading checkpoint file './impl-output/post_route.dcp' : addNotify
+// [GUI Memory]: 35 MB (+34183kb) [00:00:10]
+// [Engine Memory]: 885 MB (+776673kb) [00:00:10]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_checkpoint ./impl-output/post_route.dcp 
+// Tcl Message: Command: open_checkpoint ./impl-output/post_route.dcp  Starting open_checkpoint Task  Time (s): cpu = 00:00:00.10 ; elapsed = 00:00:00.11 . Memory (MB): peak = 6143.234 ; gain = 0.000 ; free physical = 251 ; free virtual = 62506 
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// HMemoryUtils.trashcanNow. Engine heap size: 947 MB. GUI used memory: 29 MB. Current time: 9/20/18 4:34:03 PM CDT
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 50 MB (+14183kb) [00:00:15]
+// [Engine Memory]: 953 MB (+24263kb) [00:00:15]
+// [GUI Memory]: 57 MB (+4299kb) [00:00:16]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'. 
+// [Engine Memory]: 1,027 MB (+28289kb) [00:00:19]
+// [Engine Memory]: 1,152 MB (+76625kb) [00:00:29]
+// [Engine Memory]: 1,267 MB (+60204kb) [00:00:34]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,269 MB. GUI used memory: 31 MB. Current time: 9/20/18 4:34:23 PM CDT
+// [Engine Memory]: 1,493 MB (+170446kb) [00:00:39]
+// TclEventType: READ_XDC_FILE_START
+// TclEventType: POWER_CNS_STALE
+// TclEventType: POWER_REPORT_STALE
+// TclEventType: SDC_CONSTRAINT_ADD
+// TclEventType: READ_XDC_FILE_END
+// [Engine Memory]: 1,618 MB (+53322kb) [00:00:44]
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,663 MB. GUI used memory: 31 MB. Current time: 9/20/18 4:34:35 PM CDT
+// TclEventType: DESIGN_NEW
+// [GUI Memory]: 62 MB (+2136kb) [00:00:48]
+// [Engine Memory]: 1,721 MB (+23096kb) [00:00:48]
+// [GUI Memory]: 82 MB (+18235kb) [00:00:49]
+// [Engine Memory]: 1,982 MB (+182927kb) [00:00:49]
+// [GUI Memory]: 89 MB (+2710kb) [00:00:50]
+// [GUI Memory]: 135 MB (+42985kb) [00:00:51]
+// Xgd.load filename: /usr/local/packages/Xilinx/Vivado/2017.3/data/parts/xilinx/virtexu/devint/virtexu/xcvu095/xcvu095.xgd; ZipEntry: xcvu095_detail.xgd elapsed time: 2.7s
+// Device: addNotify
+// DeviceView Instantiated
+// Tcl Message: INFO: [Netlist 29-17] Analyzing 394 Unisim elements for replacement INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds INFO: [Project 1-479] Netlist was created with Vivado 2017.3 INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e INFO: [Project 1-570] Preparing netlist for logic optimization 
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-19902-eda04/dcp3/dnn_accelerator_top.xdc] Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/.Xil/Vivado-19902-eda04/dcp3/dnn_accelerator_top.xdc] Reading XDEF placement. Reading placer database... Reading XDEF routing. 
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Tcl Message: Read XDEF File: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6929.965 ; gain = 60.344 ; free physical = 276 ; free virtual = 61685 
+// Tcl Message: Restored from archive | CPU: 2.480000 secs | Memory: 53.303024 MB | 
+// Tcl Message: Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 6929.965 ; gain = 60.344 ; free physical = 275 ; free virtual = 61684 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary:   A total of 76 instances were transformed.   DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 64 instances   IBUF => IBUF (IBUFCTRL, INBUF): 3 instances   RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances  
+// TclEventType: PROJ_DESIGN_MODE_SET
+// Device view-level: 0.0
+// [GUI Memory]: 141 MB (+105kb) [00:00:52]
+// [Engine Memory]: 2,146 MB (+68944kb) [00:00:53]
+// Device view-level: 0.0
+// TclEventType: PROJ_DESIGN_MODE_SET
+// TclEventType: DESIGN_MODE_CHANGE
+// Tcl Message: INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833 
+// TclEventType: STOP_PROGRESS_DIALOG
+// Tcl Message: open_checkpoint: Time (s): cpu = 00:00:59 ; elapsed = 00:00:43 . Memory (MB): peak = 7338.879 ; gain = 1195.645 ; free physical = 261 ; free virtual = 61366 
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// RouteApi::loadEngineXgd elapsed time: 6.6s
+// Device view-level: 0.0
+// [GUI Memory]: 155 MB (+7031kb) [00:00:54]
+dismissDialog("Reading checkpoint file './impl-output/post_route.dcp'"); // bs (cl)
+// TclEventType: STOP_PROGRESS_DIALOG
+// HMemoryUtils.trashcanNow. Engine heap size: 2,197 MB. GUI used memory: 156 MB. Current time: 9/20/18 4:34:43 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 2,286 MB. GUI used memory: 108 MB. Current time: 9/20/18 4:35:08 PM CDT
+// [Engine Memory]: 2,291 MB (+38629kb) [00:01:21]
+// [Engine Memory]: 2,811 MB (+425080kb) [00:01:36]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,069 MB. GUI used memory: 107 MB. Current time: 9/20/18 4:35:33 PM CDT
+// [Engine Memory]: 3,069 MB (+123150kb) [00:01:46]
+// [Engine Memory]: 3,224 MB (+2571kb) [00:01:51]
+// RouteApi::initDelayMediator elapsed time: 62.4s
+// RouteApi: Init Delay Mediator Swing Worker Finished
+// Elapsed time: 505 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_RECENT_FILE, "Open Recent File"); // Z (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_IMPORT, "Import"); // Z (cl)
+selectMenu(PAResourceItoN.MainMenuMgr_EXPORT, "Export"); // Z (cl)
+selectMenuItem(PAResourceCommand.PACommandNames_EXPORT_NETLIST, "Export Netlist..."); // ac (cl)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // U (q, cl)
+// Run Command: PAResourceCommand.PACommandNames_EXPORT_NETLIST
+// d (cl): Export Netlist: addNotify
+// Elapsed time: 11 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (d)
+// Tcl Message: write_edif /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/project_post_route.edn 
+// bs (d):  Export Netlist : addNotify
+// Tcl Message: write_verilog /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/project_post_route.v 
+// 'h' command handler elapsed time: 14 seconds
+dismissDialog("Export Netlist"); // bs (d)
+dismissDialog("Export Netlist"); // d (cl)
+// Tcl Command: 'rdi::info_commands {s*}'
+// Tcl Command: 'rdi::info_commands {sour*}'
+// Elapsed time: 654 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "pwd", true); // aG (af, cl)
+// Tcl Command: 'pwd'
+// Tcl Command: 'pwd'
+// Tcl Message: pwd 
+// Tcl Message: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64 
+// Tcl Command: 'rdi::info_commands {sour*}'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 14 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: couldn't read file "scripts/export_bookshelf_netlist.tcl": no such file or directory 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "ll", true); // aG (af, cl)
+// Tcl Command: 'll'
+// Tcl Command: 'll'
+// Tcl Message: ll 
+// Tcl Message: wrong # args: should be "llength list" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,222 MB. GUI used memory: 116 MB. Current time: 9/20/18 4:54:46 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "ls", true); // aG (af, cl)
+// Tcl Command: 'ls'
+// Tcl Command: 'ls'
+// Tcl Message: ls 
+// Tcl Message: invalid command name "ls" ambiguous command name "ls": lsearch lset lsort 
+// Tcl Command: 'rdi::info_commands {pwd*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "pwd", true); // aG (af, cl)
+// Tcl Command: 'pwd'
+// Tcl Command: 'pwd'
+// Tcl Message: pwd 
+// Tcl Message: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,222 MB. GUI used memory: 119 MB. Current time: 9/20/18 4:54:50 PM CDT
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 20 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # set outdir "" # if {$argc != 1} { #     puts "Usage: $argv0 <design name>" #     set outdir [lindex $argv 0]; # } 
+// Tcl Message: Usage: /usr/local/packages/Xilinx/Vivado/2017.3/bin/unwrapped/lnx64.o/vivado <design name> 
+// Tcl Message: # if {! [file isdirectory $outdir]} { #     file mkdir $outdir # } 
+// Tcl Message: can't create directory "": no such file or directory     while executing "file mkdir $outdir"     invoked from within "if {! [file isdirectory $outdir]} {     file mkdir $outdir }"     (file "../../../scripts/export_bookshelf_netlist.tcl" line 10) 
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 19 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 29 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # set outdir "" # if {$argc != 1} { #     error "Usage: $argv0 <design name>" #  # } 
+// Tcl Message: Usage: /usr/local/packages/Xilinx/Vivado/2017.3/bin/unwrapped/lnx64.o/vivado <design name>     while executing "error "Usage: $argv0 <design name>""     invoked from within "if {$argc != 1} {     error "Usage: $argv0 <design name>"  }"     (file "../../../scripts/export_bookshelf_netlist.tcl" line 4) 
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 27 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 22 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # set outdir "" # if {$argc != 1} { #     error "Usage: $argv0 <design name>" #  # } 
+// Tcl Message: Usage: /usr/local/packages/Xilinx/Vivado/2017.3/bin/unwrapped/lnx64.o/vivado <design name>     while executing "error "Usage: $argv0 <design name>""     invoked from within "if {$argc != 1} {     error "Usage: $argv0 <design name>"  }"     (file "../../../scripts/export_bookshelf_netlist.tcl" line 4) 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,224 MB. GUI used memory: 143 MB. Current time: 9/20/18 4:57:03 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 50 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {source*}'
+// Elapsed time: 35 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: '../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: '../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Message: ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: invalid command name "../../../scripts/export_bookshelf_netlist.tcl" 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # set outdir "" # if {$argc != 1} { #     error "Usage: $argv0 <design name>" # } 
+// Tcl Message: Usage: /usr/local/packages/Xilinx/Vivado/2017.3/bin/unwrapped/lnx64.o/vivado <design name>     while executing "error "Usage: $argv0 <design name>""     invoked from within "if {$argc != 1} {     error "Usage: $argv0 <design name>" }"     (file "../../../scripts/export_bookshelf_netlist.tcl" line 4) 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,225 MB. GUI used memory: 144 MB. Current time: 9/20/18 4:58:51 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 24 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl netlist", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl netlist'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl netlist'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl netlist 
+// Tcl Message: ERROR: [Common 17-165] Too many positional options when parsing 'netlist', please type 'source -help' for usage info. 
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 62 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 18 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl netlist", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl netlist'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl netlist'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl netlist 
+// Tcl Message: ERROR: [Common 17-165] Too many positional options when parsing 'netlist', please type 'source -help' for usage info. 
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands bd::match_path'
+// Tcl Command: 'rdi::info_commands bd::match_path'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # set outdir "" # puts "$argc" 
+// Tcl Message: 0 
+// Tcl Message: # puts "$argv0" 
+// Tcl Message: /usr/local/packages/Xilinx/Vivado/2017.3/bin/unwrapped/lnx64.o/vivado 
+// Tcl Message: # if {$argc != 1} { #     error "Usage: $argv0 <design name>" # } 
+// Tcl Message: Usage: /usr/local/packages/Xilinx/Vivado/2017.3/bin/unwrapped/lnx64.o/vivado <design name>     while executing "error "Usage: $argv0 <design name>""     invoked from within "if {$argc != 1} {     error "Usage: $argv0 <design name>" }"     (file "../../../scripts/export_bookshelf_netlist.tcl" line 7) 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,226 MB. GUI used memory: 159 MB. Current time: 9/20/18 5:00:51 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Elapsed time: 24 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 47 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 49 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # proc export_bookshelf_netlist {outdir} { #     # Create a output directory if it doesn't exist #     set outdir [lindex $argv 0] #     if {! [file isdirectory $outdir]} { #         file mkdir $outdir #     } # } 
+dismissDialog("Tcl Command Line"); // bs (cl)
+// Tcl Command: 'rdi::info_commands {e*}'
+// Tcl Command: 'rdi::info_commands {ex*}'
+// Tcl Command: 'rdi::info_commands {ex*}'
+// Tcl Command: 'rdi::info_commands {ex*}'
+// Tcl Command: 'rdi::info_commands {exp*}'
+// Tcl Command: 'rdi::info_commands {expo*}'
+// Tcl Command: 'rdi::info_commands {export*}'
+// Tcl Command: 'rdi::info_commands {export_*}'
+// Tcl Command: 'rdi::info_commands {export_boo*}'
+// Tcl Command: 'rdi::info_commands {export_boo*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "export_bookshelf_netlist", true); // aG (af, cl)
+// Tcl Command: 'export_bookshelf_netlist'
+// Tcl Command: 'export_bookshelf_netlist'
+// Tcl Message: export_bookshelf_netlist 
+// Tcl Message: wrong # args: should be "export_bookshelf_netlist outdir" 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,227 MB. GUI used memory: 156 MB. Current time: 9/20/18 5:03:04 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "export_bookshelf_netlist netlist", true); // aG (af, cl)
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Message: export_bookshelf_netlist netlist 
+// Tcl Message: can't read "argv": no such variable 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "export_bookshelf_netlist netlist", true); // aG (af, cl)
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Message: export_bookshelf_netlist netlist 
+// Tcl Message: can't read "argv": no such variable 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "source ../../../scripts/export_bookshelf_netlist.tcl", true); // aG (af, cl)
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// Tcl Command: 'source ../../../scripts/export_bookshelf_netlist.tcl'
+// bs (cl):  Tcl Command Line : addNotify
+// Tcl Message: source ../../../scripts/export_bookshelf_netlist.tcl 
+// Tcl Message: # proc export_bookshelf_netlist {outdir} { #     # Create a output directory if it doesn't exist #     if {! [file isdirectory $outdir]} { #         file mkdir $outdir #     } # } 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,227 MB. GUI used memory: 116 MB. Current time: 9/20/18 5:03:23 PM CDT
+dismissDialog("Tcl Command Line"); // bs (cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "export_bookshelf_netlist netlist", true); // aG (af, cl)
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Message: export_bookshelf_netlist netlist 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "export_bookshelf_netlist netlist", true); // aG (af, cl)
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Command: 'export_bookshelf_netlist netlist'
+// Tcl Message: export_bookshelf_netlist netlist 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,227 MB. GUI used memory: 154 MB. Current time: 9/20/18 5:03:38 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 156 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_le*}'
+// Tcl Command: 'rdi::info_commands {get_l*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Elapsed time: 121 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -"); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {h}'
+// Tcl Command: 'rdi::match_options {get_cells} {hier}'
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_*}'
+// Tcl Command: 'rdi::info_commands {get_pro*}'
+// Tcl Command: 'rdi::info_commands {get_pro*}'
+// Tcl Command: 'rdi::info_commands {get_pr*}'
+// Tcl Command: 'rdi::info_commands {get_pro*}'
+// Tcl Command: 'rdi::info_commands {get_proper*}'
+// Tcl Command: 'rdi::info_commands {get_proper*}'
+// Tcl Command: 'rdi::match_options {get_property} {}'
+// Tcl Command: 'rdi::match_options {get_property} { }'
+// Elapsed time: 42 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_property ref_name [get_cells -hier *]", true); // aG (af, cl)
+// Tcl Command: 'get_property ref_name [get_cells -hier *]'
+// Tcl Command: 'get_property ref_name [get_cells -hier *]'
+// Tcl Message: get_property ref_name [get_cells -hier *] 
+// Tcl Command: 'rdi::info_commands {sort*}'
+// Elapsed time: 16 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "[sort get_property ref_name [get_cells -hier *]]", true); // aG (af, cl)
+// Tcl Command: '[sort get_property ref_name [get_cells -hier *]]'
+// Tcl Command: '[sort get_property ref_name [get_cells -hier *]]'
+// Tcl Message: [sort get_property ref_name [get_cells -hier *]] 
+// Tcl Message: invalid command name "sort" 
+// [GUI Memory]: 196 MB (+35070kb) [00:35:34]
+// Tcl Command: 'rdi::info_commands {sor*}'
+// Tcl Command: 'rdi::info_commands {l*}'
+// Tcl Command: 'rdi::info_commands {lsort*}'
+// Tcl Command: 'rdi::info_commands {lsort*}'
+// Tcl Command: 'rdi::match_options {lsort} {}'
+// Tcl Command: 'rdi::match_options {lsort} {u}'
+// Tcl Command: 'rdi::match_options {lsort} {uni}'
+// Tcl Command: 'rdi::match_options {lsort} {}'
+// Tcl Command: 'rdi::match_options {lsort} {}'
+// Tcl Command: 'rdi::match_options {lsort} {u}'
+// Tcl Command: 'rdi::match_options {lsort} {unique}'
+// Tcl Command: 'rdi::match_options {lsort} {unique}'
+// Elapsed time: 48 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsort -unique [get_property ref_name [get_cells -hier *]]", true); // aG (af, cl)
+// Tcl Command: 'lsort -unique [get_property ref_name [get_cells -hier *]]'
+// Tcl Command: 'lsort -unique [get_property ref_name [get_cells -hier *]]'
+// Tcl Message: lsort -unique [get_property ref_name [get_cells -hier *]] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,229 MB. GUI used memory: 156 MB. Current time: 9/20/18 5:10:05 PM CDT
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {fil}'
+// Tcl Command: 'rdi::match_options {get_cells} {fil}'
+// Elapsed time: 29 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -filter {ref_name == DSP48E2}", true); // aG (af, cl)
+// Tcl Command: 'get_cells -filter {ref_name == DSP48E2}'
+// Tcl Command: 'get_cells -filter {ref_name == DSP48E2}'
+// Tcl Message: get_cells -filter {ref_name == DSP48E2} 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -filter {ref_name =~ DSP48E2}", true); // aG (af, cl)
+// Tcl Command: 'get_cells -filter {ref_name =~ DSP48E2}'
+// Tcl Command: 'get_cells -filter {ref_name =~ DSP48E2}'
+// Tcl Message: get_cells -filter {ref_name =~ DSP48E2} 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,229 MB. GUI used memory: 196 MB. Current time: 9/20/18 5:10:42 PM CDT
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "get_cells -hier -filter {ref_name == DSP48E2}", true); // aG (af, cl)
+// Tcl Command: 'get_cells -hier -filter {ref_name == DSP48E2}'
+// Tcl Command: 'get_cells -hier -filter {ref_name == DSP48E2}'
+// Tcl Message: get_cells -hier -filter {ref_name == DSP48E2} 
+// Tcl Command: 'rdi::info_commands {high*}'
+// Tcl Command: 'rdi::info_commands {high*}'
+// Elapsed time: 15 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "highlight_objects [get_cells -hier -filter {ref_name == DSP48E2}]", true); // aG (af, cl)
+// Tcl Command: 'highlight_objects [get_cells -hier -filter {ref_name == DSP48E2}]'
+// Tcl Command: 'highlight_objects [get_cells -hier -filter {ref_name == DSP48E2}]'
+// TclEventType: HIGHLIGHT_ADD
+// Tcl Message: highlight_objects [get_cells -hier -filter {ref_name == DSP48E2}] 
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 846907, 1801969); // D (M, cl)
+// Device view-level: 2.3
+// HMemoryUtils.trashcanNow. Engine heap size: 3,232 MB. GUI used memory: 194 MB. Current time: 9/20/18 5:11:12 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 960616, 1856902); // D (M, cl)
+// Device select: 'Cell - out_reg_reg'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 3554, 6870, 1453, 710); // Y (k, cl)
+// PAPropertyPanels.initPanels (out_reg_reg (DSP48E2)) elapsed time: 0.4s
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[63].u_PE (PE_88), MACC_pe (macc_116), Leaf Cells (57), out_reg_reg (DSP48E2)]", 119); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, accelerator (dnn_accelerator), PU_GEN[0].u_PU (PU), PE_GENBLK[63].u_PE (PE_88), MACC_pe (macc_116), Leaf Cells (57), out_reg_reg (DSP48E2)]", 119); // aW (O, cl)
+// Elapsed time: 31 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsort -unique [get_property ref_name [get_cells -hier *]]", true); // aG (af, cl)
+// Tcl Command: 'lsort -unique [get_property ref_name [get_cells -hier *]]'
+// Tcl Command: 'lsort -unique [get_property ref_name [get_cells -hier *]]'
+// Tcl Message: lsort -unique [get_property ref_name [get_cells -hier *]] 
+// Elapsed time: 38 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1001, 129); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1001, 129, false, false, false, false, true); // dw (ad, cl) - Double Click
+// Elapsed time: 10 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]", true); // aG (af, cl)
+// Tcl Command: 'highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// Tcl Command: 'highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// TclEventType: HIGHLIGHT_ADD
+// Tcl Message: highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}] 
+// [GUI Memory]: 207 MB (+674kb) [00:38:53]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,236 MB. GUI used memory: 175 MB. Current time: 9/20/18 5:12:41 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 968454, 1855551); // D (M, cl)
+// Device view-level: 4.6
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970716, 1858687); // D (M, cl)
+// Device select: 'Site - AP9'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84912, 162586, 1453, 710); // Y (k, cl)
+// PAPropertyPanels.initPanels (Site: AP9) elapsed time: 0.2s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,238 MB. GUI used memory: 167 MB. Current time: 9/20/18 5:12:54 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970224, 1858801); // D (M, cl)
+// Device select: 'Site - AP9'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84869, 162596, 1453, 710); // Y (k, cl)
+// PAPropertyPanels.initPanels (Tile: HPIO_L_X51Y270) elapsed time: 0.2s
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970224, 1858801, false, false, false, false, true); // D (M, cl) - Double Click
+// Device select: 'Site - AP9'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84869, 162596, 1453, 710); // Y (k, cl)
+// PAPropertyPanels.initPanels (I/O Bank 68) elapsed time: 0.2s
+// HMemoryUtils.trashcanNow. Engine heap size: 3,239 MB. GUI used memory: 190 MB. Current time: 9/20/18 5:12:56 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970224, 1858801); // D (M, cl)
+// Device select: 'Site - AP9'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84869, 162596, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,239 MB. GUI used memory: 178 MB. Current time: 9/20/18 5:12:58 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,239 MB. GUI used memory: 165 MB. Current time: 9/20/18 5:12:58 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,239 MB. GUI used memory: 165 MB. Current time: 9/20/18 5:12:59 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970453, 1859647); // D (M, cl)
+// Device select: 'BEL - INBUF'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84889, 162670, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970030, 1858961); // D (M, cl)
+// Device select: 'Site - AP9'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84852, 162610, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 969847, 1859384); // D (M, cl)
+// Device select: 'BEL - OUTBUF'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84836, 162647, 1453, 710); // Y (k, cl)
+// [GUI Memory]: 218 MB (+370kb) [00:39:17]
+// [GUI Memory]: 229 MB (+524kb) [00:39:22]
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "Properties", 1); // i (c, cl)
+selectTab(RDIResource.PropertiesView_TABBED_PANE, (HResource) null, "General", 0); // i (c, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,241 MB. GUI used memory: 205 MB. Current time: 9/20/18 5:13:18 PM CDT
+// Device select: 'Site - DSP48E2_X2Y109'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 84434, 162707, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,241 MB. GUI used memory: 166 MB. Current time: 9/20/18 5:13:19 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 965252, 1860070); // D (M, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,241 MB. GUI used memory: 157 MB. Current time: 9/20/18 5:13:19 PM CDT
+// Tcl Command: 'rdi::info_commands {un*}'
+// Tcl Command: 'rdi::info_commands {unhi*}'
+// Tcl Command: 'rdi::info_commands {unhi*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "unhighlight_objects *", true); // aG (af, cl)
+// Tcl Command: 'unhighlight_objects *'
+// Tcl Command: 'unhighlight_objects *'
+// Tcl Message: unhighlight_objects * 
+// Tcl Message: ERROR: [Common 17-161] Invalid option value '*' specified for 'objects'. 
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {hier}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "unhighlight_objects [get_cells -hier *]", true); // aG (af, cl)
+// Tcl Command: 'unhighlight_objects [get_cells -hier *]'
+// Tcl Command: 'unhighlight_objects [get_cells -hier *]'
+// TclEventType: HIGHLIGHT_REMOVE
+// Tcl Message: unhighlight_objects [get_cells -hier *] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,242 MB. GUI used memory: 176 MB. Current time: 9/20/18 5:13:33 PM CDT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+// HMemoryUtils.trashcanNow. Engine heap size: 3,242 MB. GUI used memory: 211 MB. Current time: 9/20/18 5:13:34 PM CDT
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, -759744, 2847867); // D (M, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]", true); // aG (af, cl)
+// Tcl Command: 'highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// Tcl Command: 'highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// TclEventType: HIGHLIGHT_ADD
+// Tcl Message: highlight_objects [get_cells -hier -filter {ref_name == IBUFCTRL}] 
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 834306, 1764166); // D (M, cl)
+// Device view-level: 1.9
+// HMemoryUtils.trashcanNow. Engine heap size: 3,242 MB. GUI used memory: 220 MB. Current time: 9/20/18 5:13:47 PM CDT
+// Tcl Command: 'rdi::info_commands {highligh*}'
+// Tcl Command: 'rdi::info_commands {sele*}'
+// Tcl Command: 'rdi::info_commands {sele*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects _objects [get_cells -hier -filter {ref_name == IBUFCTRL}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects _objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// Tcl Command: 'select_objects _objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// Tcl Message: select_objects _objects [get_cells -hier -filter {ref_name == IBUFCTRL}] 
+// Tcl Message: ERROR: [Common 17-165] Too many positional options when parsing 'clk_IBUF_inst/IBUFCTRL_INST reset_IBUF_inst/IBUFCTRL_INST start_IBUF_inst/IBUFCTRL_INST', please type 'select_objects -help' for usage info. 
+// [GUI Memory]: 241 MB (+87kb) [00:40:08]
+// Tcl Command: 'rdi::info_commands {select_objects*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}] 
+// Tcl Message: INFO: [Coretcl 2-6] '3' objects selected. 
+// [GUI Memory]: 255 MB (+2182kb) [00:40:14]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,242 MB. GUI used memory: 259 MB. Current time: 9/20/18 5:14:02 PM CDT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hier -filter {ref_name == IBUFCTRL}] 
+// Tcl Message: INFO: [Coretcl 2-6] '3' objects selected. 
+// [GUI Memory]: 271 MB (+3282kb) [00:40:20]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,330 MB. GUI used memory: 205 MB. Current time: 9/20/18 5:14:09 PM CDT
+// Elapsed time: 13 seconds
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true); // aW (O, cl) - Node
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF), Nets (3)]", 39); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF), Nets (3)]", 39); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true, false, false, false, true, false); // aW (O, cl) - Popup Trigger - Node
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true); // aW (O, cl) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true, false, false, false, true, false); // aW (O, cl) - Popup Trigger - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true); // aW (O, cl) - Node
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true, false, false, false, true, false); // aW (O, cl) - Popup Trigger - Node
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenuItem((HResource) null, "Color 1"); // ac (cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 954017, 2016189); // D (M, cl)
+// Device select: 'Clock Region - X3Y3'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 766, 342, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,331 MB. GUI used memory: 150 MB. Current time: 9/20/18 5:14:50 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 903612, 2060293); // D (M, cl)
+// Device view-level: 2.5
+// Run Command: PAResourceCommand.PACommandNames_OPEN_FILE
+dismissFileChooser();
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true, false, false, false, true, false); // aW (O, cl) - Popup Trigger - Node
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_UNHIGHLIGHT_SELECTION, "Unhighlight"); // ac (ai, cl)
+// Run Command: PAResourceCommand.PACommandNames_UNHIGHLIGHT_SELECTION
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 38, true, false, false, false, true, false); // aW (O, cl) - Popup Trigger - Node
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenuItem((HResource) null, "Color 1"); // ac (cl)
+// Elapsed time: 15 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "lsort -unique [get_property ref_name [get_cells -hier *]]", true); // aG (af, cl)
+// Tcl Command: 'lsort -unique [get_property ref_name [get_cells -hier *]]'
+// Tcl Command: 'lsort -unique [get_property ref_name [get_cells -hier *]]'
+// Tcl Message: lsort -unique [get_property ref_name [get_cells -hier *]] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,334 MB. GUI used memory: 191 MB. Current time: 9/20/18 5:15:22 PM CDT
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 3, 128); // dw (ad, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1283, 127, false, false, false, true, false); // dw (ad, cl) - Popup Trigger
+selectMenuItem(RDIResource.TclConsoleView_COPY, "Copy"); // ac (ai, cl)
+// Elapsed time: 56 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hier -filter {ref_name == INBUF}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == INBUF}]'
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == INBUF}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hier -filter {ref_name == INBUF}] 
+// Tcl Message: INFO: [Coretcl 2-6] '3' objects selected. 
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aG (af, cl)
+// Elapsed time: 11 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hier -filter {ref_name == OBUF}]"); // aG (af, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hier -filter {ref_name == OBUFT}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == OBUFT}]'
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == OBUFT}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hier -filter {ref_name == OBUFT}] 
+// Tcl Message: INFO: [Coretcl 2-6] '11' objects selected. 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,334 MB. GUI used memory: 188 MB. Current time: 9/20/18 5:16:50 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 44, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 44, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 44, false, false, false, false, false, true); // aW (O, cl) - Double Click
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 44, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 44, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+applyEscape(PAResourceItoN.NetlistTreeView_NETLIST_TREE, (String) null); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 54, false, true, false, false, false, false); // aW (O, cl) - Shift Key
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 54, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_HIGHLIGHT_DEFAULT_COLOR, "Highlight (Default Color)"); // ac (cl)
+// Run Command: PAResourceCommand.PACommandNames_HIGHLIGHT_DEFAULT_COLOR
+// HMemoryUtils.trashcanNow. Engine heap size: 3,334 MB. GUI used memory: 173 MB. Current time: 9/20/18 5:17:10 PM CDT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 575981, 1600350); // D (M, cl)
+// Device view-level: 1.4
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 44, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 54, false, true, false, false, false, false); // aW (O, cl) - Shift Key
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 54, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenuItem((HResource) null, "Color 20"); // ac (cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 54, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 54, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+// HMemoryUtils.trashcanNow. Engine heap size: 3,335 MB. GUI used memory: 218 MB. Current time: 9/20/18 5:17:31 PM CDT
+selectMenu(PAResourceItoN.InstanceMenu_FLOORPLANNING, "Floorplanning"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SHOW_CONNECTIVITY, "Show Connectivity"); // ac (ai, cl)
+// Run Command: PAResourceCommand.PACommandNames_SHOW_CONNECTIVITY
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 93, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 103, false, true, false, false, false, false); // aW (O, cl) - Shift Key
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[10]_inst (OBUFT)]", 103, false, false, false, false, true, false); // aW (O, cl) - Popup Trigger
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // Z (ai, cl)
+selectMenu(PAResourceQtoS.SelectMenu_MARK, "Mark"); // Z (ai, cl)
+selectMenuItem(PAResourceCommand.PACommandNames_SHOW_CONNECTIVITY, "Show Connectivity"); // ac (ai, cl)
+// Run Command: PAResourceCommand.PACommandNames_SHOW_CONNECTIVITY
+// Run Command: PAResourceCommand.PACommandNames_OPEN_FILE
+dismissFileChooser();
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 790201, 3175498); // D (M, cl)
+// Device view-level: 1.7
+// DeviceOracle::getDeviceDataByteArray length(bytes): 177584
+// HMemoryUtils.trashcanNow. Engine heap size: 3,336 MB. GUI used memory: 232 MB. Current time: 9/20/18 5:17:52 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 937371, 3297594); // D (M, cl)
+// Device view-level: 2.2
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 961780, 3369600); // D (M, cl)
+// Device view-level: 3.8
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 969595, 3377715); // D (M, cl)
+// Device select: 'Cell - inbuf_count_OBUF[10]_inst'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 30432, 106014, 1453, 710); // Y (k, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970009, 3376918); // D (M, cl)
+// Device select: 'I/O Port - inbuf_count[10]'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 30445, 105989, 1453, 710); // Y (k, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 87); // aW (O, cl)
+expandTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 87); // aW (O, cl)
+collapseTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 87); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), done_OBUF_inst (OBUF)]", 88, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,336 MB. GUI used memory: 267 MB. Current time: 9/20/18 5:18:26 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 90, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), done_OBUF_inst (OBUF)]", 88, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 87, true); // aW (O, cl) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), done_OBUF_inst (OBUF)]", 88, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), GND (GND)]", 89, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,336 MB. GUI used memory: 269 MB. Current time: 9/20/18 5:18:35 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 90, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[1]_inst (OBUFT)]", 91, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[2]_inst (OBUFT)]", 92, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 87, true); // aW (O, cl) - Node
+// Tcl Command: 'rdi::info_commands {unh*}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "unh", true); // aG (af, cl)
+// Tcl Command: 'rdi::info_commands {get*}'
+// Tcl Command: 'rdi::info_commands {get_cell*}'
+// Tcl Command: 'rdi::info_commands {get_cells*}'
+// Tcl Command: 'rdi::match_options {get_cells} {}'
+// Tcl Command: 'rdi::match_options {get_cells} {hier}'
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "unhighlight_objects [get_cells -hier *]", true); // aG (af, cl)
+// Tcl Command: 'unhighlight_objects [get_cells -hier *]'
+// Tcl Command: 'unhighlight_objects [get_cells -hier *]'
+// TclEventType: HIGHLIGHT_REMOVE
+// Tcl Message: unhighlight_objects [get_cells -hier *] 
+// HMemoryUtils.trashcanNow. Engine heap size: 3,337 MB. GUI used memory: 262 MB. Current time: 9/20/18 5:18:55 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), done_OBUF_inst (OBUF)]", 88, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), clk_IBUF_inst (IBUF)]", 87, true); // aW (O, cl) - Node
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), done_OBUF_inst (OBUF)]", 88, false); // aW (O, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 969850, 3386158); // D (M, cl)
+// Device select: 'Cell - clk_IBUF_inst'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 30440, 106279, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,337 MB. GUI used memory: 281 MB. Current time: 9/20/18 5:19:03 PM CDT
+// [GUI Memory]: 285 MB (+649kb) [00:45:19]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 970359, 3394410); // D (M, cl)
+// Device select: 'BEL - PAD'
+selectView(PAResourceOtoP.PAViews_DEVICE, "Device", 30456, 106538, 1453, 710); // Y (k, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,337 MB. GUI used memory: 272 MB. Current time: 9/20/18 5:19:09 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 90, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[1]_inst (OBUFT)]", 91, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[2]_inst (OBUFT)]", 92, false); // aW (O, cl)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_FIT
+// Device view-level: 0.0
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[3]_inst (OBUFT)]", 93, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,338 MB. GUI used memory: 267 MB. Current time: 9/20/18 5:19:16 PM CDT
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 764999, 3087290); // D (M, cl)
+// Device view-level: 1.6
+// DeviceOracle::getDeviceDataByteArray length(bytes): 207508
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[2]_inst (OBUFT)]", 92, false); // aW (O, cl)
+// [GUI Memory]: 299 MB (+428kb) [00:45:35]
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 938098, 3207847); // D (M, cl)
+// Device view-level: 2.5
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 951891, 3267965); // D (M, cl)
+// Device view-level: 3.5
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[3]_inst (OBUFT)]", 93, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,338 MB. GUI used memory: 293 MB. Current time: 9/20/18 5:19:27 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[2]_inst (OBUFT)]", 92, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[3]_inst (OBUFT)]", 93, false); // aW (O, cl)
+selectGraphicalView(PAResourceOtoP.PAViews_DEVICE, 966797, 3279686); // D (M, cl)
+// Device view-level: 4.6
+selectButton(PAResourceCommand.PACommandNames_FED_TOGGLE_ROUTING_RESOURCES, (String) null); // u (f, cl): TRUE
+// Run Command: PAResourceCommand.PACommandNames_FED_TOGGLE_ROUTING_RESOURCES
+// Device view-level: 4.6
+// Device view-level: 4.3
+// HMemoryUtils.trashcanNow. Engine heap size: 3,340 MB. GUI used memory: 309 MB. Current time: 9/20/18 5:19:40 PM CDT
+// [GUI Memory]: 314 MB (+42kb) [00:45:53]
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[4]_inst (OBUFT)]", 94, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[3]_inst (OBUFT)]", 93, false); // aW (O, cl)
+// [GUI Memory]: 332 MB (+1381kb) [00:45:56]
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[4]_inst (OBUFT)]", 94, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[2]_inst (OBUFT)]", 92, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[1]_inst (OBUFT)]", 91, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,341 MB. GUI used memory: 332 MB. Current time: 9/20/18 5:19:47 PM CDT
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[0]_inst (OBUFT)]", 90, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[1]_inst (OBUFT)]", 91, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[2]_inst (OBUFT)]", 92, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[3]_inst (OBUFT)]", 93, false); // aW (O, cl)
+selectTree(PAResourceItoN.NetlistTreeView_NETLIST_TREE, "[dnn_accelerator_top, Leaf Cells (115), inbuf_count_OBUF[4]_inst (OBUFT)]", 94, false); // aW (O, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 326 MB. Current time: 9/20/18 5:19:52 PM CDT
+// Elapsed time: 19 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "select_objects [get_cells -hier -filter {ref_name == PE}]", true); // aG (af, cl)
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == PE}]'
+// Tcl Command: 'select_objects [get_cells -hier -filter {ref_name == PE}]'
+// TclEventType: SELECT_REMOVE
+// TclEventType: SELECT_ADD
+// Tcl Message: select_objects [get_cells -hier -filter {ref_name == PE}] 
+// Tcl Message: INFO: [Coretcl 2-12] 'accelerator/PU_GEN[0].u_PU/PE_GENBLK[0].u_PE' selected. 
+// [GUI Memory]: 349 MB (+1132kb) [00:49:26]
+// Elapsed time: 221 seconds
+applyEscape(PAResourceItoN.NetlistTreeView_NETLIST_TREE, (String) null); // aW (O, cl)
+// [GUI Memory]: 369 MB (+2414kb) [01:03:42]
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 201 MB. Current time: 9/20/18 5:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 162 MB. Current time: 9/20/18 6:19:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 6:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 7:19:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 7:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 8:19:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 8:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 9:19:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 9:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 10:19:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 10:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 11:19:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/20/18 11:49:54 PM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 12:19:54 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 12:49:54 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 1:19:54 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 1:49:54 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 2:19:54 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 2:49:54 AM CDT
+// HMemoryUtils.trashcanNow. Engine heap size: 3,342 MB. GUI used memory: 161 MB. Current time: 9/21/18 3:19:54 AM CDT

@@ -1,0 +1,145 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 00:00:53 2018
+# Process ID: 27613
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+Command: open_checkpoint ./impl-output/post_route.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.12 . Memory (MB): peak = 6148.824 ; gain = 5.004 ; free physical = 12773 ; free virtual = 59714
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/packages/Xilinx/Vivado/2017.3/data/ip'.
+INFO: [Netlist 29-17] Analyzing 182 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xcvu095-ffvc1517-3-e
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/.Xil/Vivado-27613-eda04/dcp3/dnn_accelerator_top.xdc]
+Finished Parsing XDC File [/home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe8/.Xil/Vivado-27613-eda04/dcp3/dnn_accelerator_top.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.56 ; elapsed = 00:00:00.53 . Memory (MB): peak = 6798.059 ; gain = 10.000 ; free physical = 12112 ; free virtual = 59068
+Restored from archive | CPU: 0.570000 secs | Memory: 10.718018 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.54 . Memory (MB): peak = 6798.059 ; gain = 10.000 ; free physical = 12112 ; free virtual = 59068
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 20 instances were transformed.
+  DSP48E2 => DSP48E2 (DSP_ALU, DSP_A_B_DATA, DSP_C_DATA, DSP_MULTIPLIER, DSP_M_DATA, DSP_OUTPUT, DSP_PREADD_DATA, DSP_PREADD): 8 instances
+  IBUF => IBUF (IBUFCTRL, INBUF): 3 instances
+  RAM32M16 => RAM32M16 (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.3 (64-bit) build 2018833
+open_checkpoint: Time (s): cpu = 00:00:43 ; elapsed = 00:00:30 . Memory (MB): peak = 7207.492 ; gain = 1063.672 ; free physical = 11793 ; free virtual = 58737
+report_timing
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -3, Temperature grade: E, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
+| Date              : Sat Sep 15 00:02:44 2018
+| Host              : eda04 running 64-bit Debian GNU/Linux 9.5 (stretch)
+| Command           : report_timing
+| Design            : dnn_accelerator_top
+| Device            : xcvu095-ffvc1517
+| Speed File        : -3  PRODUCTION 1.24 03-22-2017
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             2.324ns  (required time - arrival time)
+  Source:                 accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/op_code_dd_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clock_150M  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Destination:            accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_OUTPUT_INST/ALU_OUT[24]
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clock_150M  {rise@0.000ns fall@3.333ns period=6.667ns})
+  Path Group:             clock_150M
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            6.667ns  (clock_150M rise@6.667ns - clock_150M rise@0.000ns)
+  Data Path Delay:        4.106ns  (logic 1.133ns (27.594%)  route 2.973ns (72.406%))
+  Logic Levels:           3  (DSP_ALU=1 DSP_C_DATA=1 LUT4=1)
+  Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.971ns = ( 9.638 - 6.667 ) 
+    Source Clock Delay      (SCD):    3.563ns
+    Clock Pessimism Removal (CPR):    0.455ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      2.080ns (routing 0.779ns, distribution 1.301ns)
+  Clock Net Delay (Destination): 1.828ns (routing 0.711ns, distribution 1.117ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clock_150M rise edge)
+                                                      0.000     0.000 r  
+    AP26                                              0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk_IBUF_inst/I
+    AP26                 INBUF (Prop_INBUF_HRIO_PAD_O)
+                                                      0.654     0.654 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.078     0.732    clk_IBUF_inst/OUT
+    AP26                 IBUFCTRL (Prop_IBUFCTRL_HRIO_I_O)
+                                                      0.038     0.770 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.646     1.416    clk_IBUF
+    BUFGCE_X1Y2          BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.067     1.483 r  clk_IBUF_BUFG_inst/O
+    X2Y1 (CLOCK_ROOT)    net (fo=5500, routed)        2.080     3.563    accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/clk_IBUF_BUFG
+    SLICE_X72Y107        FDRE                                         r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/op_code_dd_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X72Y107        FDRE (Prop_DFF2_SLICEL_C_Q)
+                                                      0.102     3.665 r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[1].u_PE/MACC_pe/op_code_dd_reg[2]/Q
+                         net (fo=128, routed)         1.755     5.420    accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/op_code_dd[1]
+    SLICE_X82Y116        LUT4 (Prop_G6LUT_SLICEL_I2_O)
+                                                      0.115     5.535 r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg_i_35__6/O
+                         net (fo=33, routed)          1.218     6.753    accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/C[24]
+    DSP48E2_X2Y46        DSP_C_DATA (Prop_DSP_C_DATA_DSP48E2_C[24]_C_DATA[24])
+                                                      0.141     6.894 r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_C_DATA_INST/C_DATA[24]
+                         net (fo=2, routed)           0.000     6.894    accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_C_DATA.C_DATA<24>
+    DSP48E2_X2Y46        DSP_ALU (Prop_DSP_ALU_DSP48E2_C_DATA[24]_ALU_OUT[24])
+                                                      0.775     7.669 r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_ALU_INST/ALU_OUT[24]
+                         net (fo=1, routed)           0.000     7.669    accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_ALU.ALU_OUT<24>
+    DSP48E2_X2Y46        DSP_OUTPUT                                   r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_OUTPUT_INST/ALU_OUT[24]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clock_150M rise edge)
+                                                      6.667     6.667 r  
+    AP26                                              0.000     6.667 r  clk (IN)
+                         net (fo=0)                   0.000     6.667    clk_IBUF_inst/I
+    AP26                 INBUF (Prop_INBUF_HRIO_PAD_O)
+                                                      0.440     7.107 r  clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.051     7.158    clk_IBUF_inst/OUT
+    AP26                 IBUFCTRL (Prop_IBUFCTRL_HRIO_I_O)
+                                                      0.026     7.184 r  clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.566     7.750    clk_IBUF
+    BUFGCE_X1Y2          BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.060     7.810 r  clk_IBUF_BUFG_inst/O
+    X2Y1 (CLOCK_ROOT)    net (fo=5500, routed)        1.828     9.638    accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/CLK
+    DSP48E2_X2Y46        DSP_OUTPUT                                   r  accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_OUTPUT_INST/CLK
+                         clock pessimism              0.455    10.094    
+                         clock uncertainty           -0.035    10.058    
+    DSP48E2_X2Y46        DSP_OUTPUT (Setup_DSP_OUTPUT_DSP48E2_CLK_ALU_OUT[24])
+                                                     -0.065     9.993    accelerator/PU_GEN[0].u_PU/PE_GENBLK[7].u_PE/MACC_pe/out_reg_reg/DSP_OUTPUT_INST
+  -------------------------------------------------------------------
+                         required time                          9.993    
+                         arrival time                          -7.669    
+  -------------------------------------------------------------------
+                         slack                                  2.324    
+
+
+
+
+report_timing: Time (s): cpu = 00:00:32 ; elapsed = 00:00:29 . Memory (MB): peak = 8129.484 ; gain = 842.973 ; free physical = 11044 ; free virtual = 57984
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Sep 15 00:14:39 2018...

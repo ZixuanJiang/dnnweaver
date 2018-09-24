@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:07 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sat Sep 15 12:51:36 2018
+# Process ID: 20437
+# Current directory: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64
+# Command line: vivado ./impl-output/post_route.dcp
+# Log file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.log
+# Journal file: /home/local/eda04/wuxili/common/NeuralNetwork-FPGA/dnnweaver.public/fpga/designs/lenet_pu1_pe64/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_checkpoint ./impl-output/post_route.dcp
+unhighlight_objects *
+unhighlight_objects [get_cells -hierarchical *]
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[63].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y110/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[63].u_PE/MACC_pe/out_reg_reg} DSP48E2_X2Y109/DSP_ALU
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[60].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y107/RAMB18E2_U
+endgroup
+startgroup
+place_cell {accelerator/PU_GEN[0].u_PU/PE_GENBLK[60].u_PE/pe_buffer/mem_reg_bram_0} RAMB18_X10Y106/RAMB18E2_L
+endgroup

@@ -1,0 +1,186 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (lin64) Build 2018833 Wed Oct  4 19:58:07 MDT 2017
+| Date         : Fri Sep 14 23:31:30 2018
+| Host         : eda04 running 64-bit Debian GNU/Linux 9.5 (stretch)
+| Command      : report_utilization -hierarchical -file ./impl-output/utilization_post_route.rpt
+| Design       : dnn_accelerator_top
+| Device       : xcvu095ffvc1517-3
+| Design State : Routed
+-------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------------------------+------------------------------+------------+------------+---------+------+------+--------+--------+------+--------------+
+|                   Instance                   |            Module            | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | URAM | DSP48 Blocks |
++----------------------------------------------+------------------------------+------------+------------+---------+------+------+--------+--------+------+--------------+
+| dnn_accelerator_top                          |                        (top) |       3840 |       3735 |      72 |   33 | 5227 |     14 |     10 |    0 |            8 |
+|   (dnn_accelerator_top)                      |                        (top) |          0 |          0 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|   accelerator                                |              dnn_accelerator |       3840 |       3735 |      72 |   33 | 5224 |     14 |     10 |    0 |            8 |
+|     (accelerator)                            |              dnn_accelerator |         30 |         30 |       0 |    0 |   20 |      0 |      0 |    0 |            0 |
+|     PU_GEN[0].u_PU                           |                           PU |       1377 |       1350 |       8 |   19 | 2122 |      5 |      9 |    0 |            8 |
+|       (PU_GEN[0].u_PU)                       |                           PU |         12 |         12 |       0 |    0 |   52 |      0 |      0 |    0 |            0 |
+|       PE_GENBLK[0].u_PE                      |                           PE |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_74 |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_75 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_76 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_77 |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       PE_GENBLK[1].u_PE                      |                        PE_31 |         66 |         65 |       0 |    1 |  148 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_69 |         33 |         33 |       0 |    0 |   40 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_70 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_71 |         24 |         24 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         macc_en_delay                        |  register__parameterized0_72 |          1 |          0 |       0 |    1 |    4 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_73 |          8 |          8 |       0 |    0 |   38 |      0 |      1 |    0 |            0 |
+|         src_2_delay                          |                     register |          0 |          0 |       0 |    0 |    2 |      0 |      0 |    0 |            0 |
+|       PE_GENBLK[2].u_PE                      |                        PE_32 |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_65 |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_66 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_67 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_68 |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       PE_GENBLK[3].u_PE                      |                        PE_33 |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_61 |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_62 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_63 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_64 |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       PE_GENBLK[4].u_PE                      |                        PE_34 |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_57 |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_58 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_59 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_60 |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       PE_GENBLK[5].u_PE                      |                        PE_35 |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_53 |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_54 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_55 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_56 |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       PE_GENBLK[6].u_PE                      |                        PE_36 |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                      macc_49 |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                activation_50 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |  register__parameterized1_51 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                       ram_52 |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       PE_GENBLK[7].u_PE                      |                        PE_37 |         33 |         33 |       0 |    0 |  116 |      0 |      1 |    0 |            1 |
+|         MACC_pe                              |                         macc |         17 |         17 |       0 |    0 |   36 |      0 |      0 |    0 |            1 |
+|         ReLU                                 |                   activation |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         fifo_out_delay                       |     register__parameterized1 |          8 |          8 |       0 |    0 |   48 |      0 |      0 |    0 |            0 |
+|         pe_buffer                            |                          ram |          8 |          8 |       0 |    0 |   16 |      0 |      1 |    0 |            0 |
+|       neuron_delay                           |    register__parameterized10 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|       out_sel_delay                          |  register__parameterized5_38 |          2 |          2 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       packer                                 |               data_packer_39 |        114 |        114 |       0 |    0 |  130 |      0 |      0 |    0 |            0 |
+|       pe_neuron_bias_delay                   |  register__parameterized5_40 |          0 |          0 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       pe_neuron_sel_delay                    |     register__parameterized9 |        118 |        118 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       pool_DUT                               |                      pooling |        284 |        284 |       0 |    0 |  369 |      2 |      1 |    0 |            0 |
+|         (pool_DUT)                           |                      pooling |          2 |          2 |       0 |    0 |  150 |      0 |      0 |    0 |            0 |
+|         kw2_delay1                           | register__parameterized10_45 |         16 |         16 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         kw2_delay2                           | register__parameterized10_46 |         24 |         24 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         pool_fifo                            |         fifo__parameterized1 |        146 |        146 |       0 |    0 |   16 |      2 |      0 |    0 |            0 |
+|         row_fifo                             |         fifo__parameterized2 |         24 |         24 |       0 |    0 |   22 |      0 |      1 |    0 |            0 |
+|         row_fifo_out_delay                   |    register__parameterized11 |          0 |          0 |       0 |    0 |   16 |      0 |      0 |    0 |            0 |
+|         sipo_output                          |                      sipo_47 |         72 |         72 |       0 |    0 |  133 |      0 |      0 |    0 |            0 |
+|           (sipo_output)                      |                      sipo_47 |         67 |         67 |       0 |    0 |  132 |      0 |      0 |    0 |            0 |
+|           push_delay                         |  register__parameterized5_48 |          5 |          5 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       pool_cfg_delay                         |     register__parameterized8 |          0 |          0 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       pool_ctrl_delay                        |     register__parameterized7 |          9 |          3 |       0 |    6 |   13 |      0 |      0 |    0 |            0 |
+|       pu_ctrl_delay                          |     register__parameterized3 |          4 |          1 |       0 |    3 |   71 |      0 |      0 |    0 |            0 |
+|       pu_vg_data_delay                       |     register__parameterized2 |          0 |          0 |       0 |    0 |  128 |      0 |      0 |    0 |            0 |
+|       src_1_sel_delay                        |     register__parameterized0 |          0 |          0 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       src_2_sel_delay                        |  register__parameterized0_41 |          1 |          0 |       0 |    1 |    0 |      0 |      0 |    0 |            0 |
+|       u_serdes                               |                       serdes |        208 |        200 |       8 |    0 |  298 |      2 |      0 |    0 |            0 |
+|         (u_serdes)                           |                       serdes |          0 |          0 |       0 |    0 |  131 |      0 |      0 |    0 |            0 |
+|         cfg_fifo                             |         fifo__parameterized4 |         49 |         41 |       8 |    0 |   20 |      0 |      0 |    0 |            0 |
+|         data_fifo                            |         fifo__parameterized3 |         79 |         79 |       0 |    0 |   10 |      2 |      0 |    0 |            0 |
+|         serializer_counter                   |                   counter_43 |          9 |          9 |       0 |    0 |    4 |      0 |      0 |    0 |            0 |
+|         sipo_output                          |                         sipo |         71 |         71 |       0 |    0 |  133 |      0 |      0 |    0 |            0 |
+|           (sipo_output)                      |                         sipo |         67 |         67 |       0 |    0 |  132 |      0 |      0 |    0 |            0 |
+|           push_delay                         |  register__parameterized5_44 |          4 |          4 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       u_wb                                   |                weight_buffer |         17 |         17 |       0 |    0 |   28 |      1 |      0 |    0 |            0 |
+|       vg_mask_delay                          |     register__parameterized6 |        312 |        304 |       0 |    8 |   16 |      0 |      0 |    0 |            0 |
+|       wb_read_addr_delay                     |     register__parameterized4 |          0 |          0 |       0 |    0 |   27 |      0 |      0 |    0 |            0 |
+|       wb_read_req_delay                      |  register__parameterized0_42 |          0 |          0 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|     mem_ctrl_top                             |           mem_controller_top |       1024 |        960 |      64 |    0 | 1196 |      9 |      1 |    0 |            0 |
+|       (mem_ctrl_top)                         |           mem_controller_top |          2 |          2 |       0 |    0 |   67 |      0 |      0 |    0 |            0 |
+|       OUTPUT_BUFFER_GEN[0].d_unpacker        |                data_unpacker |         35 |         35 |       0 |    0 |  132 |      0 |      0 |    0 |            0 |
+|       OUTPUT_BUFFER_GEN[0].outbuf_iwidth     |         fifo__parameterized6 |         56 |         56 |       0 |    0 |   22 |      2 |      0 |    0 |            0 |
+|       OUTPUT_BUFFER_GEN[0].outbuf_owidth     |                    fifo_fwft |         50 |         50 |       0 |    0 |   17 |      1 |      0 |    0 |            0 |
+|         (OUTPUT_BUFFER_GEN[0].outbuf_owidth) |                    fifo_fwft |          0 |          0 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|         fifo_buffer                          |      fifo__parameterized7_30 |         50 |         50 |       0 |    0 |   16 |      1 |      0 |    0 |            0 |
+|       STREAM_PU_GEN[0].packer                |                  data_packer |          0 |          0 |       0 |    0 |    2 |      0 |      0 |    0 |            0 |
+|       STREAM_PU_GEN[0].stream_pu             |         fifo__parameterized5 |          9 |          9 |       0 |    0 |    7 |      0 |      0 |    0 |            0 |
+|       axi_rd_buffer                          |        fifo__parameterized11 |         21 |         21 |       0 |    0 |   19 |      1 |      0 |    0 |            0 |
+|       buffer_read                            |        fifo__parameterized13 |         34 |         34 |       0 |    0 |   31 |      2 |      0 |    0 |            0 |
+|       packer                                 |               data_packer_20 |          3 |          3 |       0 |    0 |  130 |      0 |      0 |    0 |            0 |
+|       stream_fifo                            |        fifo__parameterized12 |         26 |         26 |       0 |    0 |   25 |      2 |      0 |    0 |            0 |
+|       u_axim                                 |           axi_master_wrapper |        338 |        290 |      48 |    0 |  285 |      1 |      0 |    0 |            0 |
+|         (u_axim)                             |           axi_master_wrapper |          0 |          0 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|         AXI_GEN[0].u_axim                    |                   axi_master |        338 |        290 |      48 |    0 |  284 |      1 |      0 |    0 |            0 |
+|           (AXI_GEN[0].u_axim)                |                   axi_master |         79 |         79 |       0 |    0 |  151 |      0 |      0 |    0 |            0 |
+|           WBURST_COUNTER_GEN[0].wburst_C     |               wburst_counter |         50 |         50 |       0 |    0 |   17 |      0 |      0 |    0 |            0 |
+|           awchannel_req_buf                  |        fifo__parameterized10 |         22 |         14 |       8 |    0 |   18 |      0 |      0 |    0 |            0 |
+|           pu_obuf_rd_counter                 |                      counter |          6 |          6 |       0 |    0 |    4 |      0 |      0 |    0 |            0 |
+|           rd_req_buf                         |         fifo__parameterized8 |        111 |         79 |      32 |    0 |   59 |      0 |      0 |    0 |            0 |
+|           wchannel_req_buf                   |    fifo_fwft__parameterized0 |         33 |         25 |       8 |    0 |   18 |      0 |      0 |    0 |            0 |
+|             (wchannel_req_buf)               |    fifo_fwft__parameterized0 |          2 |          2 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|             fifo_buffer                      |         fifo__parameterized9 |         31 |         23 |       8 |    0 |   17 |      0 |      0 |    0 |            0 |
+|           write_buf                          |                 fifo_fwft_29 |         39 |         39 |       0 |    0 |   17 |      1 |      0 |    0 |            0 |
+|             (write_buf)                      |                 fifo_fwft_29 |          3 |          3 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|             fifo_buffer                      |         fifo__parameterized7 |         36 |         36 |       0 |    0 |   16 |      1 |      0 |    0 |            0 |
+|       u_buffer_counter                       |          buffer_read_counter |         44 |         44 |       0 |    0 |   45 |      0 |      1 |    0 |            0 |
+|         (u_buffer_counter)                   |          buffer_read_counter |          2 |          2 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|         read_info_fifo                       |        fifo__parameterized14 |         32 |         32 |       0 |    0 |   22 |      0 |      1 |    0 |            0 |
+|         rvalid_counter                       |   counter__parameterized3_28 |         10 |         10 |       0 |    0 |   20 |      0 |      0 |    0 |            0 |
+|       u_mem_ctrl                             |               mem_controller |        354 |        354 |       0 |    0 |  346 |      0 |      0 |    0 |            0 |
+|         (u_mem_ctrl)                         |               mem_controller |         92 |         92 |       0 |    0 |  180 |      0 |      0 |    0 |            0 |
+|         buffer_read_counter                  |   counter__parameterized0_21 |         29 |         29 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|         read_idx_counter                     |   counter__parameterized1_22 |         12 |         12 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|         stream_read_loop_0                   |   counter__parameterized0_23 |        105 |        105 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|         stream_read_loop_1                   |   counter__parameterized0_24 |         43 |         43 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|         stream_read_loop_2                   |   counter__parameterized0_25 |         36 |         36 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|         stream_write_counter                 |   counter__parameterized0_26 |         27 |         27 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|         write_idx_counter                    |   counter__parameterized1_27 |         11 |         11 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       u_read_info                            |                    read_info |         53 |         37 |      16 |    0 |   68 |      0 |      0 |    0 |            0 |
+|         (u_read_info)                        |                    read_info |          1 |          1 |       0 |    0 |    9 |      0 |      0 |    0 |            0 |
+|         read_info_fifo                       |        fifo__parameterized15 |         42 |         26 |      16 |    0 |   39 |      0 |      0 |    0 |            0 |
+|         rvalid_counter                       |      counter__parameterized3 |         10 |         10 |       0 |    0 |   20 |      0 |      0 |    0 |            0 |
+|     u_controller                             |                PU_controller |        757 |        743 |       0 |   14 |  460 |      0 |      0 |    0 |            0 |
+|       (u_controller)                         |                PU_controller |        183 |        183 |       0 |    0 |  272 |      0 |      0 |    0 |            0 |
+|       FC_neuron_idx_counter                  |      counter__parameterized4 |         32 |         32 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       conv_stride_counter                    |      counter__parameterized1 |         12 |         12 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       ic_counter                             |      counter__parameterized0 |        135 |        135 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|       ic_inc_delay                           |    register__parameterized13 |          3 |          2 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       ih_counter                             |    counter__parameterized4_0 |         64 |         64 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       ih_inc_delay                           |     register__parameterized5 |          0 |          0 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       iw_counter                             |    counter__parameterized4_1 |         37 |         37 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       iw_inc_delay                           |   register__parameterized5_2 |          1 |          1 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       kw_counter                             |    counter__parameterized1_3 |         41 |         41 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       l_counter                              |    counter__parameterized4_4 |         27 |         27 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       l_inc_delay                            |  register__parameterized13_5 |          2 |          1 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       nextfm_delay                           |   register__parameterized5_6 |          0 |          0 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       oc_counter                             |    counter__parameterized0_7 |         99 |         99 |       0 |    0 |   32 |      0 |      0 |    0 |            0 |
+|       out_sel_delay                          |    register__parameterized14 |          3 |          2 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       p_counter                              |    counter__parameterized4_8 |         16 |         16 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       pe_fifo_pop_delay                      |   register__parameterized5_9 |          1 |          1 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       pe_fifo_push_delay                     | register__parameterized14_10 |          4 |          3 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       pe_neuron_bias_delay                   |    register__parameterized18 |          2 |          1 |       0 |    1 |    1 |      0 |      0 |    0 |            0 |
+|       pe_neuron_sel_delay                    |    register__parameterized17 |          5 |          2 |       0 |    3 |    3 |      0 |      0 |    0 |            0 |
+|       pe_sel_counter                         |   counter__parameterized1_11 |          2 |          2 |       0 |    0 |    3 |      0 |      0 |    0 |            0 |
+|       pe_write_valid_delay                   |    register__parameterized15 |          2 |          1 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       pool_ih_counter                        |   counter__parameterized4_12 |         23 |         23 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       pool_iw_counter                        |   counter__parameterized4_13 |         28 |         28 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       pool_pad_row_delay                     |  register__parameterized5_14 |          2 |          2 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       pool_valid_delay                       |    register__parameterized20 |          0 |          0 |       0 |    0 |    5 |      0 |      0 |    0 |            0 |
+|       pu_serdes_count_delay                  |    register__parameterized16 |          3 |          1 |       0 |    2 |    4 |      0 |      0 |    0 |            0 |
+|       scratch_sw_rd_delay                    | register__parameterized14_15 |          7 |          6 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       scratch_sw_wr_delay                    |  register__parameterized5_16 |          1 |          1 |       0 |    0 |    1 |      0 |      0 |    0 |            0 |
+|       src_1_sel_delay                        | register__parameterized14_17 |          4 |          3 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|       stride_counter                         |   counter__parameterized4_18 |         14 |         14 |       0 |    0 |   10 |      0 |      0 |    0 |            0 |
+|       wr_addr_clear_delay                    | register__parameterized15_19 |          4 |          3 |       0 |    1 |    2 |      0 |      0 |    0 |            0 |
+|     vecgen                                   |    vectorgen__parameterized0 |        653 |        653 |       0 |    0 | 1426 |      0 |      0 |    0 |            0 |
++----------------------------------------------+------------------------------+------------+------------+---------+------+------+--------+--------+------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+
